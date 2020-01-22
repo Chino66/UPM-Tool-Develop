@@ -1,7 +1,9 @@
-﻿using System.Runtime.CompilerServices;
-using UnityEditor;
+﻿using System;
+using System.Reflection;
+using Example;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using UPMTool;
 
 namespace UnityEditor
 {
@@ -12,23 +14,37 @@ namespace UnityEditor
 
         static PackagePath()
         {
-            Debug.Log("sss");
-            var cb = new callback();
-            PackageManager.BuildUtilities.RegisterShouldIncludeInBuildCallback(cb);
+//            BuildIn();
+            var s = GetPackagePath(typeof(TheExample));
+            Debug.Log(s);
+            s = GetPackagePath(typeof(BatUtils));
+            Debug.Log(s);
         }
 
-        class callback : IShouldIncludeInBuildCallback
+        public static string GetPackagePath(Type type)
+        {
+            var p =
+                PackageManager.PackageInfo.FindForAssembly(Assembly.GetAssembly(type));
+            return p.assetPath;
+        }
+
+
+        static void BuildIn()
+        {
+            UnityEditor.PackageManager.BuildUtilities.RegisterShouldIncludeInBuildCallback(new BuildInCallback());
+        }
+
+        class BuildInCallback : IShouldIncludeInBuildCallback
         {
             public bool ShouldIncludeInBuild(string path)
             {
-                Debug.Log("path is " + path);
+                Debug.Log("build in " + path);
                 return true;
             }
 
             public string PackageName { get; }
         }
-
-        static string m_PackagePath;
+//        static string m_PackagePath;
 
 //        public static string fileSystemPackagePath
 //        {

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\chino\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\chino\.Rider2019.1\system\resharper-host\Local\Transient\ReSharperHost\v191\SolutionCaches\_UPM-Tool-Develop.-1104287432.00" t="ExcludeRecursive" />
+    <e p="F:\Unity3D\Package Example\Assets\_package_\_main_\Editor" t="Include">
+      <e p="Editor Example.asmdef" t="Include" />
+      <e p="PackagePath.cs" t="Include" />
+      <e p="TheExample.cs" t="Include" />
+    </e>
+    <e p="F:\Unity3D\UPM-Tool-Develop" t="IncludeRecursive">
+      <e p="Assets" t="Include">
+        <e p="_package_" t="Include">
+          <e p="_main_" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Editor.UPMTool.asmdef" t="Include" />
+              <e p="PackagePath.cs" t="Include" />
+              <e p="UPMToolExtension" t="Include">
+                <e p="UPMToolExtension.cs" t="Include" />
+                <e p="UPMToolExtensionUI.cs" t="Include" />
+              </e>
+              <e p="Utils" t="Include">
+                <e p="BatUtils.cs" t="Include" />
+                <e p="GitUtils.cs" t="Include" />
+                <e p="PackageUtils.cs" t="Include" />
+                <e p="RegexUtils.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Editor.UPMTool.csproj" t="IncludeRecursive" />
+      <e p="EditorExample.csproj" t="IncludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="UPM-Tool-Develop.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

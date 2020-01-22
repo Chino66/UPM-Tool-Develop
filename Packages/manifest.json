@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.chino.network_core": "https://github.com/Chino66/Network.git#upm",
+    "com.chino.example": "file:F:/Unity3D/Package Example/Assets/_package_",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.probuilder": "4.1.2",
     "com.unity.textmeshpro": "2.0.1",
@@ -36,11 +36,5 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  },
-  "lock": {
-    "com.chino.network_core": {
-      "revision": "upm",
-      "hash": "a8bf75b242fd75a390a69af066baeec67cdeb9c6"
-    }
   }
 }
