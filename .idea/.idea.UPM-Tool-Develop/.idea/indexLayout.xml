@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelUserStore">
-    <attachedFolders />
-    <explicitIncludes>
-      <Path>$USER_HOME$/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.test-framework@1.1.3</Path>
+    <attachedFolders>
+      <Path>../../../AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.test-framework@1.1.3</Path>
       <Path>../Package Example/Assets/_package_</Path>
+    </attachedFolders>
+    <explicitIncludes>
+      <Path>../Network/Assets/GameBase</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.ide.rider@1.1.4</Path>
-      <Path>Library/PackageCache/com.unity.probuilder@4.1.2</Path>
-      <Path>Library/PackageCache/com.unity.render-pipelines.core@7.1.8</Path>
-      <Path>Library/PackageCache/com.unity.settings-manager@1.0.0</Path>
-      <Path>Library/PackageCache/com.unity.shadergraph@7.1.8</Path>
-      <Path>Library/PackageCache/com.unity.textmeshpro@2.0.1</Path>
-      <Path>Library/PackageCache/com.unity.visualeffectgraph@7.1.8</Path>
       <Path>Packages</Path>
       <Path>ProjectSettings</Path>
     </explicitIncludes>

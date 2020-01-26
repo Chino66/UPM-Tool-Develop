@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\chino\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\chino\.Rider2019.1\system\resharper-host\Local\Transient\ReSharperHost\v191\SolutionCaches\_UPM-Tool-Develop.-1104287432.00" t="ExcludeRecursive" />
-    <e p="F:\Unity3D\Package Example\Assets\_package_\_main_\Editor" t="Include">
-      <e p="Editor Example.asmdef" t="Include" />
-      <e p="PackagePath.cs" t="Include" />
-      <e p="TheExample.cs" t="Include" />
+    <e p="$PROJECT_DIR$/../Network/Assets/GameBase/Network.Core" t="Include">
+      <e p="NetworkCore.asmdef" t="Include" />
+      <e p="Scripts" t="Include">
+        <e p="IClient.cs" t="Include" />
+        <e p="IConnect.cs" t="Include" />
+        <e p="IServer.cs" t="Include" />
+      </e>
     </e>
-    <e p="F:\Unity3D\UPM-Tool-Develop" t="IncludeRecursive">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assets" t="Include">
         <e p="_package_" t="Include">
           <e p="_main_" t="Include">
             <e p="Editor" t="Include">
+              <e p="Common" t="Include">
+                <e p="PackagePath.cs" t="Include" />
+                <e p="PackagePathGenerator.cs" t="Include" />
+              </e>
               <e p="Editor.UPMTool.asmdef" t="Include" />
+              <e p="example.cs" t="Include" />
               <e p="PackagePath.cs" t="Include" />
               <e p="UPMToolExtension" t="Include">
                 <e p="UPMToolExtension.cs" t="Include" />
@@ -30,11 +36,13 @@
         </e>
       </e>
       <e p="Editor.UPMTool.csproj" t="IncludeRecursive" />
-      <e p="EditorExample.csproj" t="IncludeRecursive" />
+      <e p="NetworkCore.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
       <e p="UPM-Tool-Develop.sln" t="IncludeFlat" />
     </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/Local/Transient/ReSharperHost/v193/SolutionCaches/_UPM-Tool-Develop.-712719565.00" t="ExcludeRecursive" />
   </component>
 </project>

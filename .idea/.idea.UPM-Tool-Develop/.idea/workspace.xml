@@ -2,97 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1143237c-53f8-4284-8da9-15f458a0f077" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Editor.UPMTool.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Editor.UPMTool.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Library.meta" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Common.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Common/PackagePath.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Common/PackagePath.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Common/PackagePathGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Common/PackagePathGenerator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackagePath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackagePath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackagePath.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackagePath.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackagePath.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-              <folding>
-                <marker date="1579709590499" expanded="true" signature="6:121" ph="..." />
-                <marker date="1579709590499" expanded="true" signature="144:1910" ph="{...}" />
-                <marker date="1579709590499" expanded="true" signature="205:1908" ph="{...}" />
-                <marker date="1579709590499" expanded="true" signature="310:513" ph="{...}" />
-                <marker date="1579709590499" expanded="true" signature="569:729" ph="{...}" />
-                <marker date="1579709590499" expanded="true" signature="761:896" ph="{...}" />
-                <marker date="1579709590499" expanded="true" signature="959:1189" ph="{...}" />
-                <marker date="1579709590499" expanded="true" signature="1027:1131" ph="{...}" />
-                <marker date="1579709590499" expanded="true" signature="1190:1902" ph="/* static string m_PackagePath; ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/83A73882-C51C-4602-B3D3-4743827D03E7/2e/fb441313/BuildUtilities.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="23" column="89" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/83A73882-C51C-4602-B3D3-4743827D03E7/ea/003a26ab/PackageInfo.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="376" column="30" selection-start-line="376" selection-start-column="30" selection-end-line="376" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/BatUtils.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <marker date="1579691938736" expanded="true" signature="26:174" ph="..." />
-                <marker date="1579691938736" expanded="true" signature="235:3893" ph="{...}" />
-                <marker date="1579691938736" expanded="true" signature="270:3891" ph="{...}" />
-                <marker date="1579691938736" expanded="true" signature="285:342" ph="/// .bat文件路径 ... " />
-                <marker date="1579691938736" expanded="true" signature="571:709" ph="/// 运行.bat ... " />
-                <marker date="1579691938736" expanded="true" signature="780:1522" ph="{...}" />
-                <marker date="1579691938736" expanded="true" signature="930:969" ph="/* 新开一个进程,运行.bat ... */" />
-                <marker date="1579691938736" expanded="true" signature="1532:1628" ph="/// 生成.bat内容 ... " />
-                <marker date="1579691938736" expanded="true" signature="1683:2226" ph="{...}" />
-                <marker date="1579691938736" expanded="true" signature="1905:1967" ph="{...}" />
-                <marker date="1579691938736" expanded="true" signature="2236:2337" ph="/// 创建.bat文件,空文件 ... " />
-                <marker date="1579691938736" expanded="true" signature="2389:2516" ph="{...}" />
-                <marker date="1579691938736" expanded="true" signature="2443:2506" ph="{...}" />
-                <marker date="1579691938736" expanded="true" signature="2519:3885" ph="/* 直接执行命令行 ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackagePath.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/BatUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Package Example/Assets/_package_/_main_/Editor/PackagePath.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Package Example/Assets/_package_/_main_/Editor/TheExample.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/83A73882-C51C-4602-B3D3-4743827D03E7/ea/003a26ab/PackageInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/83A73882-C51C-4602-B3D3-4743827D03E7/2e/fb441313/BuildUtilities.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Common/PackagePathGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Common.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Common/PackagePath.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackagePath.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EA2B1753-01EF-455A-891E-BF49A4B19E83/68/a696f1d0/PackageInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -100,6 +42,10 @@
         <option value="$PROJECT_DIR$/../Package Example/Assets/_package_/_main_/Editor/TheExample.cs" />
         <option value="$PROJECT_DIR$/../Package Example/Assets/_package_/_main_/Editor/PackagePath.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackagePath.cs" />
+        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Common/PackagePathGenerater.cs" />
+        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Common/PackagePath.cs" />
+        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Common/PackagePathGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example.cs" />
       </list>
     </option>
   </component>
@@ -111,64 +57,47 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="450" />
-    <option name="y" value="65" />
-    <option name="width" value="1382" />
-    <option name="height" value="1087" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="UnityExplorer" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="UnityExplorer">
-        <option name="show-hidden-items" value="false" />
-        <option name="show-project-names" value="true" />
-      </pane>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
-    </panes>
+  <component name="ProjectId" id="1WtMuulHvcN1r49Nb4kzkqUXXKQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="TWShift.4" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -187,48 +116,31 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="4736000" />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="450" y="65" width="1382" height="1087" extended-state="0" />
-    <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19742814" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="257" y="100" key="SettingsEditor" timestamp="1580027892742">
+      <screen x="49" y="23" width="1391" height="877" />
+    </state>
+    <state x="255" y="100" key="SettingsEditor/47.23.1393.877@47.23.1393.877" timestamp="1579965855006" />
+    <state x="257" y="100" key="SettingsEditor/49.23.1391.877@49.23.1391.877" timestamp="1580027892742" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -238,92 +150,5 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/83A73882-C51C-4602-B3D3-4743827D03E7/ea/003a26ab/PackageInfo.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="376" column="30" selection-start-line="376" selection-start-column="30" selection-end-line="376" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Package Example/Assets/_package_/_main_/Editor/TheExample.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding>
-            <marker date="1579708640915" expanded="false" signature="6:78" ph="..." />
-            <marker date="1579708640915" expanded="true" signature="97:206" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/83A73882-C51C-4602-B3D3-4743827D03E7/2e/fb441313/BuildUtilities.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="23" column="89" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/BatUtils.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <marker date="1579691938736" expanded="true" signature="26:174" ph="..." />
-            <marker date="1579691938736" expanded="true" signature="235:3893" ph="{...}" />
-            <marker date="1579691938736" expanded="true" signature="270:3891" ph="{...}" />
-            <marker date="1579691938736" expanded="true" signature="285:342" ph="/// .bat文件路径 ... " />
-            <marker date="1579691938736" expanded="true" signature="571:709" ph="/// 运行.bat ... " />
-            <marker date="1579691938736" expanded="true" signature="780:1522" ph="{...}" />
-            <marker date="1579691938736" expanded="true" signature="930:969" ph="/* 新开一个进程,运行.bat ... */" />
-            <marker date="1579691938736" expanded="true" signature="1532:1628" ph="/// 生成.bat内容 ... " />
-            <marker date="1579691938736" expanded="true" signature="1683:2226" ph="{...}" />
-            <marker date="1579691938736" expanded="true" signature="1905:1967" ph="{...}" />
-            <marker date="1579691938736" expanded="true" signature="2236:2337" ph="/// 创建.bat文件,空文件 ... " />
-            <marker date="1579691938736" expanded="true" signature="2389:2516" ph="{...}" />
-            <marker date="1579691938736" expanded="true" signature="2443:2506" ph="{...}" />
-            <marker date="1579691938736" expanded="true" signature="2519:3885" ph="/* 直接执行命令行 ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Package Example/Assets/_package_/_main_/Editor/PackagePath.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <marker date="1579709457355" expanded="false" signature="6:91" ph="..." />
-            <marker date="1579709457355" expanded="true" signature="114:1778" ph="{...}" />
-            <marker date="1579709457355" expanded="true" signature="175:1776" ph="{...}" />
-            <marker date="1579709457355" expanded="true" signature="280:381" ph="{...}" />
-            <marker date="1579709457355" expanded="true" signature="291:371" ph="/* BuildIn(); ... */" />
-            <marker date="1579709457355" expanded="true" signature="437:597" ph="{...}" />
-            <marker date="1579709457355" expanded="true" signature="629:764" ph="{...}" />
-            <marker date="1579709457355" expanded="true" signature="827:1057" ph="{...}" />
-            <marker date="1579709457355" expanded="true" signature="895:999" ph="{...}" />
-            <marker date="1579709457355" expanded="true" signature="1058:1770" ph="/* static string m_PackagePath; ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackagePath.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding>
-            <marker date="1579709590499" expanded="true" signature="6:121" ph="..." />
-            <marker date="1579709590499" expanded="true" signature="144:1910" ph="{...}" />
-            <marker date="1579709590499" expanded="true" signature="205:1908" ph="{...}" />
-            <marker date="1579709590499" expanded="true" signature="310:513" ph="{...}" />
-            <marker date="1579709590499" expanded="true" signature="569:729" ph="{...}" />
-            <marker date="1579709590499" expanded="true" signature="761:896" ph="{...}" />
-            <marker date="1579709590499" expanded="true" signature="959:1189" ph="{...}" />
-            <marker date="1579709590499" expanded="true" signature="1027:1131" ph="{...}" />
-            <marker date="1579709590499" expanded="true" signature="1190:1902" ph="/* static string m_PackagePath; ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
