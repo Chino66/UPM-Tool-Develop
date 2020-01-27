@@ -132,10 +132,12 @@ namespace UPMToolDevelop
             selectPackageInfo = packageInfo;
 
             var packageId = selectPackageInfo.packageId;
-
-            if (packageId.Contains("chino"))
+            
+            gitUrl = GetGitUrl(packageId);
+            
+            if (!string.IsNullOrEmpty(gitUrl))
             {
-                gitUrl = GetGitUrl(packageId);
+                
                 ui.SetUIVisible(true);
             }
             else
@@ -144,6 +146,13 @@ namespace UPMToolDevelop
             }
         }
 
+        /// <summary>
+        /// 获取git路径
+        /// http格式：https://github.com/Chino66/MyData.git
+        /// ssh格式：git@github.com:Chino66/MyData.git
+        /// </summary>
+        /// <param name="packageId"></param>
+        /// <returns></returns>
         private string GetGitUrl(string packageId)
         {
             if (string.IsNullOrEmpty(packageId))
@@ -155,18 +164,18 @@ namespace UPMToolDevelop
             var s = packageId.Split('@');
             if (s.Length < 2)
             {
-                Debug.LogError("packageId is bad");
+                Debug.LogWarning("packageId is invalid");
+                return "";
+            }
+
+            var path = s[1];
+            if (!path.StartsWith("https://github.com/")&&!path.StartsWith("git@github.com:"))
+            {
+                Debug.LogWarning("packageId is not git url");
                 return "";
             }
 
             var u = s[1].Split('#');
-
-            if (u.Length < 2)
-            {
-                Debug.LogError("packageId is bad");
-                return "";
-            }
-
             return u[0];
         }
 
