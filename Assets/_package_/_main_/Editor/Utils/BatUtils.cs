@@ -18,7 +18,7 @@ namespace UPMTool
         /// .bat文件路径
         /// </summary>
 //        private static string Bat_Path = PackageChecker.PackagePath + @"Resources\Bat\git_get_tags.bat";
-        private static string Bat_Path = Path.Combine(PackagePath.MainPath, @"Resources\Bat\git_get_tags.bat");
+        private static string Bat_Path = Path.Combine(PackagePath.MainPath, @"Resources/Bat/git_get_tags.bat");
 
         /// <summary>
         /// 运行.bat

@@ -1,11 +1,9 @@
 using System.Reflection;
+using System.CodeDom.Compiler;
+using System.CodeDom;
 
 namespace UPMTool
 {
-    using System;
-    using System.CodeDom.Compiler;
-    using System.CodeDom;
-
     public class PackagePathGenerator
     {
         public static void Generate(string nameSpace, string path, string className = "PackagePath")
@@ -22,7 +20,7 @@ namespace UPMTool
 
             CodeMemberField LocalPath = new CodeMemberField(typeof(string), "LocalPath");
             LocalPath.Attributes = MemberAttributes.Private | MemberAttributes.Const;
-            LocalPath.InitExpression = new CodePrimitiveExpression(@"Assets\_package_\_main_\");
+            LocalPath.InitExpression = new CodePrimitiveExpression(@"Assets/_package_/_main_/");
             theClass.Members.Add(LocalPath);
 
             CodeMemberField _mainPath = new CodeMemberField(typeof(string), "_mainPath");
@@ -50,7 +48,8 @@ namespace UPMTool
             CodeConditionStatement ifCondition2 = new CodeConditionStatement();
             ifCondition2.Condition = new CodeVariableReferenceExpression("p == null");
             ifCondition2.TrueStatements.Add(new CodeVariableReferenceExpression("_mainPath = LocalPath"));
-            ifCondition2.FalseStatements.Add(new CodeVariableReferenceExpression("_mainPath = p.assetPath"));
+            ifCondition2.FalseStatements.Add(
+                new CodeVariableReferenceExpression("_mainPath = p.assetPath + \"/_main_/\""));
             ifCondition.TrueStatements.Add(ifCondition2);
 
             MainPath.GetStatements.Add(ifCondition);

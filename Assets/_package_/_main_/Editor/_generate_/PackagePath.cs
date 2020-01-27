@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UMPTool
+namespace UPMTool
 {
     using System.Reflection;
     
@@ -16,7 +16,7 @@ namespace UMPTool
     public class PackagePath
     {
         
-        private const string LocalPath = "Assets\\_package_\\_main_\\";
+        private const string LocalPath = "Assets/_package_/_main_/";
         
         private static string _mainPath;
         
@@ -33,7 +33,7 @@ namespace UMPTool
                     }
                     else
                     {
-                        _mainPath = p.assetPath;
+                        _mainPath = p.assetPath + "/_main_/";
                     }
                 }
                 return _mainPath;

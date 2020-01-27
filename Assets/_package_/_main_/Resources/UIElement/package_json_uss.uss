@@ -1,0 +1,54 @@
+.root Box
+{
+    background-color: rgba(140,140,140,0.5);
+    /*margin: 2,5;*/
+    border-width: 0;
+}
+
+.row 
+{
+    flex-direction: row;
+}
+
+.row Button
+{
+    width: 0;
+    flex-grow: 1;
+    margin: 5,5;
+}
+
+.row Label
+{
+    width: 0;
+    flex-grow: 1;
+    margin: 5,5;
+}
+
+.row TextField
+{
+    width: 0;
+    flex-grow: 1;
+    margin: 5,5;
+}
+
+/*自动换行*/
+.word_warp
+{
+    white-space: normal;
+}
+
+.preview_tf
+{
+    margin: 0;
+    white-space: normal;
+}
+
+.color
+{
+    color: #FF0000;
+}
+
+.color_green
+{
+    color: #009900;
+}

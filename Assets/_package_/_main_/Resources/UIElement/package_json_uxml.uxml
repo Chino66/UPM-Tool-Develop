@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
+    xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
+    
+    <VisualElement class="root">
+        <Label text="package.json编辑工具" />
+        <Box class="row">
+            <Label name="name_lab" text="name" />
+            <TextField name="name_tf" />
+        </Box>
+        <Box class="row">
+            <Label name="displayName_lab" text="displayName" />
+            <TextField name="displayName_tf" />
+        </Box>
+        <Box class="row">
+            <Label name="version_lab" text="version" />
+            <TextField name="version_tf" />
+        </Box>
+        <Box class="row">
+            <Label name="type_lab" text="type" />
+            <TextField name="type_tf" />
+        </Box>
+        <Box class="row">
+            <Label name="description_lab" text="description" />
+        </Box>
+        <Box class="row">
+            <TextField name="description_tf" class="word_warp" multiline="true" />
+        </Box>
+
+        <Box class="row" name="edit_box">
+            <Button name="revert_btn" text="revert" />
+            <Button name="apply_btn" text="apply" />
+        </Box>
+        <Box class="row" name="create_box">
+            <Button name="create_btn" text="create" />
+        </Box>
+    </VisualElement>
+
+    <VisualElement class="root" name="msg_ve">
+        <Label class="color" name="msg_lab" text="" />
+    </VisualElement>
+
+    <VisualElement class="root" name="preview_ve">
+        <Label text="预览" />
+            <TextField text="..." 
+                name="preview_tf"
+                multiline="true" 
+                readonly="true" 
+                class="preview_tf"
+                />
+    </VisualElement>
+</UXML>

@@ -14,13 +14,21 @@
         <e p="_package_" t="Include">
           <e p="_main_" t="Include">
             <e p="Editor" t="Include">
-              <e p="Common" t="Include">
+              <e p="_generate_" t="Include">
                 <e p="PackagePath.cs" t="Include" />
+              </e>
+              <e p="Develop" t="Include">
+                <e p="PackageChecker.cs" t="Include" />
+                <e p="PackageJsonEditor.cs" t="Include" />
+                <e p="PackageJsonInfo.cs" t="Include" />
+                <e p="PackageJsonUI.cs" t="Include" />
                 <e p="PackagePathGenerator.cs" t="Include" />
               </e>
               <e p="Editor.UPMTool.asmdef" t="Include" />
               <e p="example.cs" t="Include" />
-              <e p="PackagePath.cs" t="Include" />
+              <e p="PackageCreateTool" t="Include">
+                <e p="PackageCreateTool.cs" t="Include" />
+              </e>
               <e p="UPMToolExtension" t="Include">
                 <e p="UPMToolExtension.cs" t="Include" />
                 <e p="UPMToolExtensionUI.cs" t="Include" />
