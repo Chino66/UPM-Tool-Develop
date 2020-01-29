@@ -109,12 +109,58 @@ namespace UPMToolDevelop
             var button = root.Q<Button>("create_btn");
             button.clicked += () =>
             {
+                // 创建插件包的动作
+                CreatePackageAction(packageJsonInfo);
+                // 创建或修改package.json
                 SavePackageJsonChange(root, packageJsonInfo, path);
                 preview.value = packageJsonInfo.ToJson();
+                AssetDatabase.Refresh();
             };
 
             var element = root.Q<VisualElement>("edit_box");
             element.parent.Remove(element);
+        }
+
+        private static void CreatePackageAction(PackageJsonInfo packageJsonInfo)
+        {
+            // 创建readme.md
+            var path = PackageChecker.readmeMDPath;
+            var content = $"# {packageJsonInfo.displayName}";
+            CreateTextFile(path, content);
+            // 创建changelog.md
+            path = PackageChecker.changelogMDPath;
+            content = $"# {packageJsonInfo.displayName} changelog";
+            CreateTextFile(path, content);
+            // 创建Resources目录
+            path = PackageChecker.resourcesPath;
+            CreateDir(path);
+        }
+
+        private static void CreateDir(string path)
+        {
+            if (Directory.Exists(path) == false)
+            {
+                Directory.CreateDirectory(path);
+            }
+        }
+
+        private static void CreateTextFile(string path, string content)
+        {
+            if (File.Exists(path))
+            {
+                return;
+            }
+            
+            var dir = Path.GetDirectoryName(path);
+            
+            if (Directory.Exists(dir) == false)
+            {
+                Directory.CreateDirectory(dir);
+            }
+            
+            StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default);
+            sw.Write(content);
+            sw.Close();
         }
 
         /// <summary>
@@ -232,19 +278,20 @@ namespace UPMToolDevelop
             }
 
             string json = packageJsonInfo.ToJson();
-            if (File.Exists(path) == false)
-            {
-                var dir = Path.GetDirectoryName(path);
-                if (Directory.Exists(dir) == false)
-                {
-                    Directory.CreateDirectory(dir);
-                }
-            }
-
-            StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default);
-            sw.Write(json);
-            sw.Close();
-            AssetDatabase.Refresh();
+            CreateTextFile(path, json);
+            
+            // if (File.Exists(path) == false)
+            // {
+            //     var dir = Path.GetDirectoryName(path);
+            //     if (Directory.Exists(dir) == false)
+            //     {
+            //         Directory.CreateDirectory(dir);
+            //     }
+            // }
+            //
+            // StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default);
+            // sw.Write(json);
+            // sw.Close();
         }
 
         /// <summary>
