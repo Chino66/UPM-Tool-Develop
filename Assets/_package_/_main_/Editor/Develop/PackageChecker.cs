@@ -11,7 +11,13 @@ namespace UPMTool
     {
         public const string packageJsonPath = "Assets/_package_/package.json";
 
-        private const string generatePath = "Assets/_package_/_main_/Editor/_generate_/PackagePath.cs";
+        public const string readmeMDPath = "Assets/_package_/README.md";
+
+        public const string changelogMDPath = "Assets/_package_/CHANGELOG.md";
+        
+        private const string packagePathCsPath = "Assets/_package_/_main_/Editor/_generate_/PackagePath.cs";
+
+        public const string resourcesPath = "Assets/_package_/_main_/Resources";
 
         private static PackageJsonInfo _packageJsonInfo;
 
@@ -27,14 +33,14 @@ namespace UPMTool
 
             _packageJsonInfo = GetPackageJsonInfo();
 
-            hasFile = File.Exists(generatePath);
+            hasFile = File.Exists(packagePathCsPath);
 
             if (hasFile)
             {
                 return;
             }
 
-            var dirPath = Path.GetDirectoryName(generatePath);
+            var dirPath = Path.GetDirectoryName(packagePathCsPath);
 
             if (Directory.Exists(dirPath) == false)
             {
@@ -43,7 +49,7 @@ namespace UPMTool
 
             var nameSpace = _packageJsonInfo.displayName.Replace(" ", "");
 
-            PackagePathGenerator.Generate(nameSpace, generatePath);
+            PackagePathGenerator.Generate(nameSpace, packagePathCsPath);
         }
 
         public static bool HasPackageJson
