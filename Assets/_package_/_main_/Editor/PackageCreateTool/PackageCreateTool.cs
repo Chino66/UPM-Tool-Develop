@@ -9,7 +9,7 @@ using UPMToolDevelop;
 
 public class PackageCreateTool : EditorWindow
 {
-    [MenuItem("Tool/UPM Tool/PackageCreateTool")]
+    [MenuItem("Tool/UPM Tool/Package Create Tool")]
     public static void Show()
     {
         PackageCreateTool pct = GetWindow<PackageCreateTool>();

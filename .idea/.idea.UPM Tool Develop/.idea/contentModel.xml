@@ -5,12 +5,32 @@
     <e p="C:\Users\Administrator\.Rider2019.1\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Administrator\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_UPM Tool Develop.-811136192.00" t="ExcludeRecursive" />
     <e p="E:\GitHub\Package Projects\UPM Tool Develop" t="IncludeRecursive">
-      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_package_" t="Include">
           <e p="_main_" t="Include">
             <e p="Editor" t="Include">
-              <e p="PackagePath.cs" t="Include" />
+              <e p="_generate_" t="Include">
+                <e p="PackagePath.cs" t="Include" />
+              </e>
+              <e p="Develop" t="Include">
+                <e p="PackageChecker.cs" t="Include" />
+                <e p="PackageJsonEditor.cs" t="Include" />
+                <e p="PackageJsonInfo.cs" t="Include" />
+                <e p="PackageJsonUI.cs" t="Include" />
+                <e p="PackagePathGenerator.cs" t="Include" />
+              </e>
+              <e p="Editor.UPMTool.asmdef" t="Include" />
+              <e p="Example.cs" t="Include" />
+              <e p="PackageCreateTool" t="Include">
+                <e p="PackageCreateTool.cs" t="Include" />
+              </e>
+              <e p="PackageReleaseTool" t="Include">
+                <e p="CMDTool.cs" t="Include" />
+                <e p="PackageReleaseTool.cs" t="Include" />
+              </e>
+              <e p="Process" t="Include">
+                <e p="ProcessProxy.cs" t="Include" />
+              </e>
               <e p="UPMToolExtension" t="Include">
                 <e p="UPMToolExtension.cs" t="Include" />
                 <e p="UPMToolExtensionUI.cs" t="Include" />
@@ -19,12 +39,15 @@
                 <e p="BatUtils.cs" t="Include" />
                 <e p="GitUtils.cs" t="Include" />
                 <e p="PackageUtils.cs" t="Include" />
+                <e p="ProcessUtils.cs" t="Include" />
                 <e p="RegexUtils.cs" t="Include" />
+                <e p="TimeUtil.cs" t="Include" />
               </e>
             </e>
           </e>
         </e>
       </e>
+      <e p="Editor.UPMTool.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
