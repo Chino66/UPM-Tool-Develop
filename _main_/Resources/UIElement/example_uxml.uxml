@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
+    xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
+    
+    <VisualElement>
+	    <Box class="box">
+	    	<Label text="6669999" style="color:#009900"/>
+	    	<Button text="button1"/>
+	    </Box>
+	    <Button class="btn" text="button2"/>
+    </VisualElement>
+</UXML>

@@ -122,6 +122,10 @@ namespace UPMToolDevelop
             return $"{selectPackageInfo.name}@{gitUrl}#{selectVersion}";
         }
 
+        /// <summary>
+        /// 当选择插件包时,获取这个插件包的信息
+        /// </summary>
+        /// <param name="packageInfo"></param>
         public void OnPackageSelectionChange(PackageInfo packageInfo)
         {
             if (ui == null)
@@ -133,8 +137,10 @@ namespace UPMToolDevelop
 
             var packageId = selectPackageInfo.packageId;
             
+            // 判断这个包是否是git途径获取的
             gitUrl = GetGitUrl(packageId);
             
+            // 只有git途径获取的包,才能使用UPM Tool拓展功能
             if (!string.IsNullOrEmpty(gitUrl))
             {
                 

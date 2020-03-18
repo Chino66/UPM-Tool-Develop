@@ -114,6 +114,7 @@ namespace UPMToolDevelop
                 // 创建或修改package.json
                 SavePackageJsonChange(root, packageJsonInfo, path);
                 preview.value = packageJsonInfo.ToJson();
+                // 刷新
                 AssetDatabase.Refresh();
             };
 
