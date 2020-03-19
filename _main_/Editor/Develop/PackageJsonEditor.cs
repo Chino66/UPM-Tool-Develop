@@ -145,20 +145,25 @@ namespace UPMToolDevelop
             }
         }
 
+        /// <summary>
+        /// 创建或修改文件
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="content"></param>
         private static void CreateTextFile(string path, string content)
         {
-            if (File.Exists(path))
-            {
-                return;
-            }
-            
+//            if (File.Exists(path))
+//            {
+//                return;
+//            }
+
             var dir = Path.GetDirectoryName(path);
-            
+
             if (Directory.Exists(dir) == false)
             {
                 Directory.CreateDirectory(dir);
             }
-            
+
             StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default);
             sw.Write(content);
             sw.Close();
@@ -188,6 +193,7 @@ namespace UPMToolDevelop
             {
                 SavePackageJsonChange(root, packageJsonInfo, path);
                 preview.value = packageJsonInfo.ToJson();
+                AssetDatabase.Refresh();
             };
 
             var element = root.Q<VisualElement>("create_box");
@@ -280,19 +286,35 @@ namespace UPMToolDevelop
 
             string json = packageJsonInfo.ToJson();
             CreateTextFile(path, json);
-            
-            // if (File.Exists(path) == false)
-            // {
-            //     var dir = Path.GetDirectoryName(path);
-            //     if (Directory.Exists(dir) == false)
-            //     {
-            //         Directory.CreateDirectory(dir);
-            //     }
-            // }
-            //
-            // StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default);
-            // sw.Write(json);
-            // sw.Close();
+        }
+
+        public static bool SavePackageJsonChange(PackageJsonInfo packageJsonInfo, string path)
+        {
+            // check
+            var rst = PackageJsonInfoCheck(packageJsonInfo, out var retCode);
+            if (rst == false)
+            {
+                // todo 提示错误
+                Debug.LogError("检测失败");
+                return false;
+            }
+
+            string json = packageJsonInfo.ToJson();
+            CreateTextFile(path, json);
+
+            return true;
+        }
+
+        /// <summary>
+        /// 保存package,json版本号修改
+        /// </summary>
+        /// <param name="version"></param>
+        /// <returns></returns>
+        public static bool SavePackageJsonVersionChange(string version)
+        {
+            var packageJsonInfo = PackageChecker.GetPackageJsonInfo();
+            packageJsonInfo.version = version;
+            return SavePackageJsonChange(packageJsonInfo, PackageChecker.packageJsonPath);
         }
 
         /// <summary>

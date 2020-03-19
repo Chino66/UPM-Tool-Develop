@@ -41,6 +41,11 @@ namespace UPMTool
         /// </summary>
         private Queue<string> _returnMsgs;
 
+        /// <summary>
+        /// 调试模式,显示接收到的所有消息
+        /// </summary>
+        private bool _debugMode = false;
+
         public ProcessProxy()
         {
             _process = new Process();
@@ -53,34 +58,52 @@ namespace UPMTool
             _process.StartInfo.RedirectStandardOutput = true;
 
             _returnMsgs = new Queue<string>();
-            RegisterProcessOutput((msg) =>
+            RegisterProcessOutput(MessageHandle);
+        }
+
+        private void MessageHandle(string msg)
+        {
+            if (_debugMode)
             {
-                if (msg.Equals(ProcessProxy.CommandReturnFlag))
+                Debug.Log($"[debug mode]{msg}");
+            }
+
+            if (msg.Equals(ProcessProxy.CommandReturnFlag))
+            {
+                var msgs = new Queue<string>();
+                var command = _returnMsgs.Dequeue();
+
+                if (_fullInfo)
                 {
-                    var msgs = new Queue<string>();
-                    var command = _returnMsgs.Dequeue();
-
-                    if (_fullInfo)
-                    {
-                        msgs.Enqueue(command);
-                    }
-
-                    while (_returnMsgs.Count > 0)
-                    {
-                        var line = _returnMsgs.Dequeue();
-                        if (!line.Contains(ProcessProxy.CommandReturnFlag))
-                        {
-                            msgs.Enqueue(line);
-                        }
-                    }
-
-                    _currentCallback?.Invoke(new Queue<string>(msgs));
+                    msgs.Enqueue(command);
                 }
-                else
+
+                while (_returnMsgs.Count > 0)
                 {
-                    _returnMsgs.Enqueue(msg);
+                    var line = _returnMsgs.Dequeue();
+                    if (!line.Contains(ProcessProxy.CommandReturnFlag))
+                    {
+                        msgs.Enqueue(line);
+                    }
                 }
-            });
+
+                // 如果没有如何返回值,则默认添加一个"\n"换行符
+                if (msgs.Count == 0)
+                {
+                    msgs.Enqueue("\n");
+                }
+
+                _currentCallback?.Invoke(new Queue<string>(msgs));
+            }
+            else
+            {
+                _returnMsgs.Enqueue(msg);
+            }
+        }
+
+        public void SetDebugMode(bool value)
+        {
+            _debugMode = value;
         }
 
         public void RegisterProcessOutput(ProcessOutput func)
@@ -111,9 +134,10 @@ namespace UPMTool
         public void Input(string cmd, CmdOutput callback = null, bool fullInfo = true)
         {
             _returnMsgs.Clear();
+            
             _currentCallback = callback;
             _fullInfo = fullInfo;
-
+            
             _process.StandardInput.WriteLine(cmd);
             _process.StandardInput.WriteLine(CommandReturnCMD);
         }
