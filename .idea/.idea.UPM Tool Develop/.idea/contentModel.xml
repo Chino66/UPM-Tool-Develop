@@ -18,6 +18,7 @@
                 <e p="PackageJsonInfo.cs" t="Include" />
                 <e p="PackageJsonUI.cs" t="Include" />
                 <e p="PackagePathGenerator.cs" t="Include" />
+                <e p="Version.cs" t="Include" />
               </e>
               <e p="Editor.UPMTool.asmdef" t="Include" />
               <e p="Example.cs" t="Include" />

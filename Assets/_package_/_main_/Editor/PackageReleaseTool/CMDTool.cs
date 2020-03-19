@@ -186,7 +186,7 @@ public class CMDTool : EditorWindow
 //            Debug.Log(content);
             OutputLabel.text += $"输入命令:[{command}]\n\n";
             OutputLabel.text += $"输出:\n{content}\n";
-            OutputLabel.text += $">----------------------------------------------------------<";
+            OutputLabel.text += $"<-------------------------------------------------->\n";
             TimeUtil.DoActionWaitAtTime(0.1f, () =>
             {
                 // 只有在显示滑动条的时候才拉到最底
