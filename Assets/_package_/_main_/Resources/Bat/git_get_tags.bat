@@ -1,3 +1,3 @@
 @ echo off
-git ls-remote --tags https://github.com/Chino66/Network.git
+git ls-remote --tags git@gitee.com:chinochan66/UPM-Tool-Test.git
 exit

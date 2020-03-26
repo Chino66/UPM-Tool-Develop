@@ -51,5 +51,80 @@ namespace UPMTool
                 callback?.Invoke(rst.ToArray());
             });
         }
+
+        /// <summary>
+        /// 将git地址转为unity包地址
+        /// 如果是https地址,则直接返回就是正确的格式
+        /// 如果是ssh地址,有特殊情况:
+        /// 真实地址为:git@<path>:<user_name>/<project_name>.git
+        /// 在manifest.json中,会变成ssh://git@<path>/<user_name>/<project_name>.git
+        /// 可以看到<path>:<user_name>中间的":"变成了"/"
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static string GitPathConvertUnityPackagePath(string url)
+        {
+            if (string.IsNullOrEmpty(url))
+            {
+                Debug.LogError("uri is null");
+                return "";
+            }
+
+            if (url.StartsWith("https"))
+            {
+                return url;
+            }
+
+            if (url.StartsWith("git@"))
+            {
+                var index = url.IndexOf(':');
+                if (index != -1)
+                {
+                    url = url.Remove(index, 1).Insert(index, "/");
+                    url = "ssh://" + url;
+                    return url;
+                }
+            }
+            
+            Debug.LogError("url is bad");
+            return url;
+        }
+        
+        /// <summary>
+        /// 将unity包地址转为git地址
+        /// 如果是https地址,则直接返回就是正确的格式
+        /// 如果是ssh地址,有特殊情况:
+        /// 真实地址为:git@<path>:<user_name>/<project_name>.git
+        /// 在manifest.json中,会变成ssh://git@<path>/<user_name>/<project_name>.git
+        /// 可以看到<path>:<user_name>中间的":"变成了"/"
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static string UnityPackagePathConvertGitPath(string url)
+        {
+            if (string.IsNullOrEmpty(url))
+            {
+                Debug.LogError("uri is null");
+                return "";
+            }
+
+            if (url.StartsWith("https"))
+            {
+                return url;
+            }
+
+            if (url.StartsWith("git@"))
+            {
+                var index = url.IndexOf('/');
+                if (index != -1)
+                {
+                    url = url.Remove(index, 1).Insert(index, ":");
+                    return url;
+                }
+            }
+            
+            Debug.LogError("url is bad");
+            return url;
+        }
     }
 }

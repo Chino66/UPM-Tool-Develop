@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEditor.PackageManager.UI;
 using UnityEngine;
@@ -119,7 +120,9 @@ namespace UPMToolDevelop
                 return "";
             }
 
-            return $"{selectPackageInfo.name}@{gitUrl}#{selectVersion}";
+            var url = GitUtils.GitPathConvertUnityPackagePath(gitUrl);
+//            url = "git@gitee.com/chinochan66/UPM-Tool-Test.git";
+            return $"{selectPackageInfo.name}@{url}#{selectVersion}";
         }
 
         /// <summary>
@@ -136,14 +139,13 @@ namespace UPMToolDevelop
             selectPackageInfo = packageInfo;
 
             var packageId = selectPackageInfo.packageId;
-            
+
             // 判断这个包是否是git途径获取的
             gitUrl = GetGitUrl(packageId);
-            
+
             // 只有git途径获取的包,才能使用UPM Tool拓展功能
             if (!string.IsNullOrEmpty(gitUrl))
             {
-                
                 ui.SetUIVisible(true);
             }
             else
@@ -153,9 +155,9 @@ namespace UPMToolDevelop
         }
 
         /// <summary>
-        /// 获取git路径
-        /// http格式：https://github.com/Chino66/MyData.git
-        /// ssh格式：git@github.com:Chino66/MyData.git
+        /// 获取git路径 可能是github或gitee
+        /// https格式正则表达式:https://(.*).git
+        /// ssh格式正则表达式:git@(.*).git
         /// </summary>
         /// <param name="packageId"></param>
         /// <returns></returns>
@@ -166,23 +168,25 @@ namespace UPMToolDevelop
                 Debug.LogError("packageId is null");
                 return "";
             }
+            
+            Debug.Log(packageId);
 
-            var s = packageId.Split('@');
-            if (s.Length < 2)
-            {
-                Debug.LogWarning("packageId is invalid");
-                return "";
-            }
+            var pattern = "(https://(.*).git)|(git@(.*).git)";
 
-            var path = s[1];
-            if (!path.StartsWith("https://github.com/")&&!path.StartsWith("git@github.com:"))
+            Match match = Regex.Match(packageId, pattern);
+
+            if (match.Success == false)
             {
                 Debug.LogWarning("packageId is not git url");
                 return "";
             }
 
-            var u = s[1].Split('#');
-            return u[0];
+            var url = match.Value;
+
+            url = GitUtils.UnityPackagePathConvertGitPath(url);
+
+            Debug.LogWarning(url);
+            return url;
         }
 
         public void OnPackageAddedOrUpdated(PackageInfo packageInfo)

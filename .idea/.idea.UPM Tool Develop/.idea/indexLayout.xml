@@ -4,6 +4,7 @@
     <attachedFolders />
     <explicitIncludes>
       <Path>$USER_HOME$/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.test-framework@1.1.3</Path>
+      <Path>Library/PackageCache/com.chino.testpackage@edb81533a33ff1dd9e645ff778453d3b72231492</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.ide.rider@1.1.4</Path>
       <Path>Packages</Path>
