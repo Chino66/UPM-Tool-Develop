@@ -33,10 +33,16 @@ Assets
 PackagePath.MainPath指向插件包中_main_目录的位置
 
 问:为什么要这个类?
+
 答:试想一下,当这个插件包在开发环境中,你想要使用插件包下的Res目录下的资源,此时资源路径为[Assets/_package_/_main_/Res].
+
 当这个插件已经发布,此时Res目录的路径为[Packages/xx/_main_/Res]
+
 你需要为开发环境和发布环境配置两个路径,还需要根据不同环境去识别路径,这比较麻烦
-PackagePath.MainPath就是为了解决这个问题而设计的,PackagePath.MainPath指向插件包中_main_目录的位置,不必关心插件包在什么环境下,PackagePath.MainPath始终可以得到正确的_main_的位置
+
+PackagePath.MainPath就是为了解决这个问题而设计的,PackagePath.MainPath指向插件包中_main_目录的位置
+
+不必关心插件包在什么环境下,PackagePath.MainPath始终可以得到正确的_main_的位置
 
 ## 1.2 使用git发布和更新插件
 
