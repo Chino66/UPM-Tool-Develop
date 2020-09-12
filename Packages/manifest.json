@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.chino.testpackage": "ssh://git@gitee.com/chinochan66/UPM-Tool-Test.git#0.0.4",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
@@ -33,11 +32,5 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  },
-  "lock": {
-    "com.chino.testpackage": {
-      "revision": "0.0.4",
-      "hash": "5f5dfe5045064959e026e50fe29e13bc763c2fd3"
-    }
   }
 }
