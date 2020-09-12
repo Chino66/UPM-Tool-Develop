@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using UnityEngine;
+
 namespace UPMTool
 {
     using System.Reflection;
@@ -26,14 +28,18 @@ namespace UPMTool
             {
                 if (string.IsNullOrEmpty(_mainPath))
                 {
-                    var p = UnityEditor.PackageManager.PackageInfo.FindForAssembly(Assembly.GetAssembly(typeof(PackagePath)));;
+                    Debug.Log("获取MainPath");
+                    var p = UnityEditor.PackageManager.PackageInfo.FindForAssembly(Assembly.GetAssembly(typeof(PackagePath)));
+                    
                     if (p == null)
                     {
                         _mainPath = LocalPath;
+                        Debug.Log("本地路径 " + _mainPath);
                     }
                     else
                     {
                         _mainPath = p.assetPath + "/_main_/";
+                        Debug.Log("插件路径 " + _mainPath);
                     }
                 }
                 return _mainPath;

@@ -126,6 +126,7 @@ namespace UPMToolDevelop
         }
 
         /// <summary>
+        /// 在PackageManager视窗
         /// 当选择插件包时,获取这个插件包的信息
         /// </summary>
         /// <param name="packageInfo"></param>
@@ -155,11 +156,15 @@ namespace UPMToolDevelop
         }
 
         /// <summary>
-        /// 获取git路径 可能是github或gitee
+        /// 获取git路径,可能是github或gitee
         /// https格式正则表达式:https://(.*).git
         /// ssh格式正则表达式:git@(.*).git
+        ///
+        /// 例:
+        /// 本地插件的packageId:com.chino.upmtool@file:F:\Unity3D\UPM-Tool-Develop\Assets\_package_
+        /// git插件的packageId:com.chino.testpackage@ssh://git@github.com/Chino66/UPM-Tool-Develop.git#upm
         /// </summary>
-        /// <param name="packageId"></param>
+        /// <param name="packageId">插件包的来源路径</param>
         /// <returns></returns>
         private string GetGitUrl(string packageId)
         {
@@ -177,7 +182,7 @@ namespace UPMToolDevelop
 
             if (match.Success == false)
             {
-                Debug.LogWarning("packageId is not git url");
+                Debug.LogWarning("packageId is not git url, packageId is :" + packageId);
                 return "";
             }
 
