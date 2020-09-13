@@ -64,3 +64,7 @@ PackagePath.MainPath就是为了解决这个问题而设计的,PackagePath.MainP
 1. 版本的识别通过git的"tag"标记标识
 2. 默认使用"upm"分支作为插件的开发分支
 3. 导入私有仓库,推荐使用ssh方式,详见[git路径规则](https://docs.unity3d.com/Manual/upm-git.html)
+
+## 4 注意事项
+1. 插件需要.NET 4.x环境
+    * File-Player Settings-Api Compatibillity Level* 选择.NET 4.x
