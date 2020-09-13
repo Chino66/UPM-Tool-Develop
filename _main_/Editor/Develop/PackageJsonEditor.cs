@@ -114,7 +114,12 @@ namespace UPMToolDevelop
                 // 创建或修改package.json
                 SavePackageJsonChange(root, packageJsonInfo, path);
                 preview.value = packageJsonInfo.ToJson();
-                // 刷新
+                // 刷新,显示插件包框架
+                AssetDatabase.Refresh();
+
+                // 创建PackagePath.cs,需要检查插件包路径才能创建
+                AfterCreatePackageAction();
+                // 刷新,显示PackagePath.cs
                 AssetDatabase.Refresh();
             };
 
@@ -122,21 +127,40 @@ namespace UPMToolDevelop
             element.parent.Remove(element);
         }
 
+        /// <summary>
+        /// 创建插件包框架结构
+        /// </summary>
+        /// <param name="packageJsonInfo"></param>
         private static void CreatePackageAction(PackageJsonInfo packageJsonInfo)
         {
             // 创建readme.md
             var path = PackageChecker.readmeMDPath;
             var content = $"# {packageJsonInfo.displayName}";
             CreateTextFile(path, content);
+            
             // 创建changelog.md
             path = PackageChecker.changelogMDPath;
             content = $"# {packageJsonInfo.displayName} changelog";
             CreateTextFile(path, content);
+            
             // 创建Resources目录
             path = PackageChecker.resourcesPath;
             CreateDir(path);
         }
 
+        /// <summary>
+        /// 创建插件包框架结构后
+        /// 创建PackagePath.cs
+        /// </summary>
+        private static void AfterCreatePackageAction()
+        {
+            PackageChecker.Check();
+        }
+        
+        /// <summary>
+        /// 创建目录
+        /// </summary>
+        /// <param name="path"></param>
         private static void CreateDir(string path)
         {
             if (Directory.Exists(path) == false)
