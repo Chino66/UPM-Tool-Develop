@@ -10,3 +10,7 @@
 2. 通过git发布插件,控制版本
 
 具体功能,详见工具内部的README.md
+
+注意:
+1. 插件需要.NET 4.x环境
+    * File-Player Settings-Api Compatibillity Level* 选择.NET 4.x
