@@ -22,7 +22,7 @@ namespace UPMTool
         private static PackageJsonInfo _packageJsonInfo;
 
         [InitializeOnLoadMethod]
-        static void Check()
+        public static void Check()
         {
             var hasFile = HasPackageJson;
 
