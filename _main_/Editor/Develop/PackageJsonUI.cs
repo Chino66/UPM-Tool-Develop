@@ -65,6 +65,15 @@ namespace UPMTool
                 packageJsonInfo.version = value.newValue;
                 preview.value = packageJsonInfo.ToJson();
             });
+            
+            // unity版本,例:2019.4
+            textField = root.Q<TextField>("unity_tf");
+            textField.value = packageJsonInfo.unity;
+            textField.RegisterValueChangedCallback(value =>
+            {
+                packageJsonInfo.unity = value.newValue;
+                preview.value = packageJsonInfo.ToJson();
+            });
 
             // 类型(内部保留使用)
             textField = root.Q<TextField>("type_tf");
@@ -75,6 +84,8 @@ namespace UPMTool
                 preview.value = packageJsonInfo.ToJson();
             });
 
+            // 依赖关系
+            
             // 描述
             textField = root.Q<TextField>("description_tf");
             textField.value = packageJsonInfo.description;

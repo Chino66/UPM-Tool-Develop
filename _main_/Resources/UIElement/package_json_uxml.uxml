@@ -20,8 +20,29 @@
             <TextField name="version_tf" />
         </Box>
         <Box class="row">
+            <Label name="unity_lab" text="unity" />
+            <TextField name="unity_tf" />
+        </Box>
+        <Box class="row">
             <Label name="type_lab" text="type" />
             <TextField name="type_tf" />
+        </Box>
+        <Box class="row">
+            <Label name="dependencies_lab" text="dependencies" />
+        </Box>
+        <Box>
+            <Box class="row">
+                <Label name="dependencies_name" text="dependenciesN" />
+                <Label name="dependencies_path" text="dependenciesP" />
+            </Box>
+            <Box class="row">
+                <TextField name="dependencies_name_tf" />
+                <TextField name="dependencies_path_tf" />
+            </Box>
+            <Box class="row">
+                <TextField name="dependencies_name_tf" />
+                <TextField name="dependencies_path_tf" />
+            </Box>
         </Box>
         <Box class="row">
             <Label name="description_lab" text="description" />
