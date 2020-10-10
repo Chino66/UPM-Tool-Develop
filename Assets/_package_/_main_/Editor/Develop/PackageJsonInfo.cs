@@ -2,6 +2,7 @@ using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 // using LitJson;
@@ -52,9 +53,10 @@ namespace UPMToolDevelop
         /// <summary>
         /// 插件包依赖
         /// todo 可编辑ui没有做
+        /// JObject是Newtonsoft.Json中的键值对类
         /// </summary>
         // public JsonData dependencies = null;
-        public DataTable dependencies = null;
+        public JObject dependencies = null;
 
         public string ToJson()
         {

@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Label text="Label" />
+    <ui:VisualElement style="background-color: rgba(0, 0, 0, 0.13); -unity-background-image-tint-color: rgba(255, 255, 255, 255);">
+        <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" text="filler text" />
+        <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" text="filler text" />
+        <ui:Label text="Label" />
+        <ui:TextField picking-mode="Ignore" value="filler text" text="filler text" max-length="-1" multiline="false" />
+        <ui:Label text="Dependencies" />
+        <ui:VisualElement>
+            <ui:Label text="Label" />
+            <ui:ListView focusable="True" style="height: 50px;">
+                <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" text="filler text" />
+                <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" text="filler text" />
+                <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" text="filler text" />
+                <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" text="filler text" />
+                <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" text="filler text" />
+            </ui:ListView>
+        </ui:VisualElement>
+        <ui:VisualElement focusable="false" style="align-items: stretch; justify-content: flex-start; flex-direction: row; flex-basis: auto; flex-wrap: nowrap; flex-shrink: 1; flex-grow: 0;">
+            <ui:Button text="Button" style="width: 45%; height: 90%; right: 0;" />
+            <ui:Button text="Button" style="width: 45%; height: 90%; flex-direction: column; min-width: auto; min-height: auto; right: auto; left: 20px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

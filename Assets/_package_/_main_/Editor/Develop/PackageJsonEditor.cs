@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using LitJson;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -25,7 +26,6 @@ namespace UPMToolDevelop
                 if (_currentJsonTextAsset == null)
                 {
                     _currentJsonTextAsset = (TextAsset) target;
-                    // _packageJsonInfo = JsonMapper.ToObject<PackageJsonInfo>(_currentJsonTextAsset.text);
                     _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(_currentJsonTextAsset.text);
                 }
 
