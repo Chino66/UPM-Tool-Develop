@@ -41,7 +41,6 @@ namespace UPMToolDevelop
             {
                 if (_packageJsonInfo == null)
                 {
-                    // _packageJsonInfo = JsonMapper.ToObject<PackageJsonInfo>(currentJsonTextAsset.text);
                     _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(currentJsonTextAsset.text);
                 }
 
@@ -49,7 +48,7 @@ namespace UPMToolDevelop
             }
         }
 
-        private VisualElement root;
+        private PackageJsonUI root;
 
         /// <summary>
         /// 使用UIElement方式绘制Inspector
@@ -92,7 +91,7 @@ namespace UPMToolDevelop
         }
 
         /// <summary>
-        /// 给UIElement添加交互 Create部分
+        /// 创建package.json界面的UIElement交互
         /// </summary>
         public static void InitUIElementCreate(VisualElement root, PackageJsonInfo packageJsonInfo, string path)
         {
@@ -105,7 +104,7 @@ namespace UPMToolDevelop
             var preview = root.Q<TextField>("preview_tf");
             preview.value = packageJsonInfo.ToJson();
 
-            // 创建插件包
+            // 创建按钮响应点击
             var button = root.Q<Button>("create_btn");
             button.clicked += () =>
             {
@@ -123,8 +122,12 @@ namespace UPMToolDevelop
                 AssetDatabase.Refresh();
             };
 
+            // 编辑按钮隐藏
             var element = root.Q<VisualElement>("edit_box");
             element.parent.Remove(element);
+
+            // 初始化依赖操作(Create界面不需要依赖操作,所以要隐藏)
+            InitDependenciesUIElement(root, packageJsonInfo, path, false);
         }
 
         /// <summary>
@@ -137,12 +140,12 @@ namespace UPMToolDevelop
             var path = PackageChecker.readmeMDPath;
             var content = $"# {packageJsonInfo.displayName}";
             CreateTextFile(path, content);
-            
+
             // 创建changelog.md
             path = PackageChecker.changelogMDPath;
             content = $"# {packageJsonInfo.displayName} changelog";
             CreateTextFile(path, content);
-            
+
             // 创建Resources目录
             path = PackageChecker.resourcesPath;
             CreateDir(path);
@@ -156,7 +159,7 @@ namespace UPMToolDevelop
         {
             PackageChecker.Check();
         }
-        
+
         /// <summary>
         /// 创建目录
         /// </summary>
@@ -194,7 +197,7 @@ namespace UPMToolDevelop
         }
 
         /// <summary>
-        /// 给UIElement添加交互 Editor部分
+        /// 编辑package.json界面的UIElement交互 
         /// </summary>
         private static void InitUIElementEditor(VisualElement root, PackageJsonInfo packageJsonInfo, string path)
         {
@@ -207,11 +210,11 @@ namespace UPMToolDevelop
             var preview = root.Q<TextField>("preview_tf");
             preview.value = packageJsonInfo.ToJson();
 
-            // 撤销修改
+            // 编辑按钮-撤销修改响应点击
             var button = root.Q<Button>("revert_btn");
             button.clicked += () => { Debug.Log("revert todo"); };
 
-            // 引用修改
+            // 编辑按钮-应用修改响应点击
             button = root.Q<Button>("apply_btn");
             button.clicked += () =>
             {
@@ -220,8 +223,82 @@ namespace UPMToolDevelop
                 AssetDatabase.Refresh();
             };
 
+            // 创建按钮隐藏
             var element = root.Q<VisualElement>("create_box");
             element.parent.Remove(element);
+
+            // 初始化依赖操作
+            InitDependenciesUIElement(root, packageJsonInfo, path, true);
+        }
+
+        /// <summary>
+        /// 插件依赖相关UIElement交互
+        /// </summary>
+        private static void InitDependenciesUIElement(VisualElement root, PackageJsonInfo packageJsonInfo, string path,
+            bool isShow)
+        {
+            if (isShow == false)
+            {
+                var element = root.Q<VisualElement>("dependencies_box");
+                element.parent.Remove(element);
+
+                element = root.Q<VisualElement>("dependencies_lab_box");
+                element.parent.Remove(element);
+                return;
+            }
+
+            // 预览
+            var preview = root.Q<TextField>("preview_tf");
+            preview.value = packageJsonInfo.ToJson();
+
+            // 添加依赖按钮响应
+            var button = root.Q<Button>("dependencies_add");
+            button.clicked += () =>
+            {
+                // todo dependencies logic
+//                SavePackageJsonChange(root, packageJsonInfo, path);
+//                preview.value = packageJsonInfo.ToJson();
+//                AssetDatabase.Refresh();
+                ProcessDependenceItems(root, true);
+            };
+
+            // 移除依赖按钮响应
+            button = root.Q<Button>("dependencies_remove");
+            button.clicked += () =>
+            {
+                // todo dependencies logic
+//                SavePackageJsonChange(root, packageJsonInfo, path);
+//                preview.value = packageJsonInfo.ToJson();
+//                AssetDatabase.Refresh();
+                ProcessDependenceItems(root, false);
+            };
+        }
+
+        private static void ProcessDependenceItems(VisualElement root, bool isAdd)
+        {
+            var itemRoot = root.Q<VisualElement>("dependencies_item_root");
+            var noneTip = root.Q<VisualElement>("dependencies_none_tip");
+
+            if (isAdd)
+            {
+                var i = ((PackageJsonUI) root).GetDependenciesItem();
+                itemRoot.Add(i);
+            }
+            else
+            {
+                itemRoot.RemoveAt(0);
+            }
+
+            if (itemRoot.childCount <= 0)
+            {
+                itemRoot.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
+                noneTip.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
+            }
+            else
+            {
+                itemRoot.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
+                noneTip.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
+            }
         }
 
         private static bool PackageJsonInfoCheck(PackageJsonInfo packageJsonInfo, out int retCode)

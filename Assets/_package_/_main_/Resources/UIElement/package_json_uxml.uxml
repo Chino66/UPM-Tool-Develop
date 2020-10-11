@@ -1,76 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
-<UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="UnityEngine.UIElements"
-    xsi:noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
-    xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
-    
-    <VisualElement class="root">
-        <Label text="package.json编辑工具" />
-        <Box class="row">
-            <Label name="name_lab" text="name" />
-            <TextField name="name_tf" />
-        </Box>
-        <Box class="row">
-            <Label name="displayName_lab" text="displayName" />
-            <TextField name="displayName_tf" />
-        </Box>
-        <Box class="row">
-            <Label name="version_lab" text="version" />
-            <TextField name="version_tf" />
-        </Box>
-        <Box class="row">
-            <Label name="unity_lab" text="unity" />
-            <TextField name="unity_tf" />
-        </Box>
-        <Box class="row">
-            <Label name="type_lab" text="type" />
-            <TextField name="type_tf" />
-        </Box>
-        <Box class="row">
-            <Label name="dependencies_lab" text="dependencies" />
-        </Box>
-        <Box>
-            <Box class="row">
-                <Label name="dependencies_name" text="dependenciesN" />
-                <Label name="dependencies_path" text="dependenciesP" />
-            </Box>
-            <Box class="row">
-                <TextField name="dependencies_name_tf" />
-                <TextField name="dependencies_path_tf" />
-            </Box>
-            <Box class="row">
-                <TextField name="dependencies_name_tf" />
-                <TextField name="dependencies_path_tf" />
-            </Box>
-        </Box>
-        <Box class="row">
-            <Label name="description_lab" text="description" />
-        </Box>
-        <Box class="row">
-            <TextField name="description_tf" class="word_warp" multiline="true" />
-        </Box>
-
-        <Box class="row" name="edit_box">
-            <Button name="revert_btn" text="revert" />
-            <Button name="apply_btn" text="apply" />
-        </Box>
-        <Box class="row" name="create_box">
-            <Button name="create_btn" text="create" />
-        </Box>
-    </VisualElement>
-
-    <VisualElement class="root" name="msg_ve">
-        <Label class="color" name="msg_lab" text="" />
-    </VisualElement>
-
-    <VisualElement class="root" name="preview_ve">
-        <Label text="预览" />
-            <TextField text="..." 
-                name="preview_tf"
-                multiline="true" 
-                readonly="true" 
-                class="preview_tf"
-                />
-    </VisualElement>
-</UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement class="root" style="background-color: rgba(255, 255, 255, 0);">
+        <Style src="package_json_uss.uss" />
+        <ui:Box class="row" style="background-color: rgba(194, 194, 194, 0);">
+            <ui:Label text="Information" style="-unity-font-style: bold;" />
+        </ui:Box>
+        <ui:VisualElement focusable="false" style="align-items: stretch; justify-content: flex-start;">
+            <ui:Box class="row">
+                <ui:Label name="name_lab" text="Name" />
+                <ui:TextField name="name_tf" style="width: 30%; height: auto; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px;" />
+            </ui:Box>
+            <ui:Box class="row">
+                <ui:Label name="displayName_lab" text="DisplayName" />
+                <ui:TextField name="displayName_tf" style="width: 30%; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px;" />
+            </ui:Box>
+            <ui:Box class="row">
+                <ui:Label name="version_lab" text="Version" />
+                <ui:TextField name="version_tf" style="width: 30%; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px;" />
+            </ui:Box>
+            <ui:Box class="row">
+                <ui:Label name="unity_lab" text="Unity" />
+                <ui:TextField name="unity_tf" style="width: 30%; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px;" />
+            </ui:Box>
+            <ui:Box class="row">
+                <ui:Label name="type_lab" text="Type" />
+                <ui:TextField name="type_tf" style="width: 30%; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px;" />
+            </ui:Box>
+        </ui:VisualElement>
+        <ui:Box class="row" style="color: rgba(255, 255, 255, 255); background-color: rgba(176, 176, 176, 0);">
+            <ui:Label name="description_lab" text="Description" style="background-color: rgba(0, 0, 0, 0); -unity-font-style: bold;" />
+        </ui:Box>
+        <ui:Box class="row">
+            <ui:TextField name="description_tf" multiline="true" class="word_warp" />
+        </ui:Box>
+        <ui:Box name="dependencies_lab_box" class="row" style="background-color: rgba(182, 182, 182, 0);">
+            <ui:Label name="dependencies_lab" text="Dependencies" style="-unity-font-style: bold;" />
+        </ui:Box>
+        <ui:Box name="dependencies_box" style="border-left-color: rgba(0, 0, 0, 255); border-right-color: rgba(0, 0, 0, 255); border-top-color: rgba(0, 0, 0, 255); border-bottom-color: rgba(0, 0, 0, 255); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(255, 255, 255, 0);">
+            <ui:Box class="row" style="border-top-left-radius: 3px; border-bottom-left-radius: 0; border-top-right-radius: 3px; border-bottom-right-radius: 0; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgba(128, 128, 128, 255); border-right-color: rgba(128, 128, 128, 255); border-top-color: rgba(128, 128, 128, 255); border-bottom-color: rgba(128, 128, 128, 255);">
+                <ui:Label name="dependencies_name" text="    Package name" style="width: 60%;" />
+                <ui:Label name="dependencies_path" text="Version" style="width: 30%;" />
+            </ui:Box>
+            <ui:Box name="dependencies_none_tip" class="row" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 3px; border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); background-color: rgba(128, 128, 128, 0); display: flex; height: 30px;">
+                <ui:Label name="dependencies_listempty" text="List is Empty" style="background-color: rgba(0, 0, 0, 0); display: flex; height: auto;" />
+            </ui:Box>
+            <ui:Box name="dependencies_item_root" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 3px; border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); display: none; background-color: rgba(140, 140, 140, 0);" />
+            <ui:Box class="row" style="width: 60px; flex-direction: row; justify-content: flex-start; align-items: stretch; position: relative; left: auto; right: auto; flex-basis: auto; flex-wrap: nowrap; border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-top-left-radius: 0; border-bottom-left-radius: 3px; border-top-right-radius: 0; border-bottom-right-radius: 3px; border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); background-color: rgba(140, 140, 140, 0);">
+                <ui:Button text="+" name="dependencies_add" style="width: auto; flex-direction: row-reverse; justify-content: flex-start; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 2px; padding-bottom: 2px; background-color: rgba(228, 228, 228, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; font-size: 16px; -unity-font-style: bold;" />
+                <ui:Button text="-" name="dependencies_remove" style="flex-direction: row-reverse; flex-wrap: nowrap; width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 2px; padding-bottom: 2px; background-color: rgba(228, 228, 228, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; font-size: 16px; -unity-font-style: bold;" />
+            </ui:Box>
+        </ui:Box>
+        <ui:Box class="row" style="color: rgb(255, 255, 255); background-color: rgba(176, 176, 176, 0);">
+            <ui:Label style="background-color: rgba(0, 0, 0, 0); -unity-font-style: bold; display: flex;" />
+        </ui:Box>
+        <ui:Box name="edit_box" class="row" style="border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px;">
+            <ui:Button name="revert_btn" text="revert" style="margin-left: 2px; margin-right: 0; margin-top: 2px; margin-bottom: 2px; height: 20px; border-left-width: 0; border-right-width: 1px; border-top-width: 0; border-bottom-width: 0; border-top-right-radius: 0; border-bottom-right-radius: 0;" />
+            <ui:Button name="apply_btn" text="apply" style="margin-left: 0; margin-right: 2px; margin-top: 2px; margin-bottom: 2px; height: 20px; border-left-width: 0; border-right-width: 1px; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0;" />
+        </ui:Box>
+        <ui:Box name="create_box" class="row" style="border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px;">
+            <ui:Button name="create_btn" text="create" style="margin-left: 2px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px; height: 20px;" />
+        </ui:Box>
+    </ui:VisualElement>
+    <ui:VisualElement name="msg_ve" class="root">
+        <Style src="package_json_uss.uss" />
+        <ui:Label name="msg_lab" class="color" />
+    </ui:VisualElement>
+    <ui:VisualElement name="preview_ve" class="root">
+        <Style src="package_json_uss.uss" />
+        <ui:Label text="Preview" style="-unity-font-style: bold; font-size: 12px;" />
+        <ui:TextField text="..." name="preview_tf" multiline="true" readonly="true" class="preview_tf" />
+    </ui:VisualElement>
+</ui:UXML>

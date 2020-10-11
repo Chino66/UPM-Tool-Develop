@@ -53,10 +53,7 @@ namespace UPMTool
             PackagePathGenerator.Generate(nameSpace, packagePathCsPath);
         }
 
-        public static bool HasPackageJson
-        {
-            get { return File.Exists(packageJsonPath); }
-        }
+        public static bool HasPackageJson => File.Exists(packageJsonPath);
 
         public static PackageJsonInfo GetPackageJsonInfo()
         {
