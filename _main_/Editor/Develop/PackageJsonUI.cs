@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -14,7 +15,11 @@ namespace UPMTool
             return new PackageJsonUI();
         }
 
-        public PackageJsonUI()
+        private readonly VisualTreeAsset _dependenciesItemVisualTreeAsset;
+
+        private readonly Queue<VisualElement> _dependenciesItemQueue;
+
+        private PackageJsonUI()
         {
             var uxmlPath = Path.Combine(PackagePath.MainPath, @"Resources/UIElement/package_json_uxml.uxml");
             var asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(uxmlPath);
@@ -23,6 +28,12 @@ namespace UPMTool
             var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(ussPath);
             root.styleSheets.Add(styleSheet);
             Add(root);
+
+            // 依赖项UI模板
+            uxmlPath = Path.Combine(PackagePath.MainPath, @"Resources/UIElement/dependencies_item_uxml.uxml");
+            _dependenciesItemVisualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(uxmlPath);
+
+            _dependenciesItemQueue = new Queue<VisualElement>();
         }
 
         /// <summary>
@@ -65,7 +76,7 @@ namespace UPMTool
                 packageJsonInfo.version = value.newValue;
                 preview.value = packageJsonInfo.ToJson();
             });
-            
+
             // unity版本,例:2019.4
             textField = root.Q<TextField>("unity_tf");
             textField.value = packageJsonInfo.unity;
@@ -84,8 +95,6 @@ namespace UPMTool
                 preview.value = packageJsonInfo.ToJson();
             });
 
-            // 依赖关系
-            
             // 描述
             textField = root.Q<TextField>("description_tf");
             textField.value = packageJsonInfo.description;
@@ -95,9 +104,26 @@ namespace UPMTool
                 preview.value = packageJsonInfo.ToJson();
             });
 
+            // 依赖关系(依赖相关UI不在这里添加,在PackageJsonEditor中)
+
             // 返回消息
             var label = root.Q<Label>("msg_lab");
             label.text = "";
+        }
+
+        public VisualElement GetDependenciesItem()
+        {
+            if (_dependenciesItemQueue.Count > 0)
+            {
+                return _dependenciesItemQueue.Dequeue();
+            }
+
+            return _dependenciesItemVisualTreeAsset != null ? _dependenciesItemVisualTreeAsset.CloneTree() : null;
+        }
+
+        public void ReturnDependenciesItem(VisualElement item)
+        {
+            _dependenciesItemQueue.Enqueue(item);
         }
     }
 }
