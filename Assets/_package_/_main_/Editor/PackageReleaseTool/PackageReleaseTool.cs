@@ -660,8 +660,7 @@ namespace UPMTool
                 button.clicked += SetVersion;
                 box.Add(button);
 
-                // todo 添加一个刷新按钮 刷新版本号
-
+                // 添加一个刷新按钮 刷新版本号
                 button = new Button();
                 button.style.width = 60;
                 button.style.backgroundImage = null;

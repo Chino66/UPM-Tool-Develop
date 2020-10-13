@@ -48,7 +48,7 @@ namespace UPMToolDevelop
             }
         }
 
-        private PackageJsonUI root;
+//        private PackageJsonUI root;
 
         /// <summary>
         /// 使用UIElement方式绘制Inspector
@@ -61,80 +61,20 @@ namespace UPMToolDevelop
             // package.json绘制
             if (path.ToLower().EndsWith(FileName))
             {
-                root = PackageJsonUI.CreateUI();
+                var root = PackageJsonUI.CreateUI();
                 root.InitUIElementCommon(packageJsonInfo);
-                InitUIElementEditor(root, packageJsonInfo, path);
+                root.InitUIElementEditor(packageJsonInfo, path);
                 return root;
             }
-
+            
             return base.CreateInspectorGUI();
-        }
-
-        /// <summary>
-        /// 给UIElement添加交互
-        /// </summary>
-        public static void InitUIElement(VisualElement root, PackageJsonInfo packageJsonInfo, string path)
-        {
-            if (root == null)
-            {
-                return;
-            }
-
-            if (PackageChecker.HasPackageJson)
-            {
-                InitUIElementEditor(root, packageJsonInfo, path);
-            }
-            else
-            {
-                InitUIElementCreate(root, packageJsonInfo, path);
-            }
-        }
-
-        /// <summary>
-        /// 创建package.json界面的UIElement交互
-        /// </summary>
-        public static void InitUIElementCreate(VisualElement root, PackageJsonInfo packageJsonInfo, string path)
-        {
-            if (root == null)
-            {
-                return;
-            }
-
-            // 预览
-            var preview = root.Q<TextField>("preview_tf");
-            preview.value = packageJsonInfo.ToJson();
-
-            // 创建按钮响应点击
-            var button = root.Q<Button>("create_btn");
-            button.clicked += () =>
-            {
-                // 创建插件包的动作
-                CreatePackageAction(packageJsonInfo);
-                // 创建或修改package.json
-                SavePackageJsonChange(root, packageJsonInfo, path);
-                preview.value = packageJsonInfo.ToJson();
-                // 刷新,显示插件包框架
-                AssetDatabase.Refresh();
-
-                // 创建PackagePath.cs,需要检查插件包路径才能创建
-                AfterCreatePackageAction();
-                // 刷新,显示PackagePath.cs
-                AssetDatabase.Refresh();
-            };
-
-            // 编辑按钮隐藏
-            var element = root.Q<VisualElement>("edit_box");
-            element.parent.Remove(element);
-
-            // 初始化依赖操作(Create界面不需要依赖操作,所以要隐藏)
-            InitDependenciesUIElement(root, packageJsonInfo, path, false);
         }
 
         /// <summary>
         /// 创建插件包框架结构
         /// </summary>
         /// <param name="packageJsonInfo"></param>
-        private static void CreatePackageAction(PackageJsonInfo packageJsonInfo)
+        public static void CreatePackageAction(PackageJsonInfo packageJsonInfo)
         {
             // 创建readme.md
             var path = PackageChecker.readmeMDPath;
@@ -155,13 +95,14 @@ namespace UPMToolDevelop
         /// 创建插件包框架结构后
         /// 创建PackagePath.cs
         /// </summary>
-        private static void AfterCreatePackageAction()
+        public static void AfterCreatePackageAction()
         {
             PackageChecker.Check();
         }
 
         /// <summary>
         /// 创建目录
+        /// todo 对文件和目录增删改的插件工具包集成
         /// </summary>
         /// <param name="path"></param>
         private static void CreateDir(string path)
@@ -179,10 +120,6 @@ namespace UPMToolDevelop
         /// <param name="content"></param>
         private static void CreateTextFile(string path, string content)
         {
-//            if (File.Exists(path))
-//            {
-//                return;
-//            }
 
             var dir = Path.GetDirectoryName(path);
 
@@ -194,115 +131,6 @@ namespace UPMToolDevelop
             StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default);
             sw.Write(content);
             sw.Close();
-        }
-
-        /// <summary>
-        /// 编辑package.json界面的UIElement交互 
-        /// </summary>
-        private static void InitUIElementEditor(VisualElement root, PackageJsonInfo packageJsonInfo, string path)
-        {
-            if (root == null)
-            {
-                return;
-            }
-
-            // 预览
-            var preview = root.Q<TextField>("preview_tf");
-            preview.value = packageJsonInfo.ToJson();
-
-            // 编辑按钮-撤销修改响应点击
-            var button = root.Q<Button>("revert_btn");
-            button.clicked += () => { Debug.Log("revert todo"); };
-
-            // 编辑按钮-应用修改响应点击
-            button = root.Q<Button>("apply_btn");
-            button.clicked += () =>
-            {
-                SavePackageJsonChange(root, packageJsonInfo, path);
-                preview.value = packageJsonInfo.ToJson();
-                AssetDatabase.Refresh();
-            };
-
-            // 创建按钮隐藏
-            var element = root.Q<VisualElement>("create_box");
-            element.parent.Remove(element);
-
-            // 初始化依赖操作
-            InitDependenciesUIElement(root, packageJsonInfo, path, true);
-        }
-
-        /// <summary>
-        /// 插件依赖相关UIElement交互
-        /// </summary>
-        private static void InitDependenciesUIElement(VisualElement root, PackageJsonInfo packageJsonInfo, string path,
-            bool isShow)
-        {
-            if (isShow == false)
-            {
-                var element = root.Q<VisualElement>("dependencies_box");
-                element.parent.Remove(element);
-
-                element = root.Q<VisualElement>("dependencies_lab_box");
-                element.parent.Remove(element);
-                return;
-            }
-
-            // 预览
-            var preview = root.Q<TextField>("preview_tf");
-            preview.value = packageJsonInfo.ToJson();
-
-            // 添加依赖按钮响应
-            var button = root.Q<Button>("dependencies_add");
-            button.clicked += () =>
-            {
-                // todo dependencies logic
-//                SavePackageJsonChange(root, packageJsonInfo, path);
-//                preview.value = packageJsonInfo.ToJson();
-//                AssetDatabase.Refresh();
-                ProcessDependenceItems(root, true);
-            };
-
-            // 移除依赖按钮响应
-            button = root.Q<Button>("dependencies_remove");
-            button.clicked += () =>
-            {
-                // todo dependencies logic
-//                SavePackageJsonChange(root, packageJsonInfo, path);
-//                preview.value = packageJsonInfo.ToJson();
-//                AssetDatabase.Refresh();
-                ProcessDependenceItems(root, false);
-            };
-            
-            // 绘制依赖项
-        }
-
-        
-        
-        private static void ProcessDependenceItems(VisualElement root, bool isAdd)
-        {
-            var itemRoot = root.Q<VisualElement>("dependencies_item_root");
-            var noneTip = root.Q<VisualElement>("dependencies_none_tip");
-
-            if (isAdd)
-            {
-                var i = ((PackageJsonUI) root).GetDependenciesItem();
-                itemRoot.Add(i);
-            }
-            else
-            {
-                itemRoot.RemoveAt(0);
-            }
-
-            if (itemRoot.childCount <= 0)
-            {
-                itemRoot.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
-                noneTip.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
-            }
-            else
-            {
-                itemRoot.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
-                noneTip.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
-            }
         }
 
         private static bool PackageJsonInfoCheck(PackageJsonInfo packageJsonInfo, out int retCode)
@@ -365,8 +193,9 @@ namespace UPMToolDevelop
         /// </summary>
         /// <param name="packageJsonInfo"></param>
         /// <param name="target"></param>
-        private static void SavePackageJsonChange(VisualElement root, PackageJsonInfo packageJsonInfo, string path)
+        public static void SavePackageJsonChange(VisualElement root, PackageJsonInfo packageJsonInfo, string path)
         {
+            // todo 这个类不处理root内容
             // check
             var rst = PackageJsonInfoCheck(packageJsonInfo, out var retCode);
 
@@ -389,6 +218,7 @@ namespace UPMToolDevelop
                 label.AddToClassList("color_green");
             }
 
+            // PackageJsonInfo转为text进行保存
             string json = packageJsonInfo.ToJson();
             CreateTextFile(path, json);
         }
@@ -399,7 +229,7 @@ namespace UPMToolDevelop
             var rst = PackageJsonInfoCheck(packageJsonInfo, out var retCode);
             if (rst == false)
             {
-                // todo 提示错误
+                // 提示错误
                 Debug.LogError("检测失败");
                 return false;
             }
@@ -443,85 +273,6 @@ namespace UPMToolDevelop
             // 普通文本文件绘制
             var text = (TextAsset) target;
             GUILayout.TextArea(text.text);
-        }
-
-        public override void OnInspectorGUI()
-        {
-            base.OnInspectorGUI();
-        }
-
-        /// <summary>
-        /// GUILayout方式绘制package.json编辑工具
-        /// </summary>
-        private void DrawPackageJson()
-        {
-            if (packageJsonInfo == null)
-            {
-                GUILayout.Label("package.json内容为空!");
-                return;
-            }
-
-            GUILayout.Label("package.json编辑工具");
-
-            // 编辑区域
-            GUILayout.BeginVertical("box");
-            {
-                // 插件名称
-                GUILayout.BeginHorizontal("box");
-                {
-                    GUILayout.Label("name");
-                    packageJsonInfo.name = GUILayout.TextField(packageJsonInfo.name);
-                }
-                GUILayout.EndHorizontal();
-
-                // 插件显示名称
-                GUILayout.BeginHorizontal("box");
-                {
-                    GUILayout.Label("displayName");
-                    packageJsonInfo.displayName = GUILayout.TextField(packageJsonInfo.displayName);
-                }
-                GUILayout.EndHorizontal();
-
-                // 版本
-                GUILayout.BeginHorizontal("box");
-                {
-                    GUILayout.Label("version");
-                    packageJsonInfo.version = GUILayout.TextField(packageJsonInfo.version);
-                }
-                GUILayout.EndHorizontal();
-
-                // 类型,内部保留信息 
-                GUILayout.BeginHorizontal("box");
-                {
-                    GUILayout.Label("type");
-                    packageJsonInfo.type = GUILayout.TextField(packageJsonInfo.type);
-                }
-                GUILayout.EndHorizontal();
-
-                // 简介
-                GUILayout.BeginVertical("box");
-                {
-                    GUILayout.Label("description");
-                    packageJsonInfo.description = GUILayout.TextArea(packageJsonInfo.description);
-                }
-                GUILayout.EndVertical();
-            }
-            GUILayout.EndVertical();
-            GUILayout.BeginHorizontal("box");
-            {
-                GUILayout.Button("revert");
-                if (GUILayout.Button("apply"))
-                {
-                    string json = packageJsonInfo.ToJson();
-                    var path = AssetDatabase.GetAssetPath(target);
-                    StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default);
-                    sw.Write(json);
-                    sw.Close();
-                    AssetDatabase.Refresh();
-                }
-            }
-            GUILayout.EndHorizontal();
-            GUILayout.Label("预览");
         }
     }
 }
