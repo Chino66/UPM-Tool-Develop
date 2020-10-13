@@ -37,15 +37,11 @@ namespace UPMTool
         }
 
         /// <summary>
-        /// 给UIElement添加交互(共用部分)
+        /// 初始化共用部分UI
         /// </summary>
-        public static void InitUIElement(VisualElement root, PackageJsonInfo packageJsonInfo)
+        public void InitUIElementCommon(PackageJsonInfo packageJsonInfo)
         {
-            if (root == null)
-            {
-                return;
-            }
-
+            var root = this;
             // 预览
             var preview = root.Q<TextField>("preview_tf");
             preview.value = packageJsonInfo.ToJson();
@@ -109,6 +105,46 @@ namespace UPMTool
             // 返回消息
             var label = root.Q<Label>("msg_lab");
             label.text = "";
+        }
+
+        /// <summary>
+        /// 初始化创建界面UI
+        /// </summary>
+        public void InitUIElementCreate()
+        {
+            
+        }
+        
+        /// <summary>
+        /// 初始化编辑界面UI
+        /// </summary>
+        public void InitUIElementEditor(PackageJsonInfo packageJsonInfo)
+        {
+            var root = this;
+
+            // 预览
+            var preview = root.Q<TextField>("preview_tf");
+            preview.value = packageJsonInfo.ToJson();
+
+            // 编辑按钮-撤销修改响应点击
+            var button = root.Q<Button>("revert_btn");
+            button.clicked += () => { Debug.Log("revert todo"); };
+
+            // 编辑按钮-应用修改响应点击
+            button = root.Q<Button>("apply_btn");
+            button.clicked += () =>
+            {
+                SavePackageJsonChange(root, packageJsonInfo, path);
+                preview.value = packageJsonInfo.ToJson();
+                AssetDatabase.Refresh();
+            };
+
+            // 创建按钮隐藏
+            var element = root.Q<VisualElement>("create_box");
+            element.parent.Remove(element);
+
+            // 初始化依赖操作
+            InitDependenciesUIElement(root, packageJsonInfo, path, true);
         }
 
         public VisualElement GetDependenciesItem()

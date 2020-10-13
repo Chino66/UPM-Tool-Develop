@@ -44,7 +44,7 @@ public class PackageCreateTool : EditorWindow
     private void OnEnable()
     {
         var root = PackageJsonUI.CreateUI();
-        PackageJsonUI.InitUIElement(root, packageJsonInfo);
+        root.InitUIElementCommon(packageJsonInfo);
         PackageJsonEditor.InitUIElement(root, packageJsonInfo, PackageChecker.packageJsonPath);
         rootVisualElement.Add(root);
     }

@@ -62,7 +62,7 @@ namespace UPMToolDevelop
             if (path.ToLower().EndsWith(FileName))
             {
                 root = PackageJsonUI.CreateUI();
-                PackageJsonUI.InitUIElement(root, packageJsonInfo);
+                root.InitUIElementCommon(packageJsonInfo);
                 InitUIElementEditor(root, packageJsonInfo, path);
                 return root;
             }
@@ -272,8 +272,12 @@ namespace UPMToolDevelop
 //                AssetDatabase.Refresh();
                 ProcessDependenceItems(root, false);
             };
+            
+            // 绘制依赖项
         }
 
+        
+        
         private static void ProcessDependenceItems(VisualElement root, bool isAdd)
         {
             var itemRoot = root.Q<VisualElement>("dependencies_item_root");

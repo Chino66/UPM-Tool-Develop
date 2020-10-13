@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4bc877-c64f-49dd-9bb0-e70078763c60" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageCreateTool/PackageCreateTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageCreateTool/PackageCreateTool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Resources/UIElement/package_json_uxml.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Resources/UIElement/package_json_uxml.uxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,43 +18,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="2128">
               <caret line="124" column="64" selection-start-line="124" selection-start-column="64" selection-end-line="124" selection-end-column="64" />
               <folding>
-                <marker date="1585117645047" expanded="false" signature="6:231" ph="..." />
-                <marker date="1585117645047" expanded="true" signature="257:5595" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="264:332" ph="/// UPM Tool在PackageManager上的拓展 ... " />
-                <marker date="1585117645047" expanded="true" signature="416:5593" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="456:556" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="765:943" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="803:909" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="974:3364" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="1012:1064" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="1167:3115" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="1234:3099" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="1331:1421" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="1486:2790" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="1643:1733" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="1786:2733" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="1844:2503" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="2038:2152" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="2198:2313" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="2359:2473" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="2551:2707" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="2836:3081" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="3414:3741" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="3467:3522" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="3751:3865" ph="/// 当选择插件包时,获取这个插件包的信息 ... " />
-                <marker date="1585117645047" expanded="true" signature="3935:4459" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="3973:4025" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="4297:4364" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="4381:4449" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="4469:4696" ph="/// 获取git路径 可能是github或gitee ... " />
-                <marker date="1585117645047" expanded="true" signature="4747:5414" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="4806:4914" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="5126:5243" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="5484:5504" ph="{...}" />
-                <marker date="1585117645047" expanded="true" signature="5567:5587" ph="{...}" />
+                <marker date="1602302147896" expanded="false" signature="6:231" ph="..." />
+                <marker date="1602302147896" expanded="true" signature="257:5887" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="264:332" ph="/// UPM Tool在PackageManager上的拓展 ... " />
+                <marker date="1602302147896" expanded="true" signature="416:5885" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="456:556" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="765:943" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="803:909" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="974:3364" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="1012:1064" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="1167:3115" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="1234:3099" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="1331:1421" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="1486:2790" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="1643:1733" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="1786:2733" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="1844:2503" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="2038:2152" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="2198:2313" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="2359:2473" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="2551:2707" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="2836:3081" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="3414:3741" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="3467:3522" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="3751:3895" ph="/// 在PackageManager视窗 ... " />
+                <marker date="1602302147896" expanded="true" signature="3965:4489" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="4003:4055" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="4327:4394" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="4411:4479" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="4499:4960" ph="/// 获取git路径,可能是github或gitee ... " />
+                <marker date="1602302147896" expanded="true" signature="5011:5706" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="5070:5178" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="5390:5535" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="5776:5796" ph="{...}" />
+                <marker date="1602302147896" expanded="true" signature="5859:5879" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -69,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtensionUI.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="722">
               <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
               <folding>
                 <marker date="1579684220219" expanded="false" signature="6:93" ph="..." />
@@ -91,73 +85,144 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageCreateTool/PackageCreateTool.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="950">
-              <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+            <state relative-caret-position="330">
+              <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
               <folding>
-                <marker date="1602229012641" expanded="true" signature="6:150" ph="..." />
-                <marker date="1602229012641" expanded="true" signature="197:1370" ph="{...}" />
-                <marker date="1602229012641" expanded="true" signature="281:423" ph="{...}" />
-                <marker date="1602229012641" expanded="true" signature="569:1003" ph="{...}" />
-                <marker date="1602229012641" expanded="true" signature="587:997" ph="{...}" />
-                <marker date="1602229012641" expanded="true" signature="639:949" ph="{...}" />
-                <marker date="1602229012641" expanded="true" signature="704:816" ph="{...}" />
-                <marker date="1602229012641" expanded="true" signature="837:935" ph="{...}" />
-                <marker date="1602229012641" expanded="true" signature="1065:1095" ph="{...}" />
-                <marker date="1602229012641" expanded="true" signature="1122:1368" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonUI.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="86" column="19" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
-              <folding>
-                <marker date="1602237644089" expanded="false" signature="6:136" ph="..." />
-                <marker date="1602237644089" expanded="true" signature="155:3483" ph="{...}" />
-                <marker date="1602237644089" expanded="true" signature="204:3481" ph="{...}" />
-                <marker date="1602237644089" expanded="true" signature="257:317" ph="{...}" />
-                <marker date="1602237644089" expanded="true" signature="349:860" ph="{...}" />
-                <marker date="1602237644089" expanded="true" signature="870:939" ph="/// 给UIElement添加交互(共用部分) ... " />
-                <marker date="1602237644089" expanded="true" signature="1033:3475" ph="{...}" />
-                <marker date="1602237644089" expanded="true" signature="1073:1125" ph="{...}" />
-                <marker date="1602237644089" expanded="true" signature="1472:1600" ph="{...}" />
-                <marker date="1602237644089" expanded="true" signature="1816:1951" ph="{...}" />
-                <marker date="1602237644089" expanded="true" signature="2157:2288" ph="{...}" />
-                <marker date="1602237644089" expanded="true" signature="2516:2645" ph="{...}" />
-                <marker date="1602237644089" expanded="true" signature="2853:2981" ph="{...}" />
-                <marker date="1602237644089" expanded="true" signature="2997:3035" ph="/* 依赖关系 ... */" />
-                <marker date="1602237644089" expanded="true" signature="3228:3363" ph="{...}" />
+                <marker date="1602571648547" expanded="false" signature="6:150" ph="..." />
+                <marker date="1602571648547" expanded="true" signature="197:1279" ph="{...}" />
+                <marker date="1602571648547" expanded="true" signature="281:423" ph="{...}" />
+                <marker date="1602571648547" expanded="true" signature="569:1003" ph="{...}" />
+                <marker date="1602571648547" expanded="true" signature="587:997" ph="{...}" />
+                <marker date="1602571648547" expanded="true" signature="639:949" ph="{...}" />
+                <marker date="1602571648547" expanded="true" signature="704:816" ph="{...}" />
+                <marker date="1602571648547" expanded="true" signature="837:935" ph="{...}" />
+                <marker date="1602571648547" expanded="true" signature="1036:1277" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonUI.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="133" column="49" lean-forward="true" selection-start-line="133" selection-start-column="49" selection-end-line="133" selection-end-column="49" />
+              <folding>
+                <marker date="1602571648591" expanded="false" signature="6:170" ph="..." />
+                <marker date="1602571648591" expanded="true" signature="189:5517" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="238:5515" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="291:351" ph="{...}" />
+                <marker date="1602571648591" expanded="false" signature="531:1348" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="1358:1416" ph="/// 初始化共用部分UI ... " />
+                <marker date="1602571648591" expanded="false" signature="1489:3887" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="1874:2002" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="2218:2353" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="2559:2690" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="2906:3035" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="3243:3371" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="3585:3720" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="3736:3798" ph="/* 依赖关系(依赖相关UI不在这里添加,在PackageJsonEditor中) ... */" />
+                <marker date="1602571648591" expanded="true" signature="3897:3955" ph="/// 初始化创建界面UI ... " />
+                <marker date="1602571648591" expanded="true" signature="3997:4030" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="4048:4106" ph="/// 初始化编辑界面UI ... " />
+                <marker date="1602571648591" expanded="true" signature="4179:5052" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="4631:4813" ph="{...}" />
+                <marker date="1602571648591" expanded="false" signature="5104:5375" ph="{...}" />
+                <marker date="1602571648591" expanded="true" signature="5164:5249" ph="{...}" />
+                <marker date="1602571648591" expanded="false" signature="5439:5509" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonEditor.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-144">
+              <caret line="203" selection-start-line="203" selection-end-line="230" selection-end-column="73" />
+              <folding>
+                <marker date="1602571648418" expanded="false" signature="6:165" ph="..." />
+                <marker date="1602571648418" expanded="true" signature="191:16206" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="198:266" ph="/// package.json文件Inspector视图拓展 ... " />
+                <marker date="1602571648418" expanded="true" signature="348:16204" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="508:885" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="534:875" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="599:814" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="985:1287" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="1011:1277" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="1071:1221" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="1334:1439" ph="/// 使用UIElement方式绘制Inspector ... " />
+                <marker date="1602571648418" expanded="true" signature="1498:1937" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="1649:1880" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="1947:2010" ph="/// 给UIElement添加交互 ... " />
+                <marker date="1602571648418" expanded="true" signature="2117:2472" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="2157:2209" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="2257:2351" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="2368:2462" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="2482:2559" ph="/// 创建package.json界面的UIElement交互 ... " />
+                <marker date="1602571648418" expanded="true" signature="2672:3792" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="2712:2764" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="3025:3531" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="3802:3911" ph="/// 创建插件包框架结构 ... " />
+                <marker date="1602571648418" expanded="true" signature="3992:4497" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="4507:4595" ph="/// 创建插件包框架结构后 ... " />
+                <marker date="1602571648418" expanded="true" signature="4650:4706" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="4716:4809" ph="/// 创建目录 ... " />
+                <marker date="1602571648418" expanded="true" signature="4860:5006" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="4919:4996" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="5016:5155" ph="/// 创建或修改文件 ... " />
+                <marker date="1602571648418" expanded="true" signature="5227:5666" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="5238:5332" ph="/* if (File.Exists(path)) ... */" />
+                <marker date="1602571648418" expanded="true" signature="5433:5509" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="5676:5754" ph="/// 编辑package.json界面的UIElement交互  ... " />
+                <marker date="1602571648418" expanded="true" signature="5868:6794" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="5908:5960" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="6373:6555" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="6804:6870" ph="/// 插件依赖相关UIElement交互 ... " />
+                <marker date="1602571648418" expanded="true" signature="7015:8367" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="7058:7353" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="7620:7903" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="7638:7837" ph="/* todo dependencies logic ... */" />
+                <marker date="1602571648418" expanded="true" signature="8038:8322" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="8056:8255" ph="/* todo dependencies logic ... */" />
+                <marker date="1602571648418" expanded="true" signature="8469:9347" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="8653:8784" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="8801:8867" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="8910:9115" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="9132:9337" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="9447:10376" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="9676:9763" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="9949:10036" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="10228:10315" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="10433:10992" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="10504:10957" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="11002:11161" ph="/// 创建或保存package.json ... " />
+                <marker date="1602571648418" expanded="true" signature="11277:11974" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="11564:11721" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="11738:11871" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="12070:12465" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="12209:12336" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="12475:12618" ph="/// 保存package,json版本号修改 ... " />
+                <marker date="1602571648418" expanded="true" signature="12690:12919" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="12929:13047" ph="/// 使用OnHeaderGUI,绘制的GUI可以交互 ... " />
+                <marker date="1602571648418" expanded="true" signature="13093:13534" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="13277:13413" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="13308:13375" ph="/* GUILayout绘制package.json编辑工具 ... */" />
+                <marker date="1602571648418" expanded="true" signature="13581:13636" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="13646:13724" ph="/// GUILayout方式绘制package.json编辑工具 ... " />
+                <marker date="1602571648418" expanded="true" signature="13763:16198" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="13814:13920" ph="{...}" />
+                <marker date="1602571648418" expanded="true" signature="15725:16100" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://F:/GitHub/Game_Console_Develop/Assets/_package_/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/8b/e9726dc4/ListView.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2033">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/f7/d334bd4c/TextField.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-57">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -165,22 +230,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonInfo.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
+            <state relative-caret-position="988">
               <caret line="58" column="35" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="35" />
               <folding>
-                <marker date="1602228749402" expanded="false" signature="6:145" ph="..." />
-                <marker date="1602228749402" expanded="true" signature="190:2253" ph="{...}" />
-                <marker date="1602228749402" expanded="true" signature="197:244" ph="/// 插件开发信息 ... " />
-                <marker date="1602228749402" expanded="true" signature="277:2251" ph="{...}" />
-                <marker date="1602228749402" expanded="true" signature="292:388" ph="/// 插件包名成:com.xx.xx ... " />
-                <marker date="1602228749402" expanded="true" signature="431:513" ph="/// 插件包显示名称:xx ... " />
-                <marker date="1602228749402" expanded="true" signature="563:659" ph="/// 版本信息 ... " />
-                <marker date="1602228749402" expanded="true" signature="705:783" ph="/// Unity版本号 ... " />
-                <marker date="1602228749402" expanded="true" signature="827:880" ph="/// 插件简介 ... " />
-                <marker date="1602228749402" expanded="true" signature="930:1013" ph="/// 为包管理器提供其他信息的常量 ... " />
-                <marker date="1602228749402" expanded="true" signature="1056:1178" ph="/// 插件包依赖 ... " />
-                <marker date="1602228749402" expanded="true" signature="1302:2092" ph="{...}" />
-                <marker date="1602228749402" expanded="true" signature="1325:1868" ph="/* LitJson ... */" />
+                <marker date="1602302181286" expanded="false" signature="6:145" ph="..." />
+                <marker date="1602302181286" expanded="true" signature="190:2253" ph="{...}" />
+                <marker date="1602302181286" expanded="true" signature="197:244" ph="/// 插件开发信息 ... " />
+                <marker date="1602302181286" expanded="true" signature="277:2251" ph="{...}" />
+                <marker date="1602302181286" expanded="true" signature="292:388" ph="/// 插件包名成:com.xx.xx ... " />
+                <marker date="1602302181286" expanded="true" signature="431:513" ph="/// 插件包显示名称:xx ... " />
+                <marker date="1602302181286" expanded="true" signature="563:659" ph="/// 版本信息 ... " />
+                <marker date="1602302181286" expanded="true" signature="705:783" ph="/// Unity版本号 ... " />
+                <marker date="1602302181286" expanded="true" signature="827:880" ph="/// 插件简介 ... " />
+                <marker date="1602302181286" expanded="true" signature="930:1013" ph="/// 为包管理器提供其他信息的常量 ... " />
+                <marker date="1602302181286" expanded="true" signature="1056:1178" ph="/// 插件包依赖 ... " />
+                <marker date="1602302181286" expanded="true" signature="1302:2092" ph="{...}" />
+                <marker date="1602302181286" expanded="true" signature="1325:1868" ph="/* LitJson ... */" />
               </folding>
             </state>
           </provider>
@@ -299,10 +364,10 @@
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/GitUtils.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" />
-        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageCreateTool/PackageCreateTool.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Resources/UIElement/package_json_uxml.uxml" />
+        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageCreateTool/PackageCreateTool.cs" />
+        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonUI.cs" />
       </list>
     </option>
@@ -314,31 +379,13 @@
     <option name="height" value="1092" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="AssemblyExplorer" proportions="" version="1">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Project" type="5427d58d:AssemblyExplorerRootNode" />
-              <item name="UnityEngine.UIElementsModule (msil, .Net Framework v3.5)" type="5e97225f:AssemblyExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="5427d58d:AssemblyExplorerRootNode" />
-              <item name="UnityEngine.UIElementsModule (msil, .Net Framework v3.5)" type="5e97225f:AssemblyExplorerNode" />
-              <item name="UnityEngine.UIElements" type="5e97225f:AssemblyExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="5427d58d:AssemblyExplorerRootNode" />
-              <item name="UnityEngine.UIElementsModule (msil, .Net Framework v3.5)" type="5e97225f:AssemblyExplorerNode" />
-              <item name="UnityEngine.UIElements" type="5e97225f:AssemblyExplorerNode" />
-              <item name="ListView" type="5e97225f:AssemblyExplorerNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
+      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
       </pane>
       <pane id="UnityExplorer">
         <subPane>
@@ -373,44 +420,13 @@
               <item name="Editor" type="1045f7f1:UnityExplorerNode" />
               <item name="Develop" type="1045f7f1:UnityExplorerNode" />
             </path>
-            <path>
-              <item name="" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="8711f2a6:AssetsRoot" />
-              <item name="_package_" type="1045f7f1:UnityExplorerNode" />
-              <item name="_main_" type="1045f7f1:UnityExplorerNode" />
-              <item name="Editor" type="1045f7f1:UnityExplorerNode" />
-              <item name="PackageCreateTool" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="8711f2a6:AssetsRoot" />
-              <item name="_package_" type="1045f7f1:UnityExplorerNode" />
-              <item name="_main_" type="1045f7f1:UnityExplorerNode" />
-              <item name="Editor" type="1045f7f1:UnityExplorerNode" />
-              <item name="PackageReleaseTool" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="8711f2a6:AssetsRoot" />
-              <item name="_package_" type="1045f7f1:UnityExplorerNode" />
-              <item name="_main_" type="1045f7f1:UnityExplorerNode" />
-              <item name="Editor" type="1045f7f1:UnityExplorerNode" />
-              <item name="UPMToolExtension" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="e068e287:UnityExplorerRootNode" />
-              <item name="Packages" type="4e2708dd:PackagesRoot" />
-            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
-      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -479,11 +495,12 @@
       <workItem from="1585106772187" duration="2824000" />
       <workItem from="1585115157919" duration="3564000" />
       <workItem from="1602227511113" duration="4281000" />
+      <workItem from="1602561141280" duration="3157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125994000" />
+    <option name="totallyTimeSpent" value="129151000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -495,14 +512,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17270789" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17430703" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32917964" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32917964" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.27102804" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -1548,71 +1565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonEditor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
-          <folding>
-            <marker date="1602228600990" expanded="false" signature="6:165" ph="..." />
-            <marker date="1602228600990" expanded="true" signature="191:12859" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="198:266" ph="/// package.json文件Inspector视图拓展 ... " />
-            <marker date="1602228600990" expanded="true" signature="348:12857" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="508:885" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="534:875" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="599:814" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="985:1394" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="1011:1384" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="1071:1328" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="1441:1546" ph="/// 使用UIElement方式绘制Inspector ... " />
-            <marker date="1602228600990" expanded="true" signature="1605:2053" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="1756:1996" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="2063:2126" ph="/// 给UIElement添加交互 ... " />
-            <marker date="1602228600990" expanded="true" signature="2233:2588" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="2273:2325" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="2373:2467" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="2484:2578" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="2598:2670" ph="/// 给UIElement添加交互 Create部分 ... " />
-            <marker date="1602228600990" expanded="true" signature="2783:3573" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="2823:2875" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="3133:3456" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="3655:4158" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="4210:4356" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="4269:4346" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="4366:4505" ph="/// 创建或修改文件 ... " />
-            <marker date="1602228600990" expanded="true" signature="4577:5016" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="4588:4682" ph="/* if (File.Exists(path)) ... */" />
-            <marker date="1602228600990" expanded="true" signature="4783:4859" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="5026:5098" ph="/// 给UIElement添加交互 Editor部分 ... " />
-            <marker date="1602228600990" expanded="true" signature="5212:6000" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="5252:5304" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="5699:5881" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="6100:7029" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="6329:6416" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="6602:6689" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="6881:6968" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="7086:7645" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="7157:7610" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="7655:7814" ph="/// 创建或保存package.json ... " />
-            <marker date="1602228600990" expanded="true" signature="7930:8627" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="8217:8374" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="8391:8524" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="8723:9118" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="8862:8989" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="9128:9271" ph="/// 保存package,json版本号修改 ... " />
-            <marker date="1602228600990" expanded="true" signature="9343:9572" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="9582:9700" ph="/// 使用OnHeaderGUI,绘制的GUI可以交互 ... " />
-            <marker date="1602228600990" expanded="true" signature="9746:10187" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="9930:10066" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="9961:10028" ph="/* GUILayout绘制package.json编辑工具 ... */" />
-            <marker date="1602228600990" expanded="true" signature="10234:10289" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="10299:10377" ph="/// GUILayout方式绘制package.json编辑工具 ... " />
-            <marker date="1602228600990" expanded="true" signature="10416:12851" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="10467:10573" ph="{...}" />
-            <marker date="1602228600990" expanded="true" signature="12378:12753" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Resources/UIElement/package_json_uxml.uxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -1620,93 +1572,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonInfo.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="58" column="35" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="35" />
-          <folding>
-            <marker date="1602228749402" expanded="false" signature="6:145" ph="..." />
-            <marker date="1602228749402" expanded="true" signature="190:2253" ph="{...}" />
-            <marker date="1602228749402" expanded="true" signature="197:244" ph="/// 插件开发信息 ... " />
-            <marker date="1602228749402" expanded="true" signature="277:2251" ph="{...}" />
-            <marker date="1602228749402" expanded="true" signature="292:388" ph="/// 插件包名成:com.xx.xx ... " />
-            <marker date="1602228749402" expanded="true" signature="431:513" ph="/// 插件包显示名称:xx ... " />
-            <marker date="1602228749402" expanded="true" signature="563:659" ph="/// 版本信息 ... " />
-            <marker date="1602228749402" expanded="true" signature="705:783" ph="/// Unity版本号 ... " />
-            <marker date="1602228749402" expanded="true" signature="827:880" ph="/// 插件简介 ... " />
-            <marker date="1602228749402" expanded="true" signature="930:1013" ph="/// 为包管理器提供其他信息的常量 ... " />
-            <marker date="1602228749402" expanded="true" signature="1056:1178" ph="/// 插件包依赖 ... " />
-            <marker date="1602228749402" expanded="true" signature="1302:2092" ph="{...}" />
-            <marker date="1602228749402" expanded="true" signature="1325:1868" ph="/* LitJson ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageCreateTool/PackageCreateTool.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding>
-            <marker date="1602229012641" expanded="true" signature="6:150" ph="..." />
-            <marker date="1602229012641" expanded="true" signature="197:1370" ph="{...}" />
-            <marker date="1602229012641" expanded="true" signature="281:423" ph="{...}" />
-            <marker date="1602229012641" expanded="true" signature="569:1003" ph="{...}" />
-            <marker date="1602229012641" expanded="true" signature="587:997" ph="{...}" />
-            <marker date="1602229012641" expanded="true" signature="639:949" ph="{...}" />
-            <marker date="1602229012641" expanded="true" signature="704:816" ph="{...}" />
-            <marker date="1602229012641" expanded="true" signature="837:935" ph="{...}" />
-            <marker date="1602229012641" expanded="true" signature="1065:1095" ph="{...}" />
-            <marker date="1602229012641" expanded="true" signature="1122:1368" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="2128">
           <caret line="124" column="64" selection-start-line="124" selection-start-column="64" selection-end-line="124" selection-end-column="64" />
           <folding>
-            <marker date="1585117645047" expanded="false" signature="6:231" ph="..." />
-            <marker date="1585117645047" expanded="true" signature="257:5595" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="264:332" ph="/// UPM Tool在PackageManager上的拓展 ... " />
-            <marker date="1585117645047" expanded="true" signature="416:5593" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="456:556" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="765:943" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="803:909" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="974:3364" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="1012:1064" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="1167:3115" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="1234:3099" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="1331:1421" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="1486:2790" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="1643:1733" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="1786:2733" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="1844:2503" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="2038:2152" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="2198:2313" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="2359:2473" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="2551:2707" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="2836:3081" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="3414:3741" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="3467:3522" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="3751:3865" ph="/// 当选择插件包时,获取这个插件包的信息 ... " />
-            <marker date="1585117645047" expanded="true" signature="3935:4459" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="3973:4025" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="4297:4364" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="4381:4449" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="4469:4696" ph="/// 获取git路径 可能是github或gitee ... " />
-            <marker date="1585117645047" expanded="true" signature="4747:5414" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="4806:4914" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="5126:5243" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="5484:5504" ph="{...}" />
-            <marker date="1585117645047" expanded="true" signature="5567:5587" ph="{...}" />
+            <marker date="1602302147896" expanded="false" signature="6:231" ph="..." />
+            <marker date="1602302147896" expanded="true" signature="257:5887" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="264:332" ph="/// UPM Tool在PackageManager上的拓展 ... " />
+            <marker date="1602302147896" expanded="true" signature="416:5885" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="456:556" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="765:943" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="803:909" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="974:3364" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="1012:1064" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="1167:3115" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="1234:3099" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="1331:1421" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="1486:2790" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="1643:1733" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="1786:2733" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="1844:2503" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="2038:2152" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="2198:2313" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="2359:2473" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="2551:2707" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="2836:3081" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="3414:3741" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="3467:3522" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="3751:3895" ph="/// 在PackageManager视窗 ... " />
+            <marker date="1602302147896" expanded="true" signature="3965:4489" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="4003:4055" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="4327:4394" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="4411:4479" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="4499:4960" ph="/// 获取git路径,可能是github或gitee ... " />
+            <marker date="1602302147896" expanded="true" signature="5011:5706" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="5070:5178" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="5390:5535" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="5776:5796" ph="{...}" />
+            <marker date="1602302147896" expanded="true" signature="5859:5879" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtensionUI.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="722">
           <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
           <folding>
             <marker date="1579684220219" expanded="false" signature="6:93" ph="..." />
@@ -1724,40 +1635,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/f7/d334bd4c/TextField.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/8b/e9726dc4/ListView.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2033">
+        <state relative-caret-position="247">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonUI.cs">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/f7/d334bd4c/TextField.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="86" column="19" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
+        <state relative-caret-position="114">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="58" column="35" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="35" />
           <folding>
-            <marker date="1602237644089" expanded="false" signature="6:136" ph="..." />
-            <marker date="1602237644089" expanded="true" signature="155:3483" ph="{...}" />
-            <marker date="1602237644089" expanded="true" signature="204:3481" ph="{...}" />
-            <marker date="1602237644089" expanded="true" signature="257:317" ph="{...}" />
-            <marker date="1602237644089" expanded="true" signature="349:860" ph="{...}" />
-            <marker date="1602237644089" expanded="true" signature="870:939" ph="/// 给UIElement添加交互(共用部分) ... " />
-            <marker date="1602237644089" expanded="true" signature="1033:3475" ph="{...}" />
-            <marker date="1602237644089" expanded="true" signature="1073:1125" ph="{...}" />
-            <marker date="1602237644089" expanded="true" signature="1472:1600" ph="{...}" />
-            <marker date="1602237644089" expanded="true" signature="1816:1951" ph="{...}" />
-            <marker date="1602237644089" expanded="true" signature="2157:2288" ph="{...}" />
-            <marker date="1602237644089" expanded="true" signature="2516:2645" ph="{...}" />
-            <marker date="1602237644089" expanded="true" signature="2853:2981" ph="{...}" />
-            <marker date="1602237644089" expanded="true" signature="2997:3035" ph="/* 依赖关系 ... */" />
-            <marker date="1602237644089" expanded="true" signature="3228:3363" ph="{...}" />
+            <marker date="1602302181286" expanded="false" signature="6:145" ph="..." />
+            <marker date="1602302181286" expanded="true" signature="190:2253" ph="{...}" />
+            <marker date="1602302181286" expanded="true" signature="197:244" ph="/// 插件开发信息 ... " />
+            <marker date="1602302181286" expanded="true" signature="277:2251" ph="{...}" />
+            <marker date="1602302181286" expanded="true" signature="292:388" ph="/// 插件包名成:com.xx.xx ... " />
+            <marker date="1602302181286" expanded="true" signature="431:513" ph="/// 插件包显示名称:xx ... " />
+            <marker date="1602302181286" expanded="true" signature="563:659" ph="/// 版本信息 ... " />
+            <marker date="1602302181286" expanded="true" signature="705:783" ph="/// Unity版本号 ... " />
+            <marker date="1602302181286" expanded="true" signature="827:880" ph="/// 插件简介 ... " />
+            <marker date="1602302181286" expanded="true" signature="930:1013" ph="/// 为包管理器提供其他信息的常量 ... " />
+            <marker date="1602302181286" expanded="true" signature="1056:1178" ph="/// 插件包依赖 ... " />
+            <marker date="1602302181286" expanded="true" signature="1302:2092" ph="{...}" />
+            <marker date="1602302181286" expanded="true" signature="1325:1868" ph="/* LitJson ... */" />
           </folding>
         </state>
       </provider>
@@ -1765,7 +1674,137 @@
     <entry file="file://F:/GitHub/Game_Console_Develop/Assets/_package_/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageCreateTool/PackageCreateTool.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+          <folding>
+            <marker date="1602571648547" expanded="false" signature="6:150" ph="..." />
+            <marker date="1602571648547" expanded="true" signature="197:1279" ph="{...}" />
+            <marker date="1602571648547" expanded="true" signature="281:423" ph="{...}" />
+            <marker date="1602571648547" expanded="true" signature="569:1003" ph="{...}" />
+            <marker date="1602571648547" expanded="true" signature="587:997" ph="{...}" />
+            <marker date="1602571648547" expanded="true" signature="639:949" ph="{...}" />
+            <marker date="1602571648547" expanded="true" signature="704:816" ph="{...}" />
+            <marker date="1602571648547" expanded="true" signature="837:935" ph="{...}" />
+            <marker date="1602571648547" expanded="true" signature="1036:1277" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonEditor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="203" selection-start-line="203" selection-end-line="230" selection-end-column="73" />
+          <folding>
+            <marker date="1602571648418" expanded="false" signature="6:165" ph="..." />
+            <marker date="1602571648418" expanded="true" signature="191:16206" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="198:266" ph="/// package.json文件Inspector视图拓展 ... " />
+            <marker date="1602571648418" expanded="true" signature="348:16204" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="508:885" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="534:875" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="599:814" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="985:1287" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="1011:1277" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="1071:1221" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="1334:1439" ph="/// 使用UIElement方式绘制Inspector ... " />
+            <marker date="1602571648418" expanded="true" signature="1498:1937" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="1649:1880" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="1947:2010" ph="/// 给UIElement添加交互 ... " />
+            <marker date="1602571648418" expanded="true" signature="2117:2472" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="2157:2209" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="2257:2351" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="2368:2462" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="2482:2559" ph="/// 创建package.json界面的UIElement交互 ... " />
+            <marker date="1602571648418" expanded="true" signature="2672:3792" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="2712:2764" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="3025:3531" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="3802:3911" ph="/// 创建插件包框架结构 ... " />
+            <marker date="1602571648418" expanded="true" signature="3992:4497" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="4507:4595" ph="/// 创建插件包框架结构后 ... " />
+            <marker date="1602571648418" expanded="true" signature="4650:4706" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="4716:4809" ph="/// 创建目录 ... " />
+            <marker date="1602571648418" expanded="true" signature="4860:5006" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="4919:4996" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="5016:5155" ph="/// 创建或修改文件 ... " />
+            <marker date="1602571648418" expanded="true" signature="5227:5666" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="5238:5332" ph="/* if (File.Exists(path)) ... */" />
+            <marker date="1602571648418" expanded="true" signature="5433:5509" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="5676:5754" ph="/// 编辑package.json界面的UIElement交互  ... " />
+            <marker date="1602571648418" expanded="true" signature="5868:6794" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="5908:5960" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="6373:6555" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="6804:6870" ph="/// 插件依赖相关UIElement交互 ... " />
+            <marker date="1602571648418" expanded="true" signature="7015:8367" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="7058:7353" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="7620:7903" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="7638:7837" ph="/* todo dependencies logic ... */" />
+            <marker date="1602571648418" expanded="true" signature="8038:8322" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="8056:8255" ph="/* todo dependencies logic ... */" />
+            <marker date="1602571648418" expanded="true" signature="8469:9347" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="8653:8784" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="8801:8867" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="8910:9115" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="9132:9337" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="9447:10376" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="9676:9763" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="9949:10036" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="10228:10315" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="10433:10992" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="10504:10957" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="11002:11161" ph="/// 创建或保存package.json ... " />
+            <marker date="1602571648418" expanded="true" signature="11277:11974" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="11564:11721" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="11738:11871" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="12070:12465" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="12209:12336" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="12475:12618" ph="/// 保存package,json版本号修改 ... " />
+            <marker date="1602571648418" expanded="true" signature="12690:12919" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="12929:13047" ph="/// 使用OnHeaderGUI,绘制的GUI可以交互 ... " />
+            <marker date="1602571648418" expanded="true" signature="13093:13534" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="13277:13413" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="13308:13375" ph="/* GUILayout绘制package.json编辑工具 ... */" />
+            <marker date="1602571648418" expanded="true" signature="13581:13636" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="13646:13724" ph="/// GUILayout方式绘制package.json编辑工具 ... " />
+            <marker date="1602571648418" expanded="true" signature="13763:16198" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="13814:13920" ph="{...}" />
+            <marker date="1602571648418" expanded="true" signature="15725:16100" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonUI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="133" column="49" lean-forward="true" selection-start-line="133" selection-start-column="49" selection-end-line="133" selection-end-column="49" />
+          <folding>
+            <marker date="1602571648591" expanded="false" signature="6:170" ph="..." />
+            <marker date="1602571648591" expanded="true" signature="189:5517" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="238:5515" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="291:351" ph="{...}" />
+            <marker date="1602571648591" expanded="false" signature="531:1348" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="1358:1416" ph="/// 初始化共用部分UI ... " />
+            <marker date="1602571648591" expanded="false" signature="1489:3887" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="1874:2002" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="2218:2353" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="2559:2690" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="2906:3035" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="3243:3371" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="3585:3720" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="3736:3798" ph="/* 依赖关系(依赖相关UI不在这里添加,在PackageJsonEditor中) ... */" />
+            <marker date="1602571648591" expanded="true" signature="3897:3955" ph="/// 初始化创建界面UI ... " />
+            <marker date="1602571648591" expanded="true" signature="3997:4030" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="4048:4106" ph="/// 初始化编辑界面UI ... " />
+            <marker date="1602571648591" expanded="true" signature="4179:5052" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="4631:4813" ph="{...}" />
+            <marker date="1602571648591" expanded="false" signature="5104:5375" ph="{...}" />
+            <marker date="1602571648591" expanded="true" signature="5164:5249" ph="{...}" />
+            <marker date="1602571648591" expanded="false" signature="5439:5509" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
