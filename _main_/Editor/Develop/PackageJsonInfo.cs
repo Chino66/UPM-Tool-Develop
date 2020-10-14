@@ -62,7 +62,6 @@ namespace UPMToolDevelop
 
         public string ToJson()
         {
-            
             // LitJson
             // var sb = new StringBuilder();
             // var jw = new JsonWriter(sb) {PrettyPrint = true};
@@ -75,8 +74,31 @@ namespace UPMToolDevelop
             // return Regex.Unescape(sb.ToString());
 
             // Newtonsoft.Json
+//            var setting = new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore};
+//            var json = JsonConvert.SerializeObject(this, Formatting.Indented, setting);
+//            return json;
+
             var setting = new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore};
-            var json = JsonConvert.SerializeObject(this, Formatting.Indented, setting);
+            var jObject = new JObject();
+            jObject["name"] = name;
+            jObject["displayName"] = displayName;
+            jObject["version"] = version;
+            jObject["unity"] = unity;
+            jObject["description"] = description;
+            jObject["type"] = type;
+
+            if (dependencies.Count > 0)
+            {
+                var ds = new JObject();
+                foreach (var dependency in dependencies)
+                {
+                    ds[dependency.packageName] = dependency.version;
+                }
+
+                jObject["dependencies"] = ds;
+            }
+
+            var json = JsonConvert.SerializeObject(jObject, Formatting.Indented, setting);
             return json;
         }
 
