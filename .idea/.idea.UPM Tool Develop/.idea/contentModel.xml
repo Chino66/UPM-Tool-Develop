@@ -5,6 +5,7 @@
     <e p="C:\Users\Administrator\.Rider2019.1\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Administrator\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_UPM Tool Develop.-811136192.00" t="ExcludeRecursive" />
     <e p="E:\GitHub\Package Projects\UPM Tool Develop" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_package_" t="Include">
           <e p="_main_" t="Include">
@@ -13,6 +14,7 @@
                 <e p="PackagePath.cs" t="Include" />
               </e>
               <e p="Develop" t="Include">
+                <e p="DependencyItem.cs" t="Include" />
                 <e p="PackageChecker.cs" t="Include" />
                 <e p="PackageJsonEditor.cs" t="Include" />
                 <e p="PackageJsonInfo.cs" t="Include" />
@@ -45,7 +47,22 @@
                 <e p="TimeUtil.cs" t="Include" />
               </e>
             </e>
+            <e p="Resources" t="Include">
+              <e p="UIElement" t="Include">
+                <e p="dependencies_item_uxml.uxml" t="Include" />
+                <e p="example_uss.uss" t="Include" />
+                <e p="example_uxml.uxml" t="Include" />
+                <e p="package_json_uss.uss" t="Include" />
+                <e p="package_json_uxml.uxml" t="Include" />
+              </e>
+            </e>
           </e>
+        </e>
+        <e p="Test" t="Include">
+          <e p="UIElementsExamples.cs" t="Include" />
+        </e>
+        <e p="UIBuilder" t="Include">
+          <e p="example.uxml" t="Include" />
         </e>
       </e>
       <e p="Editor.UPMTool.csproj" t="IncludeRecursive" />

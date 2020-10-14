@@ -206,27 +206,17 @@ namespace UPMTool
             var preview = root.Q<TextField>("preview_tf");
             preview.value = packageJsonInfo.ToJson();
 
-//            // 添加依赖按钮响应
-//            var button = root.Q<Button>("dependencies_add");
-//            button.clicked += () =>
-//            {
-//                // todo dependencies logic
-////                SavePackageJsonChange(root, packageJsonInfo, path);
-////                preview.value = packageJsonInfo.ToJson();
-////                AssetDatabase.Refresh();
-//                ProcessDependenceItems(root, true);
-//            };
-//
-//            // 移除依赖按钮响应
-//            button = root.Q<Button>("dependencies_remove");
-//            button.clicked += () =>
-//            {
-//                // todo dependencies logic
-////                SavePackageJsonChange(root, packageJsonInfo, path);
-////                preview.value = packageJsonInfo.ToJson();
-////                AssetDatabase.Refresh();
-//                ProcessDependenceItems(root, false);
-//            };
+            // 添加依赖按钮响应
+            var button = root.Q<Button>("dependencies_add");
+            button.clicked += () =>
+            {
+            };
+
+            // 移除依赖按钮响应
+            button = root.Q<Button>("dependencies_remove");
+            button.clicked += () =>
+            {
+            };
 
             // 绘制依赖项
             DrawDependencyItems(packageJsonInfo);
