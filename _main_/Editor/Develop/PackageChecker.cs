@@ -58,7 +58,8 @@ namespace UPMTool
         public static PackageJsonInfo GetPackageJsonInfo()
         {
             var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(packageJsonPath);
-            var packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(textAsset.text);
+//            var packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(textAsset.text);
+            var packageJsonInfo = PackageJsonEditor.JsonConvertToPackageJsonInfo(textAsset.text);
             return packageJsonInfo;
         }
     }
