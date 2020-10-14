@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using LitJson;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -26,7 +28,8 @@ namespace UPMToolDevelop
                 if (_currentJsonTextAsset == null)
                 {
                     _currentJsonTextAsset = (TextAsset) target;
-                    _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(_currentJsonTextAsset.text);
+//                    _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(_currentJsonTextAsset.text);
+                    _packageJsonInfo = JsonConvertToPackageJsonInfo(_currentJsonTextAsset.text);
                 }
 
                 return _currentJsonTextAsset;
@@ -41,12 +44,50 @@ namespace UPMToolDevelop
             {
                 if (_packageJsonInfo == null)
                 {
-                    _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(currentJsonTextAsset.text);
+//                    _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(currentJsonTextAsset.text);
+                    _packageJsonInfo = JsonConvertToPackageJsonInfo(currentJsonTextAsset.text);
                 }
 
                 return _packageJsonInfo;
             }
         }
+
+        public static PackageJsonInfo JsonConvertToPackageJsonInfo(string json)
+        {
+            try
+            {
+                var jObject = JsonConvert.DeserializeObject<JObject>(json);
+                var packageJson = new PackageJsonInfo();
+                packageJson.name = (string) jObject["name"];
+                packageJson.displayName = (string) jObject["displayName"];
+                packageJson.version = (string) jObject["version"];
+                packageJson.unity = (string) jObject["unity"];
+                packageJson.description = (string) jObject["description"];
+                packageJson.type = (string) jObject["type"];
+                // 依赖项
+                if (jObject.ContainsKey("dependencies"))
+                {
+                    packageJson.dependencies = new List<PackageDependency>();
+                    var ds = (JObject) jObject["dependencies"];
+                    foreach (var d in ds)
+                    {
+                        Debug.Log($"{d.Key},{d.Value}");
+                        var pd = new PackageDependency {packageName = (string) d.Key, version = (string) d.Value};
+                        packageJson.dependencies.Add(pd);
+                    }
+                }
+
+                return packageJson;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+                throw;
+            }
+
+            return null;
+        }
+
 
 //        private PackageJsonUI root;
 
@@ -66,7 +107,7 @@ namespace UPMToolDevelop
                 root.InitUIElementEditor(packageJsonInfo, path);
                 return root;
             }
-            
+
             return base.CreateInspectorGUI();
         }
 
@@ -120,7 +161,6 @@ namespace UPMToolDevelop
         /// <param name="content"></param>
         private static void CreateTextFile(string path, string content)
         {
-
             var dir = Path.GetDirectoryName(path);
 
             if (Directory.Exists(dir) == false)

@@ -22,7 +22,7 @@ namespace UPMTool
         private readonly VisualElement _dependencyItemsRoot;
 
         private readonly VisualElement _noneDependenciesTip;
-        
+
 //        private List<>
 
         private PackageJsonUI()
@@ -40,7 +40,7 @@ namespace UPMTool
             _dependenciesItemVisualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(uxmlPath);
 
             _dependenciesItemQueue = new Queue<VisualElement>();
-            
+
             _dependencyItemsRoot = this.Q<VisualElement>("dependencies_item_root");
             _noneDependenciesTip = this.Q<VisualElement>("dependencies_none_tip");
         }
@@ -208,15 +208,11 @@ namespace UPMTool
 
             // 添加依赖按钮响应
             var button = root.Q<Button>("dependencies_add");
-            button.clicked += () =>
-            {
-            };
+            button.clicked += () => { };
 
             // 移除依赖按钮响应
             button = root.Q<Button>("dependencies_remove");
-            button.clicked += () =>
-            {
-            };
+            button.clicked += () => { };
 
             // 绘制依赖项
             DrawDependencyItems(packageJsonInfo);
@@ -231,11 +227,9 @@ namespace UPMTool
             var dependencies = packageJsonInfo.dependencies;
             foreach (var pair in dependencies)
             {
-                Debug.Log($"Dependency Item is {pair.Key},{pair.Value}");
-
-                DrawDependencyItem(pair.Key, pair.Value.ToString());
+                DrawDependencyItem(pair.packageName, pair.version);
             }
-            
+
             if (_dependencyItemsRoot.childCount <= 0)
             {
                 _dependencyItemsRoot.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
