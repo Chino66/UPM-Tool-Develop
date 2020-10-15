@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace UPMTool
 {
@@ -17,10 +18,5 @@ namespace UPMTool
         /// 插件版本号(或者插件引用路径)
         /// </summary>
         public string version;
-
-        public string ToString()
-        {
-            return $"PackageDependency ToString is {packageName}:{version}";
-        }
     }
 }

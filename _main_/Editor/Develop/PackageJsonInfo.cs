@@ -1,16 +1,8 @@
-using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Text;
-using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using UnityEditor;
 using UnityEngine;
 using UPMTool;
-using Object = UnityEngine.Object;
-
-// using LitJson;
 
 namespace UPMToolDevelop
 {
@@ -56,11 +48,8 @@ namespace UPMToolDevelop
         public string type = "";
 
         /// <summary>
-        /// 插件包依赖
-        /// todo 可编辑ui没有做
-        /// JObject是Newtonsoft.Json中的键值对类
+        /// 插件包依赖项数组
         /// </summary>
-        // public JsonData dependencies = null;
         public List<PackageDependency> dependencies;
 
         public string ToJson()
@@ -81,25 +70,35 @@ namespace UPMToolDevelop
 //            var json = JsonConvert.SerializeObject(this, Formatting.Indented, setting);
 //            return json;
 
-            return "";
+//            return "";
             var setting = new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore};
-            var jObject = new JObject();
-            jObject["name"] = name;
-            jObject["displayName"] = displayName;
-            jObject["version"] = version;
-            jObject["unity"] = unity;
-            jObject["description"] = description;
-            jObject["type"] = type;
+            var jObject = new JObject
+            {
+                ["name"] = name,
+                ["displayName"] = displayName,
+                ["version"] = version,
+                ["unity"] = unity,
+                ["description"] = description,
+                ["type"] = type
+            };
 
-            if (dependencies.Count > 0)
+            if (dependencies != null && dependencies.Count > 0)
             {
                 var ds = new JObject();
                 foreach (var dependency in dependencies)
                 {
+                    if (string.IsNullOrEmpty(dependency.packageName) || string.IsNullOrEmpty(dependency.version))
+                    {
+                        continue;
+                    }
+
                     ds[dependency.packageName] = dependency.version;
                 }
 
-                jObject["dependencies"] = ds;
+                if (ds.Count > 0)
+                {
+                    jObject["dependencies"] = ds;
+                }
             }
 
             var json = JsonConvert.SerializeObject(jObject, Formatting.Indented, setting);

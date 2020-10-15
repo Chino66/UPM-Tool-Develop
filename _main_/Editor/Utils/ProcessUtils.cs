@@ -11,7 +11,6 @@ namespace UPMTool
 
         public static void method()
         {
-            // todo 异步
             ReadStdOutput += new DelReadStdOutput(ReadStdOutputAction);
 
             Process proc = new Process();
