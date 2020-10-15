@@ -44,6 +44,33 @@ PackagePath.MainPath就是为了解决这个问题而设计的,PackagePath.MainP
 
 不必关心插件包在什么环境下,PackagePath.MainPath始终可以得到正确的_main_的位置
 
+**关于插件包真实路径的补充**
+其实unity中是提供了插件包路径的方法,但它是internal修饰的内部类,并没有开放给开发者
+下面的代码可以获取到插件根目录的路径:
+```csharp
+using System.Runtime.CompilerServices;
+using UnityEngine.Bindings;
+
+namespace UnityEditor.PackageManager
+{
+	[StaticAccessor("PackageManager", StaticAccessorType.DoubleColon)]
+	[NativeHeader("Modules/PackageManager/Editor/Public/PackageManager.h")]
+	[NativeHeader("Modules/PackageManager/Editor/PackageManagerFolders.h")]
+	internal class Folders
+	{
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		public static extern string GetPackagesPath();
+
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		public static extern bool IsPackagedAssetPath(string path);
+
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		public static extern string[] GetPackagesPaths();
+	}
+}
+```
+因为api最终调用的是c++代码,所以想通过反射调用api也是不行的.
+
 ## 1.2 使用git发布和更新插件
 
 ### 1.2.1 使用git发布插件
