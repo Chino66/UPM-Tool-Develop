@@ -34,7 +34,6 @@ namespace UPMTool
             var path = info.FullName;
 
             // 新开一个进程,运行.bat
-            // todo 异步
             Process proc = new Process();
             proc.StartInfo.FileName = path;
             proc.StartInfo.CreateNoWindow = true;

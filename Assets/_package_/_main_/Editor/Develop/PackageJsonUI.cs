@@ -23,8 +23,6 @@ namespace UPMTool
 
         private readonly VisualElement _noneDependenciesTip;
 
-//        private List<>
-
         private PackageJsonUI()
         {
             var uxmlPath = Path.Combine(PackagePath.MainPath, @"Resources/UIElement/package_json_uxml.uxml");
@@ -51,57 +49,64 @@ namespace UPMTool
         public void InitUIElementCommon(PackageJsonInfo packageJsonInfo)
         {
             var root = this;
+
             // 预览
             var preview = root.Q<TextField>("preview_tf");
             preview.value = packageJsonInfo.ToJson();
 
             // 插件名 com.xxx.xxx
             var textField = root.Q<TextField>("name_tf");
-            textField.value = packageJsonInfo.name;
-            textField.RegisterValueChangedCallback(value =>
-            {
-                packageJsonInfo.name = value.newValue;
-                preview.value = packageJsonInfo.ToJson();
-            });
+            textField.bindingPath = "name";
+//            textField.value = packageJsonInfo.name;
+//            textField.RegisterValueChangedCallback(value =>
+//            {
+//                packageJsonInfo.name = value.newValue;
+//                preview.value = packageJsonInfo.ToJson();
+//            });
 
             // 显示名称
             textField = root.Q<TextField>("displayName_tf");
-            textField.value = packageJsonInfo.displayName;
-            textField.RegisterValueChangedCallback(value =>
-            {
-                packageJsonInfo.displayName = value.newValue;
-                preview.value = packageJsonInfo.ToJson();
-            });
+            textField.bindingPath = "displayName";
+//            textField.value = packageJsonInfo.displayName;
+//            textField.RegisterValueChangedCallback(value =>
+//            {
+//                packageJsonInfo.displayName = value.newValue;
+//                preview.value = packageJsonInfo.ToJson();
+//            });
 
             // 版本
             textField = root.Q<TextField>("version_tf");
-            textField.value = packageJsonInfo.version;
-            textField.RegisterValueChangedCallback(value =>
-            {
-                packageJsonInfo.version = value.newValue;
-                preview.value = packageJsonInfo.ToJson();
-            });
+            textField.bindingPath = "version";
+//            textField.value = packageJsonInfo.version;
+//            textField.RegisterValueChangedCallback(value =>
+//            {
+//                packageJsonInfo.version = value.newValue;
+//                preview.value = packageJsonInfo.ToJson();
+//            });
 
             // unity版本,例:2019.4
             textField = root.Q<TextField>("unity_tf");
-            textField.value = packageJsonInfo.unity;
-            textField.RegisterValueChangedCallback(value =>
-            {
-                packageJsonInfo.unity = value.newValue;
-                preview.value = packageJsonInfo.ToJson();
-            });
+            textField.bindingPath = "unity";
+//            textField.value = packageJsonInfo.unity;
+//            textField.RegisterValueChangedCallback(value =>
+//            {
+//                packageJsonInfo.unity = value.newValue;
+//                preview.value = packageJsonInfo.ToJson();
+//            });
 
             // 类型(内部保留使用)
             textField = root.Q<TextField>("type_tf");
-            textField.value = packageJsonInfo.type;
-            textField.RegisterValueChangedCallback(value =>
-            {
-                packageJsonInfo.type = value.newValue;
-                preview.value = packageJsonInfo.ToJson();
-            });
+            textField.bindingPath = "type";
+//            textField.value = packageJsonInfo.type;
+//            textField.RegisterValueChangedCallback(value =>
+//            {
+//                packageJsonInfo.type = value.newValue;
+//                preview.value = packageJsonInfo.ToJson();
+//            });
 
             // 描述
-//            textField = root.Q<TextField>("description_tf");
+            textField = root.Q<TextField>("description_tf");
+            textField.bindingPath = "description";
 //            textField.value = packageJsonInfo.description;
 //            textField.RegisterValueChangedCallback(value =>
 //            {
@@ -115,14 +120,9 @@ namespace UPMTool
             var label = root.Q<Label>("msg_lab");
             label.text = "";
 
-            // 描述 todo test
-            textField = root.Q<TextField>("description_tf");
-//            textField.value = packageJsonInfo.description;
-//            textField.RegisterValueChangedCallback(value =>
-//            {
-//                packageJsonInfo.description = value.newValue;
-//                preview.value = packageJsonInfo.ToJson();
-//            });
+            // PackageJsonInfo和UIElement绑定
+            var serializedObject = new SerializedObject(packageJsonInfo);
+            root.Bind(serializedObject);
         }
 
         /// <summary>
@@ -143,7 +143,15 @@ namespace UPMTool
                 // 创建插件包的动作
                 PackageJsonEditor.CreatePackageAction(packageJsonInfo);
                 // 创建或修改package.json
-                PackageJsonEditor.SavePackageJsonChange(root, packageJsonInfo, path);
+                var rst = PackageJsonEditor.SavePackageJsonChange(packageJsonInfo, path, out var msg);
+                DrawSavePackageJsonInfoRet(rst, msg);
+
+                // 保存失败直接结束
+                if (rst == false)
+                {
+                    return;
+                }
+
                 preview.value = packageJsonInfo.ToJson();
                 // 刷新,显示插件包框架
                 AssetDatabase.Refresh();
@@ -175,13 +183,21 @@ namespace UPMTool
 
             // TODO 编辑按钮-撤销修改响应点击
             var button = root.Q<Button>("revert_btn");
-            button.clicked += () => { Debug.Log("revert todo"); };
+            button.clicked += () => { Debug.Log("抱歉!撤销功能还没做..."); };
 
             // 编辑按钮-应用修改响应点击
             button = root.Q<Button>("apply_btn");
             button.clicked += () =>
             {
-                PackageJsonEditor.SavePackageJsonChange(root, packageJsonInfo, path);
+                var rst = PackageJsonEditor.SavePackageJsonChange(packageJsonInfo, path, out var msg);
+                DrawSavePackageJsonInfoRet(rst, msg);
+
+                // 保存失败直接结束
+                if (rst == false)
+                {
+                    return;
+                }
+
                 preview.value = packageJsonInfo.ToJson();
                 AssetDatabase.Refresh();
             };
@@ -194,6 +210,25 @@ namespace UPMTool
             InitDependenciesUIElement(root, packageJsonInfo, path, true);
         }
 
+        private void DrawSavePackageJsonInfoRet(bool rst, string msg)
+        {
+            // todo 提示显示时间,一段时间后消失
+            var label = this.Q<Label>("msg_lab");
+
+            label.text = msg;
+
+            if (rst == false)
+            {
+                label.RemoveFromClassList("color_green");
+                label.AddToClassList("color");
+                return;
+            }
+            else
+            {
+                label.RemoveFromClassList("color");
+                label.AddToClassList("color_green");
+            }
+        }
 
         /// <summary>
         /// 插件依赖相关UIElement交互
@@ -217,14 +252,14 @@ namespace UPMTool
 
             // 添加依赖按钮响应
             var button = root.Q<Button>("dependencies_add");
-            button.clicked += () => { };
+            button.clicked += () => { AddDependencyItem(packageJsonInfo); };
 
             // 移除依赖按钮响应
             button = root.Q<Button>("dependencies_remove");
-            button.clicked += () => { };
+            button.clicked += () => { RemoveDependencyItem(packageJsonInfo); };
 
             // 绘制依赖项
-//            DrawDependencyItems(packageJsonInfo);
+            DrawDependencyItems(packageJsonInfo);
         }
 
         /// <summary>
@@ -233,12 +268,74 @@ namespace UPMTool
         /// <param name="packageJsonInfo"></param>
         private void DrawDependencyItems(PackageJsonInfo packageJsonInfo)
         {
-            var dependencies = packageJsonInfo.dependencies;
-            foreach (var pair in dependencies)
+            var serializedObject = new SerializedObject(packageJsonInfo);
+            var dependencies = serializedObject.FindProperty("dependencies");
+            for (int i = 0; i < packageJsonInfo.dependencies.Count; i++)
             {
-                DrawDependencyItem(pair.packageName, pair.version);
+                var property = dependencies.GetArrayElementAtIndex(i);
+                DrawDependencyItem(property);
             }
 
+            DrawExistDependencyItem();
+        }
+
+        /// <summary>
+        /// 绘制依赖项
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        private void DrawDependencyItem(SerializedProperty dependency)
+        {
+            var i = GetDependenciesItem();
+            _dependencyItemsRoot.Add(i);
+
+            var textField = i.Q<TextField>("dependencies_name_tf");
+            textField.bindingPath = "packageName";
+            var packageName = dependency.FindPropertyRelative("packageName");
+            textField.BindProperty(packageName);
+
+            textField = i.Q<TextField>("dependencies_version_tf");
+            textField.bindingPath = "version";
+            var version = dependency.FindPropertyRelative("version");
+            textField.BindProperty(version);
+        }
+
+        /// <summary>
+        /// 添加依赖项
+        /// </summary>
+        /// <param name="packageJsonInfo"></param>
+        private void AddDependencyItem(PackageJsonInfo packageJsonInfo)
+        {
+            var dependency = new PackageDependency();
+            packageJsonInfo.dependencies.Add(dependency);
+
+            var serializedObject = new SerializedObject(packageJsonInfo);
+            var dependencies = serializedObject.FindProperty("dependencies");
+
+            var property = dependencies.GetArrayElementAtIndex(packageJsonInfo.dependencies.Count - 1);
+            DrawDependencyItem(property);
+
+            DrawExistDependencyItem();
+        }
+
+        /// <summary>
+        /// 移除依赖项
+        /// </summary>
+        /// <param name="packageJsonInfo"></param>
+        private void RemoveDependencyItem(PackageJsonInfo packageJsonInfo)
+        {
+            var lastIndex = packageJsonInfo.dependencies.Count - 1;
+            packageJsonInfo.dependencies.RemoveAt(lastIndex);
+
+            var i = _dependencyItemsRoot.ElementAt(lastIndex);
+            ReturnDependenciesItem(i);
+            _dependencyItemsRoot.RemoveAt(lastIndex);
+
+            DrawExistDependencyItem();
+        }
+
+        private void DrawExistDependencyItem()
+        {
             if (_dependencyItemsRoot.childCount <= 0)
             {
                 _dependencyItemsRoot.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
@@ -251,23 +348,7 @@ namespace UPMTool
             }
         }
 
-        /// <summary>
-        /// 绘制依赖项
-        /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        private void DrawDependencyItem(string key, string value)
-        {
-            var i = GetDependenciesItem();
-            _dependencyItemsRoot.Add(i);
-
-            var textField = i.Q<TextField>("dependencies_name_tf");
-            textField.value = key;
-            textField = i.Q<TextField>("dependencies_version_tf");
-            textField.value = value;
-        }
-
-        public VisualElement GetDependenciesItem()
+        private VisualElement GetDependenciesItem()
         {
             if (_dependenciesItemQueue.Count > 0)
             {
@@ -277,8 +358,9 @@ namespace UPMTool
             return _dependenciesItemVisualTreeAsset != null ? _dependenciesItemVisualTreeAsset.CloneTree() : null;
         }
 
-        public void ReturnDependenciesItem(VisualElement item)
+        private void ReturnDependenciesItem(VisualElement item)
         {
+            item.Unbind();
             _dependenciesItemQueue.Enqueue(item);
         }
     }

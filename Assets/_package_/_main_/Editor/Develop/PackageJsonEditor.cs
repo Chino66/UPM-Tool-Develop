@@ -15,36 +15,10 @@ namespace UPMToolDevelop
     /// <summary>
     /// package.json文件Inspector视图拓展
     /// </summary>
-    [CustomEditor(typeof(PackageManifestImporter))]
-    public class PackageJsonEditor : ScriptedImporterEditor
+    [CustomEditor(typeof(TextAsset))]
+    public class PackageJsonEditor : Editor
     {
-        public override bool showImportedObject => false;
-
-        protected override bool useAssetDrawPreview => false;
-
-        protected override Type extraDataType => typeof(PackageJsonInfo);
-
         private const string FileName = "package.json";
-
-//        private TextAsset _currentJsonTextAsset;
-//
-//        private TextAsset currentJsonTextAsset
-//        {
-//            get
-//            {
-//                if (_currentJsonTextAsset == null)
-//                {
-//                    PackageManifestImporter packageManifestImporter = target as PackageManifestImporter;
-//                    string assetPath = packageManifestImporter.assetPath;
-//                    Debug.Log($"path is {assetPath}");
-//                    _currentJsonTextAsset = (TextAsset) target;
-////                    _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(_currentJsonTextAsset.text);
-//                    _packageJsonInfo = JsonConvertToPackageJsonInfo(_currentJsonTextAsset.text);
-//                }
-//
-//                return _currentJsonTextAsset;
-//            }
-//        }
 
         private PackageJsonInfo _packageJsonInfo;
 
@@ -52,16 +26,11 @@ namespace UPMToolDevelop
         {
             get
             {
-                return base.extraDataTarget as PackageJsonInfo;
+                if (_packageJsonInfo != null) return _packageJsonInfo;
 
-//                if (_packageJsonInfo == null)
-//                {
-////                    _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(currentJsonTextAsset.text);
-//                    var asset = (TextAsset) target;
-//                    _packageJsonInfo = JsonConvertToPackageJsonInfo(asset, asset.text);
-//                }
-//
-//                return _packageJsonInfo;
+                var asset = (TextAsset) target;
+                _packageJsonInfo = JsonConvertToPackageJsonInfo(asset, asset.text);
+                return _packageJsonInfo;
             }
         }
 
@@ -70,21 +39,23 @@ namespace UPMToolDevelop
             try
             {
                 var jObject = JsonConvert.DeserializeObject<JObject>(json);
-                var packageJson = new PackageJsonInfo();
+                var packageJson = (PackageJsonInfo) CreateInstance(typeof(PackageJsonInfo));
                 packageJson.name = (string) jObject["name"];
                 packageJson.displayName = (string) jObject["displayName"];
                 packageJson.version = (string) jObject["version"];
                 packageJson.unity = (string) jObject["unity"];
                 packageJson.description = (string) jObject["description"];
                 packageJson.type = (string) jObject["type"];
-                // 依赖项
+                packageJson.dependencies = new List<PackageDependency>();
                 if (jObject.ContainsKey("dependencies"))
                 {
-                    packageJson.dependencies = new List<PackageDependency>();
                     var ds = (JObject) jObject["dependencies"];
                     foreach (var d in ds)
                     {
                         Debug.Log($"{d.Key},{d.Value}");
+//                        var pd = (PackageDependency)CreateInstance(typeof(PackageDependency));
+//                        pd.packageName = (string) d.Key;
+//                        pd.version = (string) d.Value;
                         var pd = new PackageDependency {packageName = (string) d.Key, version = (string) d.Value};
                         packageJson.dependencies.Add(pd);
                     }
@@ -97,23 +68,7 @@ namespace UPMToolDevelop
                 Debug.LogError(e);
                 throw;
             }
-
-            return null;
         }
-
-        private void OnEnable()
-        {
-            base.OnEnable();
-            Debug.Log("PackageJsonEditor.OnEnable");
-        }
-
-        protected override void InitializeExtraDataInstance(UnityEngine.Object extraData, int targetIndex)
-        {
-//            ReadPackageManifest(base.targets[targetIndex], (PackageManifestState)extraData);
-            Debug.LogError($"{extraData}, {targetIndex}, {base.targets[targetIndex]}");
-        }
-
-//        private PackageJsonUI root;
 
         /// <summary>
         /// 使用UIElement方式绘制Inspector
@@ -252,49 +207,18 @@ namespace UPMToolDevelop
             return msg;
         }
 
-        /// <summary>
-        /// 创建或保存package.json
-        /// </summary>
-        /// <param name="packageJsonInfo"></param>
-        /// <param name="target"></param>
-        public static void SavePackageJsonChange(VisualElement root, PackageJsonInfo packageJsonInfo, string path)
+        public static bool SavePackageJsonChange(PackageJsonInfo packageJsonInfo, string path, out string msg)
         {
-            // todo 这个类不处理root内容
             // check
             var rst = PackageJsonInfoCheck(packageJsonInfo, out var retCode);
 
             // tip
-            var msg = RetCodeToMsg(retCode);
+            msg = RetCodeToMsg(retCode);
 
-            var label = root.Q<Label>("msg_lab");
-
-            label.text = msg;
-
-            if (rst == false)
-            {
-                label.RemoveFromClassList("color_green");
-                label.AddToClassList("color");
-                return;
-            }
-            else
-            {
-                label.RemoveFromClassList("color");
-                label.AddToClassList("color_green");
-            }
-
-            // PackageJsonInfo转为text进行保存
-            string json = packageJsonInfo.ToJson();
-            CreateTextFile(path, json);
-        }
-
-        public static bool SavePackageJsonChange(PackageJsonInfo packageJsonInfo, string path)
-        {
-            // check
-            var rst = PackageJsonInfoCheck(packageJsonInfo, out var retCode);
             if (rst == false)
             {
                 // 提示错误
-                Debug.LogError("检测失败");
+                Debug.LogError($"检测失败,{msg}");
                 return false;
             }
 
@@ -313,7 +237,7 @@ namespace UPMToolDevelop
         {
             var packageJsonInfo = PackageChecker.GetPackageJsonInfo();
             packageJsonInfo.version = version;
-            return SavePackageJsonChange(packageJsonInfo, PackageChecker.packageJsonPath);
+            return SavePackageJsonChange(packageJsonInfo, PackageChecker.packageJsonPath, out var msg);
         }
 
         /// <summary>
@@ -329,8 +253,6 @@ namespace UPMToolDevelop
             // package.json绘制
             if (path.ToLower().EndsWith(FileName))
             {
-                // GUILayout绘制package.json编辑工具
-//                DrawPackageJson();
                 return;
             }
 
