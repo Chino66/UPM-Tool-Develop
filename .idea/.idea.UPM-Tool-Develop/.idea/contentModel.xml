@@ -23,7 +23,7 @@
               <e p="Editor.UPMTool.asmdef" t="Include" />
               <e p="Example.cs" t="Include" />
               <e p="PackageCreateTool" t="Include">
-                <e p="PackageCreateTool.cs" t="Include" />
+                <e p="PackageJsonTool.cs" t="Include" />
               </e>
               <e p="PackageReleaseTool" t="Include">
                 <e p="CMDTool.cs" t="Include" />

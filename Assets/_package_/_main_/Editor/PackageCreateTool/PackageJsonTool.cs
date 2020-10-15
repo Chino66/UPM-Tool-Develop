@@ -7,12 +7,12 @@ using UnityEngine.UIElements;
 using UPMTool;
 using UPMToolDevelop;
 
-public class PackageCreateTool : EditorWindow
+public class PackageJsonTool : EditorWindow
 {
     [MenuItem("Tool/UPM Tool/Package Json Tool")]
     public static void Show()
     {
-        PackageCreateTool pct = GetWindow<PackageCreateTool>();
+        PackageJsonTool pct = GetWindow<PackageJsonTool>();
         pct.titleContent = new GUIContent("Package Json Tool");
     }
 
@@ -31,10 +31,6 @@ public class PackageCreateTool : EditorWindow
                 {
                     _packageJsonInfo = PackageChecker.GetPackageJsonInfo();
                 }
-//                else
-//                {
-//                    _packageJsonInfo = new PackageJsonInfo();
-//                }
             }
 
             return _packageJsonInfo;

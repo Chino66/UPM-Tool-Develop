@@ -19,3 +19,5 @@
 1. "Package Create Tool"改名为"Package Json Tool",若检查不到package.json,则绘制创建界面,否则绘制package.json信息,且可以编辑
 2. PackageJsonEditor逻辑和界面代码重构,使用UIElements的Bind实现UI控件与数据绑定
 3. "Package Json Tool"添加了插件依赖的编辑界面,并重新设计了编辑界面
+4. 使用UPMTool创建插件模板时,默认对创建的Package.json添加"UPMTool"的插件依赖
+    * 创建的插件并不是必须依赖"UPMTool",而是"UPMTool"可以给插件拓展更多功能,如发布,更新等
