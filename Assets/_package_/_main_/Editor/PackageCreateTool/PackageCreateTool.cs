@@ -31,10 +31,10 @@ public class PackageCreateTool : EditorWindow
                 {
                     _packageJsonInfo = PackageChecker.GetPackageJsonInfo();
                 }
-                else
-                {
-                    _packageJsonInfo = new PackageJsonInfo();
-                }
+//                else
+//                {
+//                    _packageJsonInfo = new PackageJsonInfo();
+//                }
             }
 
             return _packageJsonInfo;

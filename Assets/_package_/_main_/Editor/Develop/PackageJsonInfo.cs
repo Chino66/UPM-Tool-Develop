@@ -1,11 +1,14 @@
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using UnityEditor;
 using UnityEngine;
 using UPMTool;
+using Object = UnityEngine.Object;
 
 // using LitJson;
 
@@ -14,7 +17,7 @@ namespace UPMToolDevelop
     /// <summary>
     /// 插件开发信息
     /// </summary>
-    public class PackageJsonInfo
+    public class PackageJsonInfo : ScriptableObject
     {
         /// <summary>
         /// 插件包名成:com.xx.xx
@@ -78,6 +81,7 @@ namespace UPMToolDevelop
 //            var json = JsonConvert.SerializeObject(this, Formatting.Indented, setting);
 //            return json;
 
+            return "";
             var setting = new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore};
             var jObject = new JObject();
             jObject["name"] = name;

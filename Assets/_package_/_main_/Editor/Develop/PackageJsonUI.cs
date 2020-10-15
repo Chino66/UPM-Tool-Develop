@@ -101,19 +101,28 @@ namespace UPMTool
             });
 
             // 描述
-            textField = root.Q<TextField>("description_tf");
-            textField.value = packageJsonInfo.description;
-            textField.RegisterValueChangedCallback(value =>
-            {
-                packageJsonInfo.description = value.newValue;
-                preview.value = packageJsonInfo.ToJson();
-            });
+//            textField = root.Q<TextField>("description_tf");
+//            textField.value = packageJsonInfo.description;
+//            textField.RegisterValueChangedCallback(value =>
+//            {
+//                packageJsonInfo.description = value.newValue;
+//                preview.value = packageJsonInfo.ToJson();
+//            });
 
             // 依赖关系(依赖相关UI不在这里添加,在PackageJsonEditor中)
 
             // 返回消息
             var label = root.Q<Label>("msg_lab");
             label.text = "";
+
+            // 描述 todo test
+            textField = root.Q<TextField>("description_tf");
+//            textField.value = packageJsonInfo.description;
+//            textField.RegisterValueChangedCallback(value =>
+//            {
+//                packageJsonInfo.description = value.newValue;
+//                preview.value = packageJsonInfo.ToJson();
+//            });
         }
 
         /// <summary>
@@ -215,7 +224,7 @@ namespace UPMTool
             button.clicked += () => { };
 
             // 绘制依赖项
-            DrawDependencyItems(packageJsonInfo);
+//            DrawDependencyItems(packageJsonInfo);
         }
 
         /// <summary>

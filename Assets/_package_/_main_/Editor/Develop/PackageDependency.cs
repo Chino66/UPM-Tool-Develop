@@ -1,8 +1,11 @@
+using System;
+
 namespace UPMTool
 {
     /// <summary>
     /// 插件依赖的插件包信息
     /// </summary>
+    [Serializable]
     public class PackageDependency
     {
         /// <summary>
