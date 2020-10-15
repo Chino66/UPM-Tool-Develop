@@ -5,6 +5,7 @@ using LitJson;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEditor;
+using UnityEditor.Experimental.AssetImporters;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UPMTool;
@@ -14,27 +15,36 @@ namespace UPMToolDevelop
     /// <summary>
     /// package.json文件Inspector视图拓展
     /// </summary>
-    [CustomEditor(typeof(TextAsset))]
-    public class PackageJsonEditor : Editor
+    [CustomEditor(typeof(PackageManifestImporter))]
+    public class PackageJsonEditor : ScriptedImporterEditor
     {
+        public override bool showImportedObject => false;
+
+        protected override bool useAssetDrawPreview => false;
+
+        protected override Type extraDataType => typeof(PackageJsonInfo);
+
         private const string FileName = "package.json";
 
-        private TextAsset _currentJsonTextAsset;
-
-        private TextAsset currentJsonTextAsset
-        {
-            get
-            {
-                if (_currentJsonTextAsset == null)
-                {
-                    _currentJsonTextAsset = (TextAsset) target;
-//                    _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(_currentJsonTextAsset.text);
-                    _packageJsonInfo = JsonConvertToPackageJsonInfo(_currentJsonTextAsset.text);
-                }
-
-                return _currentJsonTextAsset;
-            }
-        }
+//        private TextAsset _currentJsonTextAsset;
+//
+//        private TextAsset currentJsonTextAsset
+//        {
+//            get
+//            {
+//                if (_currentJsonTextAsset == null)
+//                {
+//                    PackageManifestImporter packageManifestImporter = target as PackageManifestImporter;
+//                    string assetPath = packageManifestImporter.assetPath;
+//                    Debug.Log($"path is {assetPath}");
+//                    _currentJsonTextAsset = (TextAsset) target;
+////                    _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(_currentJsonTextAsset.text);
+//                    _packageJsonInfo = JsonConvertToPackageJsonInfo(_currentJsonTextAsset.text);
+//                }
+//
+//                return _currentJsonTextAsset;
+//            }
+//        }
 
         private PackageJsonInfo _packageJsonInfo;
 
@@ -42,17 +52,20 @@ namespace UPMToolDevelop
         {
             get
             {
-                if (_packageJsonInfo == null)
-                {
-//                    _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(currentJsonTextAsset.text);
-                    _packageJsonInfo = JsonConvertToPackageJsonInfo(currentJsonTextAsset.text);
-                }
+                return base.extraDataTarget as PackageJsonInfo;
 
-                return _packageJsonInfo;
+//                if (_packageJsonInfo == null)
+//                {
+////                    _packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(currentJsonTextAsset.text);
+//                    var asset = (TextAsset) target;
+//                    _packageJsonInfo = JsonConvertToPackageJsonInfo(asset, asset.text);
+//                }
+//
+//                return _packageJsonInfo;
             }
         }
 
-        public static PackageJsonInfo JsonConvertToPackageJsonInfo(string json)
+        public static PackageJsonInfo JsonConvertToPackageJsonInfo(TextAsset asset, string json)
         {
             try
             {
@@ -88,6 +101,17 @@ namespace UPMToolDevelop
             return null;
         }
 
+        private void OnEnable()
+        {
+            base.OnEnable();
+            Debug.Log("PackageJsonEditor.OnEnable");
+        }
+
+        protected override void InitializeExtraDataInstance(UnityEngine.Object extraData, int targetIndex)
+        {
+//            ReadPackageManifest(base.targets[targetIndex], (PackageManifestState)extraData);
+            Debug.LogError($"{extraData}, {targetIndex}, {base.targets[targetIndex]}");
+        }
 
 //        private PackageJsonUI root;
 

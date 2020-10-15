@@ -59,7 +59,7 @@ namespace UPMTool
         {
             var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(packageJsonPath);
 //            var packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(textAsset.text);
-            var packageJsonInfo = PackageJsonEditor.JsonConvertToPackageJsonInfo(textAsset.text);
+            var packageJsonInfo = PackageJsonEditor.JsonConvertToPackageJsonInfo(textAsset, textAsset.text);
             return packageJsonInfo;
         }
     }
