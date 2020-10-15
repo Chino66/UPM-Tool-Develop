@@ -260,5 +260,18 @@ namespace UPMToolDevelop
             var text = (TextAsset) target;
             GUILayout.TextArea(text.text);
         }
+
+        /// <summary>
+        /// 创建插件package.json时,默认添加"UPMTool"依赖
+        /// "com.chino.upmtool": "ssh://git@github.com/Chino66/UPM-Tool-Develop.git#upm",
+        /// </summary>
+        /// <param name="packageJsonInfo"></param>
+        public static void AddUPMToolDependency(PackageJsonInfo packageJsonInfo)
+        {
+            var dependency = new PackageDependency();
+            dependency.packageName = "com.chino.upmtool";
+            dependency.version = "ssh://git@github.com/Chino66/UPM-Tool-Develop.git#upm";
+            packageJsonInfo.dependencies.Add(dependency);
+        }
     }
 }

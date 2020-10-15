@@ -142,6 +142,8 @@ namespace UPMTool
             {
                 // 创建插件包的动作
                 PackageJsonEditor.CreatePackageAction(packageJsonInfo);
+                // 添加"UPMTool"依赖
+                PackageJsonEditor.AddUPMToolDependency(packageJsonInfo);
                 // 创建或修改package.json
                 var rst = PackageJsonEditor.SavePackageJsonChange(packageJsonInfo, path, out var msg);
                 DrawSavePackageJsonInfoRet(rst, msg);
