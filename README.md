@@ -11,6 +11,9 @@
 
 具体功能,详见工具内部的README.md
 
+安装插件:
+在"Package Manager"中使用git方式安装,输入:"ssh://git@github.com/Chino66/UPM-Tool-Develop.git#upm"
+
 注意:
 1. 插件需要.NET 4.x环境
     * File-Player Settings-Api Compatibillity Level* 选择.NET 4.x
