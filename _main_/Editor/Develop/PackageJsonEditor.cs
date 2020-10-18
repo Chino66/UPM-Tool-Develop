@@ -29,54 +29,11 @@ namespace UPMToolDevelop
                 if (_packageJsonInfo != null) return _packageJsonInfo;
 
                 var asset = (TextAsset) target;
-                _packageJsonInfo = JsonConvertToPackageJsonInfo(asset, asset.text);
+                _packageJsonInfo = PackageJson.Parse(asset.text);
                 return _packageJsonInfo;
             }
         }
-
-        public static PackageJsonInfo JsonConvertToPackageJsonInfo(TextAsset asset, string json)
-        {
-            try
-            {
-                var jObject = JsonConvert.DeserializeObject<JObject>(json);
-                var packageJson = (PackageJsonInfo) CreateInstance(typeof(PackageJsonInfo));
-                packageJson.name = (string) jObject["name"];
-                packageJson.displayName = (string) jObject["displayName"];
-                packageJson.version = (string) jObject["version"];
-                packageJson.unity = (string) jObject["unity"];
-                packageJson.description = (string) jObject["description"];
-                packageJson.type = (string) jObject["type"];
-                // 读取Unity依赖方式
-                packageJson.dependencies = new List<PackageDependency>();
-                if (jObject.ContainsKey("dependencies"))
-                {
-                    var ds = (JObject) jObject["dependencies"];
-                    foreach (var d in ds)
-                    {
-                        var pd = new PackageDependency {packageName = (string) d.Key, version = (string) d.Value};
-                        packageJson.dependencies.Add(pd);
-                    }
-                }
-                // 读取UPMTool依赖方式
-                packageJson.dependenciesUt = new List<PackageDependency>();
-                if (jObject.ContainsKey("dependenciesUt"))
-                {
-                    var ds = (JObject) jObject["dependenciesUt"];
-                    foreach (var d in ds)
-                    {
-                        var pd = new PackageDependency {packageName = (string) d.Key, version = (string) d.Value};
-                        packageJson.dependenciesUt.Add(pd);
-                    }
-                }
-                return packageJson;
-            }
-            catch (Exception e)
-            {
-                Debug.LogError(e);
-                throw;
-            }
-        }
-
+        
         /// <summary>
         /// 使用UIElement方式绘制Inspector
         /// </summary>
@@ -229,7 +186,7 @@ namespace UPMToolDevelop
                 return false;
             }
 
-            string json = packageJsonInfo.ToJson();
+            var json = PackageJson.ToJson(packageJsonInfo);
             CreateTextFile(path, json);
 
             return true;

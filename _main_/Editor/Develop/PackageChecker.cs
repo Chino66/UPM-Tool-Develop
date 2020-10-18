@@ -15,7 +15,7 @@ namespace UPMTool
         public const string readmeMDPath = "Assets/_package_/README.md";
 
         public const string changelogMDPath = "Assets/_package_/CHANGELOG.md";
-        
+
         private const string packagePathCsPath = "Assets/_package_/_main_/Editor/_generate_/PackagePath.cs";
 
         public const string resourcesPath = "Assets/_package_/_main_/Resources";
@@ -60,7 +60,7 @@ namespace UPMTool
         public static PackageJsonInfo GetPackageJsonInfo()
         {
             var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(packageJsonPath);
-            var packageJsonInfo = PackageJsonEditor.JsonConvertToPackageJsonInfo(textAsset, textAsset.text);
+            var packageJsonInfo = PackageJson.Parse(textAsset.text);
             return packageJsonInfo;
         }
     }

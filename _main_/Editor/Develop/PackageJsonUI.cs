@@ -45,7 +45,7 @@ namespace UPMTool
 
             // 预览
             var preview = root.Q<TextField>("preview_tf");
-            preview.value = packageJsonInfo.ToJson();
+            preview.value = PackageJson.ToJson(packageJsonInfo);
 
             // 插件名 com.xxx.xxx
             var textField = root.Q<TextField>("name_tf");
@@ -127,7 +127,7 @@ namespace UPMTool
 
             // 预览
             var preview = root.Q<TextField>("preview_tf");
-            preview.value = packageJsonInfo.ToJson();
+            preview.value = PackageJson.ToJson(packageJsonInfo);
 
             // 创建按钮响应点击
             var button = root.Q<Button>("create_btn");
@@ -136,7 +136,7 @@ namespace UPMTool
                 // 创建插件包的动作
                 PackageJsonEditor.CreatePackageAction(packageJsonInfo);
                 // 添加"UPMTool"依赖
-                PackageJsonEditor.AddUPMToolDependency(packageJsonInfo);
+//                PackageJsonEditor.AddUPMToolDependency(packageJsonInfo);
                 // 创建或修改package.json
                 var rst = PackageJsonEditor.SavePackageJsonChange(packageJsonInfo, path, out var msg);
                 DrawSavePackageJsonInfoRet(rst, msg);
@@ -147,7 +147,7 @@ namespace UPMTool
                     return;
                 }
 
-                preview.value = packageJsonInfo.ToJson();
+                preview.value = PackageJson.ToJson(packageJsonInfo);
                 // 刷新,显示插件包框架
                 AssetDatabase.Refresh();
 
@@ -175,7 +175,7 @@ namespace UPMTool
 
             // 预览
             var preview = root.Q<TextField>("preview_tf");
-            preview.value = packageJsonInfo.ToJson();
+            preview.value = PackageJson.ToJson(packageJsonInfo);
 
             // TODO 编辑按钮-撤销修改响应点击
             var button = root.Q<Button>("revert_btn");
@@ -194,7 +194,7 @@ namespace UPMTool
                     return;
                 }
 
-                preview.value = packageJsonInfo.ToJson();
+                preview.value = PackageJson.ToJson(packageJsonInfo);
                 AssetDatabase.Refresh();
             };
 
@@ -246,7 +246,7 @@ namespace UPMTool
 
             // 预览
             var preview = root.Q<TextField>("preview_tf");
-            preview.value = packageJsonInfo.ToJson();
+            preview.value = PackageJson.ToJson(packageJsonInfo);
 
             // 添加依赖按钮响应
             var button = root.Q<Button>($"{dependType}_add");
@@ -259,7 +259,8 @@ namespace UPMTool
             button = root.Q<Button>($"{dependType}_remove");
             button.clicked += () =>
             {
-                RemoveDependencyItem(packageJsonInfo, packageJsonInfo.GetDependenciesByType(dependType), dependType);
+                RemoveDependencyItem(packageJsonInfo, packageJsonInfo.GetDependenciesByType(dependType),
+                    dependType);
             };
 
             // 绘制依赖项

@@ -10,7 +10,9 @@ using PackageInfo = UnityEditor.PackageManager.PackageInfo;
 namespace UPMToolDevelop
 {
     /// <summary>
-    /// UPM Tool在PackageManager上的拓展
+    /// UPMTool在PackageManager上的拓展
+    /// 拓展插件的更新功能
+    /// 显示"dependenciesUt"依赖信息,并支持加载
     /// </summary>
     [InitializeOnLoad]
     public class UPMToolExtension : IPackageManagerExtension
@@ -153,6 +155,19 @@ namespace UPMToolDevelop
             {
                 ui.SetUIVisible(false);
             }
+
+            // todo ......
+
+            Debug.Log($"package.json path is {packageInfo.assetPath}");
+
+            var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>($"{packageInfo.assetPath}/package.json");
+
+            var packageJsonInfo = PackageJson.Parse(textAsset.text);
+
+            foreach (var dependency in packageJsonInfo.dependenciesUt)
+            {
+                Debug.Log($"{dependency.packageName}:{dependency.version}");
+            }
         }
 
         /// <summary>
@@ -173,7 +188,7 @@ namespace UPMToolDevelop
                 Debug.LogError("packageId is null");
                 return "";
             }
-            
+
             Debug.Log(packageId);
 
             var pattern = "(https://(.*).git)|(git@(.*).git)";
@@ -196,7 +211,6 @@ namespace UPMToolDevelop
 
         public void OnPackageAddedOrUpdated(PackageInfo packageInfo)
         {
-            
         }
 
         public void OnPackageRemoved(PackageInfo packageInfo)

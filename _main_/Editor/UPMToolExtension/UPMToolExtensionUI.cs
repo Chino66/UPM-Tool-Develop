@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
 namespace UPMTool
 {
     /// <summary>
-    /// UPM Tool拓展的UI界面
+    /// UPMTool拓展的UI界面
     /// </summary>
     public class UPMToolExtensionUI : VisualElement
     {
@@ -26,7 +27,7 @@ namespace UPMTool
         {
             root = new VisualElement();
             root.name = "ui_root";
-            
+
             GetGitTagsButton = new Button();
             GetGitTagsButton.name = "get_git_tags";
             GetGitTagsButton.text = "获取版本信息";
