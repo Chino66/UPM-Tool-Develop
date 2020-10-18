@@ -16,6 +16,7 @@
               <e p="Develop" t="Include">
                 <e p="PackageChecker.cs" t="Include" />
                 <e p="PackageDependency.cs" t="Include" />
+                <e p="PackageJson.cs" t="Include" />
                 <e p="PackageJsonEditor.cs" t="Include" />
                 <e p="PackageJsonInfo.cs" t="Include" />
                 <e p="PackageJsonUI.cs" t="Include" />
@@ -66,8 +67,86 @@
       </e>
       <e p="Editor.UPMTool.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
-      <e p="packages" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive">
+        <e p="com.unity.upm.develop" t="Include">
+          <e p="Editor" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+            <e p="Extension.cs" t="Include" />
+            <e p="Menus" t="Include">
+              <e p="MenuExtensions.cs" t="Include" />
+              <e p="PackageCreator.cs" t="Include" />
+              <e p="PackageTemplate.cs" t="Include" />
+              <e p="PackageTemplateOptions.cs" t="Include" />
+            </e>
+            <e p="Mock" t="Include">
+              <e p="MockPackageInfo.cs" t="Include" />
+            </e>
+            <e p="PackageVersionExtensions.cs" t="Include" />
+            <e p="PublishExtensions" t="Include">
+              <e p="IPublishExtension.cs" t="Include" />
+              <e p="Local" t="Include">
+                <e p="LocalPublishExtension.cs" t="Include" />
+                <e p="UpmPackOperation.cs" t="Include" />
+              </e>
+              <e p="PackageManagerDevelopExtensions.cs" t="Include" />
+              <e p="Production" t="Include">
+                <e p="PublishProductionExtension.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Resources" t="Include">
+              <e p="Styles" t="Include">
+                <e p="Common.uss" t="Include" />
+                <e p="Dark.uss" t="Include" />
+                <e p="Light.uss" t="Include" />
+              </e>
+            </e>
+            <e p="State" t="Include">
+              <e p="DevelopmenState.cs" t="Include" />
+              <e p="PackageManagerState.cs" t="Include" />
+            </e>
+            <e p="TestRunner" t="Include">
+              <e p="PackageAssetPostprocessor.cs" t="Include" />
+              <e p="PackageTestResultUpdater.cs" t="Include" />
+              <e p="PackageTestRunner.cs" t="Include" />
+              <e p="PackageTestRunnerSingleton.cs" t="Include" />
+            </e>
+            <e p="Toolbar" t="Include">
+              <e p="PrepareTools.cs" t="Include" />
+              <e p="PublishTools.cs" t="Include" />
+              <e p="ToolbarExtension.cs" t="Include" />
+            </e>
+            <e p="Unity.PackageManagerUI.Editor.asmdef" t="Include" />
+            <e p="Validation" t="Include">
+              <e p="ReportRow.cs" t="Include" />
+              <e p="ValidationSuiteReport.cs" t="Include" />
+              <e p="ValidationSuiteReportWindow.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Tests" t="Include">
+            <e p="Editor" t="Include">
+              <e p="CreatePackageTests.cs" t="Include" />
+              <e p="ExtensionTests.cs" t="Include" />
+              <e p="Mock" t="Include">
+                <e p="MockResult.cs" t="Include" />
+                <e p="MockTest.cs" t="Include" />
+                <e p="MockTestRunnerApi.cs" t="Include" />
+              </e>
+              <e p="PackageCreatorTests.cs" t="Include" />
+              <e p="PrepareToolbarTests.cs" t="Include" />
+              <e p="TestCommon.cs" t="Include" />
+              <e p="Unity.PackageManagerUI.Develop.EditorTests.asmdef" t="Include" />
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="RuntimeTests.cs" t="Include" />
+              <e p="Unity.PackageManagerUI.Develop.RuntimeTests.asmdef" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
       <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Unity.PackageManagerUI.Develop.Editor.csproj" t="IncludeRecursive" />
+      <e p="Unity.PackageManagerUI.Develop.EditorTests.csproj" t="IncludeRecursive" />
+      <e p="Unity.PackageManagerUI.DevelopRuntime.Tests.csproj" t="IncludeRecursive" />
       <e p="UPM-Tool-Develop.sln" t="IncludeFlat" />
     </e>
   </component>

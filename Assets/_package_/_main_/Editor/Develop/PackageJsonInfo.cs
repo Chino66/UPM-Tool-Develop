@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UPMTool;
 
-namespace UPMToolDevelop
+namespace UPMTool
 {
     /// <summary>
     /// 插件开发信息
@@ -59,63 +60,7 @@ namespace UPMToolDevelop
         /// 这个依赖添加到package.json的"dependenciesUt"字段中
         /// </summary>
         public List<PackageDependency> dependenciesUt;
-
-        public string ToJson()
-        {
-            var setting = new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore};
-            var jObject = new JObject
-            {
-                ["name"] = name,
-                ["displayName"] = displayName,
-                ["version"] = version,
-                ["unity"] = unity,
-                ["description"] = description,
-                ["type"] = type
-            };
-
-            // Unity的依赖方式
-            if (dependencies != null && dependencies.Count > 0)
-            {
-                var ds = new JObject();
-                foreach (var dependency in dependencies)
-                {
-                    if (string.IsNullOrEmpty(dependency.packageName) || string.IsNullOrEmpty(dependency.version))
-                    {
-                        continue;
-                    }
-
-                    ds[dependency.packageName] = dependency.version;
-                }
-
-                if (ds.Count > 0)
-                {
-                    jObject["dependencies"] = ds;
-                }
-            }
-
-            // UPMTool的依赖方式
-            if (dependenciesUt != null && dependenciesUt.Count > 0)
-            {
-                var ds = new JObject();
-                foreach (var dependency in dependenciesUt)
-                {
-                    if (string.IsNullOrEmpty(dependency.packageName) || string.IsNullOrEmpty(dependency.version))
-                    {
-                        continue;
-                    }
-
-                    ds[dependency.packageName] = dependency.version;
-                }
-
-                if (ds.Count > 0)
-                {
-                    jObject["dependenciesUt"] = ds;
-                }
-            }
-            
-            var json = JsonConvert.SerializeObject(jObject, Formatting.Indented, setting);
-            return json;
-        }
+        
 
         public List<PackageDependency> GetDependenciesByType(string dependType)
         {
