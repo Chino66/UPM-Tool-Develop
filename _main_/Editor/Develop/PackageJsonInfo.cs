@@ -49,28 +49,19 @@ namespace UPMToolDevelop
 
         /// <summary>
         /// 插件包依赖项数组
+        /// 用于Unity插件,PackageDependency.version只能是x.x.x格式
         /// </summary>
         public List<PackageDependency> dependencies;
+        
+        /// <summary>
+        /// 插件包依赖项数组
+        /// 用于UPMTool插件,PackageDependency.version可是是x.x.x也可以是git路径
+        /// 这个依赖添加到package.json的"dependenciesUt"字段中
+        /// </summary>
+        public List<PackageDependency> dependenciesUt;
 
         public string ToJson()
         {
-            // LitJson
-            // var sb = new StringBuilder();
-            // var jw = new JsonWriter(sb) {PrettyPrint = true};
-            // JsonMapper.ToJson(this, jw);
-            // // tip 关于Unicode编码在C#中的转义
-            // // LitJson的编码方式是Unicode
-            // // Regex.Unescape的作用:
-            // // 起因:C#会将'\'转成'\\',而Unicode编码的中文形如:"\u8FD9",在C#中会变成"\\u8FD9",原来的'\'将被转义
-            // // 所以输出为"\u8FD9",Regex.Unescape的作用是将转变后的'\\'还原回'\',这样系统就能识别正确的中文Unicode编码
-            // return Regex.Unescape(sb.ToString());
-
-            // Newtonsoft.Json
-//            var setting = new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore};
-//            var json = JsonConvert.SerializeObject(this, Formatting.Indented, setting);
-//            return json;
-
-//            return "";
             var setting = new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore};
             var jObject = new JObject
             {
@@ -82,6 +73,7 @@ namespace UPMToolDevelop
                 ["type"] = type
             };
 
+            // Unity的依赖方式
             if (dependencies != null && dependencies.Count > 0)
             {
                 var ds = new JObject();
@@ -101,8 +93,43 @@ namespace UPMToolDevelop
                 }
             }
 
+            // UPMTool的依赖方式
+            if (dependenciesUt != null && dependenciesUt.Count > 0)
+            {
+                var ds = new JObject();
+                foreach (var dependency in dependenciesUt)
+                {
+                    if (string.IsNullOrEmpty(dependency.packageName) || string.IsNullOrEmpty(dependency.version))
+                    {
+                        continue;
+                    }
+
+                    ds[dependency.packageName] = dependency.version;
+                }
+
+                if (ds.Count > 0)
+                {
+                    jObject["dependenciesUt"] = ds;
+                }
+            }
+            
             var json = JsonConvert.SerializeObject(jObject, Formatting.Indented, setting);
             return json;
+        }
+
+        public List<PackageDependency> GetDependenciesByType(string dependType)
+        {
+            if (dependType.Equals("dependencies"))
+            {
+                return dependencies;
+            }
+
+            if (dependType.Equals("dependenciesUt"))
+            {
+                return dependenciesUt;
+            }
+
+            return null;
         }
 
         public string GetAssetsPath() => $@"Assets\UPM\{displayName}\";

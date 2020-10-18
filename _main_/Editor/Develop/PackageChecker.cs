@@ -8,7 +8,7 @@ using UPMToolDevelop;
 
 namespace UPMTool
 {
-    public class PackageChecker
+    public static class PackageChecker
     {
         public const string packageJsonPath = "Assets/_package_/package.json";
 
@@ -25,6 +25,7 @@ namespace UPMTool
         [InitializeOnLoadMethod]
         public static void Check()
         {
+            // package.json检查
             var hasFile = HasPackageJson;
 
             if (hasFile == false)
@@ -34,6 +35,7 @@ namespace UPMTool
 
             _packageJsonInfo = GetPackageJsonInfo();
 
+            // PackagePath.cs检查
             hasFile = File.Exists(packagePathCsPath);
 
             if (hasFile)
@@ -58,7 +60,6 @@ namespace UPMTool
         public static PackageJsonInfo GetPackageJsonInfo()
         {
             var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(packageJsonPath);
-//            var packageJsonInfo = JsonConvert.DeserializeObject<PackageJsonInfo>(textAsset.text);
             var packageJsonInfo = PackageJsonEditor.JsonConvertToPackageJsonInfo(textAsset, textAsset.text);
             return packageJsonInfo;
         }

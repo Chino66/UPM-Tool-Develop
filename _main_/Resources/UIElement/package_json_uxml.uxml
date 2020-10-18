@@ -26,17 +26,17 @@
                 <ui:TextField name="type_tf" style="width: 30%; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px;" />
             </ui:Box>
         </ui:VisualElement>
-        <ui:Box class="row" style="color: rgba(255, 255, 255, 255); background-color: rgba(176, 176, 176, 0);">
+        <ui:Box class="row" style="color: rgb(255, 255, 255); background-color: rgba(176, 176, 176, 0);">
             <ui:Label name="description_lab" text="Description" style="background-color: rgba(0, 0, 0, 0); -unity-font-style: bold;" />
         </ui:Box>
         <ui:Box class="row">
             <ui:TextField name="description_tf" multiline="true" class="word_warp" />
         </ui:Box>
         <ui:Box name="dependencies_lab_box" class="row" style="background-color: rgba(182, 182, 182, 0);">
-            <ui:Label name="dependencies_lab" text="Dependencies" style="-unity-font-style: bold;" />
+            <ui:Label name="dependencies_lab" text="Dependencies(Unity)" style="-unity-font-style: bold;" />
         </ui:Box>
-        <ui:Box name="dependencies_box" style="border-left-color: rgba(0, 0, 0, 255); border-right-color: rgba(0, 0, 0, 255); border-top-color: rgba(0, 0, 0, 255); border-bottom-color: rgba(0, 0, 0, 255); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(255, 255, 255, 0);">
-            <ui:Box class="row" style="border-top-left-radius: 3px; border-bottom-left-radius: 0; border-top-right-radius: 3px; border-bottom-right-radius: 0; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgba(128, 128, 128, 255); border-right-color: rgba(128, 128, 128, 255); border-top-color: rgba(128, 128, 128, 255); border-bottom-color: rgba(128, 128, 128, 255);">
+        <ui:Box name="dependencies_box" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(255, 255, 255, 0);">
+            <ui:Box class="row" style="border-top-left-radius: 3px; border-bottom-left-radius: 0; border-top-right-radius: 3px; border-bottom-right-radius: 0; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(128, 128, 128); border-right-color: rgb(128, 128, 128); border-top-color: rgb(128, 128, 128); border-bottom-color: rgb(128, 128, 128);">
                 <ui:Label name="dependencies_name" text="    Package name" style="width: 60%;" />
                 <ui:Label name="dependencies_path" text="Version" style="width: 30%;" />
             </ui:Box>
@@ -47,6 +47,23 @@
             <ui:Box class="row" style="width: 60px; flex-direction: row; justify-content: flex-start; align-items: stretch; position: relative; left: auto; right: auto; flex-basis: auto; flex-wrap: nowrap; border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-top-left-radius: 0; border-bottom-left-radius: 3px; border-top-right-radius: 0; border-bottom-right-radius: 3px; border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); background-color: rgba(140, 140, 140, 0);">
                 <ui:Button text="+" name="dependencies_add" style="width: auto; flex-direction: row-reverse; justify-content: flex-start; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 2px; padding-bottom: 2px; background-color: rgba(228, 228, 228, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; font-size: 16px; -unity-font-style: bold;" />
                 <ui:Button text="-" name="dependencies_remove" style="flex-direction: row-reverse; flex-wrap: nowrap; width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 2px; padding-bottom: 2px; background-color: rgba(228, 228, 228, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; font-size: 16px; -unity-font-style: bold;" />
+            </ui:Box>
+        </ui:Box>
+        <ui:Box name="dependenciesUt_lab_box" class="row" style="background-color: rgba(182, 182, 182, 0);">
+            <ui:Label name="dependencies_lab" text="Dependencies(UPMTool)" style="-unity-font-style: bold;" />
+        </ui:Box>
+        <ui:Box name="dependenciesUt_box" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(255, 255, 255, 0);">
+            <ui:Box class="row" style="border-top-left-radius: 3px; border-bottom-left-radius: 0; border-top-right-radius: 3px; border-bottom-right-radius: 0; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(128, 128, 128); border-right-color: rgb(128, 128, 128); border-top-color: rgb(128, 128, 128); border-bottom-color: rgb(128, 128, 128);">
+                <ui:Label name="dependencies_name" text="    Package name" style="width: 60%;" />
+                <ui:Label name="dependencies_path" text="Version" style="width: 30%;" />
+            </ui:Box>
+            <ui:Box name="dependenciesUt_none_tip" class="row" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 3px; border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); background-color: rgba(128, 128, 128, 0); display: flex; height: 30px;">
+                <ui:Label name="dependencies_listempty" text="List is Empty" style="background-color: rgba(0, 0, 0, 0); display: flex; height: auto;" />
+            </ui:Box>
+            <ui:Box name="dependenciesUt_item_root" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 3px; border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); display: none; background-color: rgba(140, 140, 140, 0);" />
+            <ui:Box class="row" style="width: 60px; flex-direction: row; justify-content: flex-start; align-items: stretch; position: relative; left: auto; right: auto; flex-basis: auto; flex-wrap: nowrap; border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-top-left-radius: 0; border-bottom-left-radius: 3px; border-top-right-radius: 0; border-bottom-right-radius: 3px; border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); background-color: rgba(140, 140, 140, 0);">
+                <ui:Button text="+" name="dependenciesUt_add" style="width: auto; flex-direction: row-reverse; justify-content: flex-start; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 2px; padding-bottom: 2px; background-color: rgba(228, 228, 228, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; font-size: 16px; -unity-font-style: bold;" />
+                <ui:Button text="-" name="dependenciesUt_remove" style="flex-direction: row-reverse; flex-wrap: nowrap; width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 2px; padding-bottom: 2px; background-color: rgba(228, 228, 228, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; font-size: 16px; -unity-font-style: bold;" />
             </ui:Box>
         </ui:Box>
         <ui:Box class="row" style="color: rgb(255, 255, 255); background-color: rgba(176, 176, 176, 0);">

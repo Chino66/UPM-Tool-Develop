@@ -31,8 +31,12 @@ public class PackageJsonTool : EditorWindow
                 {
                     _packageJsonInfo = PackageChecker.GetPackageJsonInfo();
                 }
+                else
+                {
+                    _packageJsonInfo = (PackageJsonInfo) CreateInstance(typeof(PackageJsonInfo));
+                }
             }
-
+            
             return _packageJsonInfo;
         }
     }

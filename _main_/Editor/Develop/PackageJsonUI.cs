@@ -19,10 +19,6 @@ namespace UPMTool
 
         private readonly Queue<VisualElement> _dependenciesItemQueue;
 
-        private readonly VisualElement _dependencyItemsRoot;
-
-        private readonly VisualElement _noneDependenciesTip;
-
         private PackageJsonUI()
         {
             var uxmlPath = Path.Combine(PackagePath.MainPath, @"Resources/UIElement/package_json_uxml.uxml");
@@ -38,9 +34,6 @@ namespace UPMTool
             _dependenciesItemVisualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(uxmlPath);
 
             _dependenciesItemQueue = new Queue<VisualElement>();
-
-            _dependencyItemsRoot = this.Q<VisualElement>("dependencies_item_root");
-            _noneDependenciesTip = this.Q<VisualElement>("dependencies_none_tip");
         }
 
         /// <summary>
@@ -169,7 +162,8 @@ namespace UPMTool
             element.parent.Remove(element);
 
             // 初始化依赖操作(Create界面不需要依赖操作,所以要隐藏)
-            InitDependenciesUIElement(root, packageJsonInfo, path, false);
+            InitDependenciesUIElement(root, packageJsonInfo, "dependencies", false);
+            InitDependenciesUIElement(root, packageJsonInfo, "dependenciesUt", false);
         }
 
         /// <summary>
@@ -209,7 +203,8 @@ namespace UPMTool
             element.parent.Remove(element);
 
             // 初始化依赖操作
-            InitDependenciesUIElement(root, packageJsonInfo, path, true);
+            InitDependenciesUIElement(root, packageJsonInfo, "dependencies", true);
+            InitDependenciesUIElement(root, packageJsonInfo, "dependenciesUt", true);
         }
 
         private void DrawSavePackageJsonInfoRet(bool rst, string msg)
@@ -235,15 +230,16 @@ namespace UPMTool
         /// <summary>
         /// 插件依赖相关UIElement交互
         /// </summary>
-        private void InitDependenciesUIElement(VisualElement root, PackageJsonInfo packageJsonInfo, string path,
+        private void InitDependenciesUIElement(VisualElement root, PackageJsonInfo packageJsonInfo,
+            string dependType,
             bool isShow)
         {
             if (isShow == false)
             {
-                var element = root.Q<VisualElement>("dependencies_box");
+                var element = root.Q<VisualElement>($"{dependType}_box");
                 element.parent.Remove(element);
 
-                element = root.Q<VisualElement>("dependencies_lab_box");
+                element = root.Q<VisualElement>($"{dependType}_lab_box");
                 element.parent.Remove(element);
                 return;
             }
@@ -253,32 +249,39 @@ namespace UPMTool
             preview.value = packageJsonInfo.ToJson();
 
             // 添加依赖按钮响应
-            var button = root.Q<Button>("dependencies_add");
-            button.clicked += () => { AddDependencyItem(packageJsonInfo); };
+            var button = root.Q<Button>($"{dependType}_add");
+            button.clicked += () =>
+            {
+                AddDependencyItem(packageJsonInfo, packageJsonInfo.GetDependenciesByType(dependType), dependType);
+            };
 
             // 移除依赖按钮响应
-            button = root.Q<Button>("dependencies_remove");
-            button.clicked += () => { RemoveDependencyItem(packageJsonInfo); };
+            button = root.Q<Button>($"{dependType}_remove");
+            button.clicked += () =>
+            {
+                RemoveDependencyItem(packageJsonInfo, packageJsonInfo.GetDependenciesByType(dependType), dependType);
+            };
 
             // 绘制依赖项
-            DrawDependencyItems(packageJsonInfo);
+            DrawDependencyItems(packageJsonInfo, dependType);
         }
 
         /// <summary>
         /// 绘制所有依赖项
         /// </summary>
         /// <param name="packageJsonInfo"></param>
-        private void DrawDependencyItems(PackageJsonInfo packageJsonInfo)
+        private void DrawDependencyItems(PackageJsonInfo packageJsonInfo, string dependType)
         {
             var serializedObject = new SerializedObject(packageJsonInfo);
-            var dependencies = serializedObject.FindProperty("dependencies");
-            for (int i = 0; i < packageJsonInfo.dependencies.Count; i++)
+            var dependencies = serializedObject.FindProperty(dependType);
+
+            for (int i = 0; i < dependencies.arraySize; i++)
             {
                 var property = dependencies.GetArrayElementAtIndex(i);
-                DrawDependencyItem(property);
+                DrawDependencyItem(property, dependType);
             }
 
-            DrawExistDependencyItem();
+            DrawExistDependencyItem(dependType);
         }
 
         /// <summary>
@@ -286,10 +289,10 @@ namespace UPMTool
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
-        private void DrawDependencyItem(SerializedProperty dependency)
+        private void DrawDependencyItem(SerializedProperty dependency, string dependType)
         {
             var i = GetDependenciesItem();
-            _dependencyItemsRoot.Add(i);
+            GetDependencyItemsRoot(dependType).Add(i);
 
             var textField = i.Q<TextField>("dependencies_name_tf");
             textField.bindingPath = "packageName";
@@ -306,48 +309,69 @@ namespace UPMTool
         /// 添加依赖项
         /// </summary>
         /// <param name="packageJsonInfo"></param>
-        private void AddDependencyItem(PackageJsonInfo packageJsonInfo)
+        private void AddDependencyItem(PackageJsonInfo packageJsonInfo, List<PackageDependency> dependList,
+            string dependType)
         {
             var dependency = new PackageDependency();
-            packageJsonInfo.dependencies.Add(dependency);
+            dependList.Add(dependency);
 
             var serializedObject = new SerializedObject(packageJsonInfo);
-            var dependencies = serializedObject.FindProperty("dependencies");
+            var dependencies = serializedObject.FindProperty(dependType);
 
-            var property = dependencies.GetArrayElementAtIndex(packageJsonInfo.dependencies.Count - 1);
-            DrawDependencyItem(property);
+            var property = dependencies.GetArrayElementAtIndex(dependencies.arraySize - 1);
+            DrawDependencyItem(property, dependType);
 
-            DrawExistDependencyItem();
+            DrawExistDependencyItem(dependType);
         }
 
         /// <summary>
         /// 移除依赖项
         /// </summary>
         /// <param name="packageJsonInfo"></param>
-        private void RemoveDependencyItem(PackageJsonInfo packageJsonInfo)
+        private void RemoveDependencyItem(PackageJsonInfo packageJsonInfo, List<PackageDependency> dependList,
+            string dependType)
         {
-            var lastIndex = packageJsonInfo.dependencies.Count - 1;
-            packageJsonInfo.dependencies.RemoveAt(lastIndex);
+            var lastIndex = dependList.Count - 1;
+            dependList.RemoveAt(lastIndex);
 
-            var i = _dependencyItemsRoot.ElementAt(lastIndex);
+            var root = GetDependencyItemsRoot(dependType);
+            var i = root.ElementAt(lastIndex);
             ReturnDependenciesItem(i);
-            _dependencyItemsRoot.RemoveAt(lastIndex);
+            root.RemoveAt(lastIndex);
 
-            DrawExistDependencyItem();
+            DrawExistDependencyItem(dependType);
         }
 
-        private void DrawExistDependencyItem()
+        private void DrawExistDependencyItem(string dependType)
         {
-            if (_dependencyItemsRoot.childCount <= 0)
+            var root = GetDependencyItemsRoot(dependType);
+            var noneTip = GetNoneDependenciesTip(dependType);
+
+            if (root == null || noneTip == null)
             {
-                _dependencyItemsRoot.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
-                _noneDependenciesTip.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
+                return;
+            }
+
+            if (root.childCount <= 0)
+            {
+                root.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
+                noneTip.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
             }
             else
             {
-                _dependencyItemsRoot.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
-                _noneDependenciesTip.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
+                root.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
+                noneTip.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
             }
+        }
+
+        private VisualElement GetDependencyItemsRoot(string dependenciesType)
+        {
+            return this.Q<VisualElement>($"{dependenciesType}_item_root");
+        }
+
+        private VisualElement GetNoneDependenciesTip(string dependenciesType)
+        {
+            return this.Q<VisualElement>($"{dependenciesType}_none_tip");
         }
 
         private VisualElement GetDependenciesItem()
