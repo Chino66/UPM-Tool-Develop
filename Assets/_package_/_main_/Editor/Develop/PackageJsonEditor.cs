@@ -46,21 +46,28 @@ namespace UPMToolDevelop
                 packageJson.unity = (string) jObject["unity"];
                 packageJson.description = (string) jObject["description"];
                 packageJson.type = (string) jObject["type"];
+                // 读取Unity依赖方式
                 packageJson.dependencies = new List<PackageDependency>();
                 if (jObject.ContainsKey("dependencies"))
                 {
                     var ds = (JObject) jObject["dependencies"];
                     foreach (var d in ds)
                     {
-                        Debug.Log($"{d.Key},{d.Value}");
-//                        var pd = (PackageDependency)CreateInstance(typeof(PackageDependency));
-//                        pd.packageName = (string) d.Key;
-//                        pd.version = (string) d.Value;
                         var pd = new PackageDependency {packageName = (string) d.Key, version = (string) d.Value};
                         packageJson.dependencies.Add(pd);
                     }
                 }
-
+                // 读取UPMTool依赖方式
+                packageJson.dependenciesUt = new List<PackageDependency>();
+                if (jObject.ContainsKey("dependenciesUt"))
+                {
+                    var ds = (JObject) jObject["dependenciesUt"];
+                    foreach (var d in ds)
+                    {
+                        var pd = new PackageDependency {packageName = (string) d.Key, version = (string) d.Value};
+                        packageJson.dependenciesUt.Add(pd);
+                    }
+                }
                 return packageJson;
             }
             catch (Exception e)
@@ -262,7 +269,7 @@ namespace UPMToolDevelop
         }
 
         /// <summary>
-        /// 创建插件package.json时,默认添加"UPMTool"依赖
+        /// 创建插件package.json时,默认添加"UPMTool"依赖到dependenciesUt
         /// "com.chino.upmtool": "ssh://git@github.com/Chino66/UPM-Tool-Develop.git#upm",
         /// </summary>
         /// <param name="packageJsonInfo"></param>
@@ -271,7 +278,7 @@ namespace UPMToolDevelop
             var dependency = new PackageDependency();
             dependency.packageName = "com.chino.upmtool";
             dependency.version = "ssh://git@github.com/Chino66/UPM-Tool-Develop.git#upm";
-            packageJsonInfo.dependencies.Add(dependency);
+            packageJsonInfo.dependenciesUt.Add(dependency);
         }
     }
 }

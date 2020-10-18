@@ -196,6 +196,7 @@ namespace UPMToolDevelop
 
         public void OnPackageAddedOrUpdated(PackageInfo packageInfo)
         {
+            
         }
 
         public void OnPackageRemoved(PackageInfo packageInfo)

@@ -4,7 +4,7 @@ using System.CodeDom;
 
 namespace UPMTool
 {
-    public class PackagePathGenerator
+    public static class PackagePathGenerator
     {
         public static void Generate(string nameSpace, string path, string className = "PackagePath")
         {

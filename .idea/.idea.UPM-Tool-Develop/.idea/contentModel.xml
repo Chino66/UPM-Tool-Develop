@@ -10,6 +10,7 @@
           <e p="_main_" t="Include">
             <e p="Editor" t="Include">
               <e p="_generate_" t="Include">
+                <e p="PackageDependenciesChecker.cs" t="Include" />
                 <e p="PackagePath.cs" t="Include" />
               </e>
               <e p="Develop" t="Include">

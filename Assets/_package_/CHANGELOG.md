@@ -21,3 +21,15 @@
 3. "Package Json Tool"添加了插件依赖的编辑界面,并重新设计了编辑界面
 4. 使用UPMTool创建插件模板时,默认对创建的Package.json添加"UPMTool"的插件依赖
     * 创建的插件并不是必须依赖"UPMTool",而是"UPMTool"可以给插件拓展更多功能,如发布,更新等
+
+### 0.0.6
+用于UPMTool插件的依赖使用git路径而不是semver,所以添加"dependenciesUt"字段到package.json的中,支持路径的依赖
+例:
+```
+"dependencies": {
+"com.chino.upmtool": "1.0.0"
+},
+"dependenciesUt": {
+"com.chino.upmtool": "ssh://git@github.com/Chino66/UPM-Tool-Develop.git#upm"
+}
+```
