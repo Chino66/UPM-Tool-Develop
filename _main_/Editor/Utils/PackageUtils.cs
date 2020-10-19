@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
@@ -9,30 +10,36 @@ namespace UPMTool
     {
         #region 添加或更新插件包
 
-        private static AddRequest AddRequest;
+        private static AddRequest _addRequest;
+        private static Action _addCompletedCallback;
 
         /// <summary>
         /// 添加或更新插件包
         /// </summary>
         /// <param name="packageId"></param>
-        public static void AddOrUpdatePackage(string packageId)
+        public static void AddOrUpdatePackage(string packageId, Action completed)
         {
-            AddRequest = Client.Add(packageId);
+            _addRequest = Client.Add(packageId);
+            _addCompletedCallback = completed;
             EditorApplication.update += AddProgress;
         }
 
+
         private static void AddProgress()
         {
-            if (AddRequest.IsCompleted)
+            if (_addRequest.IsCompleted)
             {
-                if (AddRequest.Status == StatusCode.Success)
+                if (_addRequest.Status == StatusCode.Success)
                 {
-                    Debug.Log("Installed: " + AddRequest.Result.packageId);
+                    Debug.Log("Installed: " + _addRequest.Result.packageId);
                 }
-                else if (AddRequest.Status >= StatusCode.Failure)
+                else if (_addRequest.Status >= StatusCode.Failure)
                 {
-                    Debug.Log(AddRequest.Error.message);
+                    Debug.Log(_addRequest.Error.message);
                 }
+
+                _addCompletedCallback?.Invoke();
+                _addCompletedCallback = null;
 
                 EditorApplication.update -= AddProgress;
             }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
+using UPMToolDevelop;
 
 namespace UPMTool
 {
@@ -15,54 +16,82 @@ namespace UPMTool
             return new UPMToolExtensionUI();
         }
 
-        private VisualElement root;
+        private readonly VisualElement _root;
 
-        public List<string> TagsList;
+        private readonly List<string> _tagsList;
 
-        public Button GetGitTagsButton;
-        public PopupField<string> versionTagsPopupField;
-        public Button ChangeVersionButton;
+        private readonly Button _getGitTagsButton;
+        private readonly PopupField<string> _versionTagsPopupField;
+        private readonly Button _changeVersionButton;
 
-        public UPMToolExtensionUI()
+        private UPMToolExtensionUI()
         {
-            root = new VisualElement();
-            root.name = "ui_root";
+            _root = new VisualElement {name = "ui_root"};
 
-            GetGitTagsButton = new Button();
-            GetGitTagsButton.name = "get_git_tags";
-            GetGitTagsButton.text = "获取版本信息";
-            root.Add(GetGitTagsButton);
+            _getGitTagsButton = new Button();
+            _getGitTagsButton.name = "get_git_tags";
+            _getGitTagsButton.text = "获取版本信息";
+            _root.Add(_getGitTagsButton);
 
-            TagsList = new List<string> {"-select version-"};
-            versionTagsPopupField = new PopupField<string>("Version:", TagsList, 0);
-            versionTagsPopupField.value = "-select version-";
-            versionTagsPopupField.SetEnabled(false);
-            root.Add(versionTagsPopupField);
+            _tagsList = new List<string> {"-select version-"};
+            _versionTagsPopupField = new PopupField<string>("Version:", _tagsList, 0) {value = "-select version-"};
+            _versionTagsPopupField.SetEnabled(false);
+            _root.Add(_versionTagsPopupField);
 
-            ChangeVersionButton = new Button();
-            ChangeVersionButton.name = "change_version";
-            ChangeVersionButton.text = "切换版本";
-            ChangeVersionButton.SetEnabled(false);
-            root.Add(ChangeVersionButton);
+            _changeVersionButton = new Button {name = "change_version", text = "切换版本"};
+            _changeVersionButton.SetEnabled(false);
+            _root.Add(_changeVersionButton);
 
-            Add(root);
+            Add(_root);
         }
 
+        /// <summary>
+        /// 如果enable为false,则UI置灰
+        /// </summary>
+        /// <param name="enable"></param>
+        public void SetUIEnable(bool enable)
+        {
+            _root.SetEnabled(enable);
+        }
+
+        /// <summary>
+        /// 设置这个UI界面的显隐
+        /// </summary>
+        /// <param name="isVisible"></param>
         public void SetUIVisible(bool isVisible)
         {
             if (isVisible == false)
             {
-                if (root.parent == this)
+                if (_root.parent == this)
                 {
-                    Remove(root);
+                    Remove(_root);
                 }
             }
             else
             {
-                if (root.parent != this)
+                if (_root.parent != this)
                 {
-                    Add(root);
+                    Add(_root);
                 }
+            }
+        }
+
+        public void Init(UPMToolExtension upmToolExtension)
+        {
+            _getGitTagsButton.clicked += () => { upmToolExtension.GetGitTags(_tagsList, ApplyChoices); };
+
+            _versionTagsPopupField.RegisterValueChangedCallback<string>(upmToolExtension.SelectVersion);
+
+            _changeVersionButton.clicked += upmToolExtension.ChangeVersion;
+        }
+
+        private void ApplyChoices(List<string> choices)
+        {
+            if (choices.Count > 0)
+            {
+                _versionTagsPopupField.SetEnabled(true);
+                _versionTagsPopupField.value = choices[0];
+                _changeVersionButton.SetEnabled(true);
             }
         }
     }

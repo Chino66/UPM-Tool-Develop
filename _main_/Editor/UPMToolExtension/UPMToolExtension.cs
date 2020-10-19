@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEditor.PackageManager.UI;
@@ -22,109 +23,116 @@ namespace UPMToolDevelop
             PackageManagerExtensions.RegisterExtension(new UPMToolExtension());
         }
 
-        private PackageInfo selectPackageInfo;
+        private PackageInfo _selectPackageInfo;
 
-        private string selectVersion;
+        private string _selectVersion;
 
-        private string gitUrl;
+        private string _gitUrl;
 
-        private UPMToolExtensionUI ui;
+        private UPMToolExtensionUI _ui;
 
         public VisualElement CreateExtensionUI()
         {
-            if (ui == null)
+            if (_ui == null)
             {
-                ui = UPMToolExtensionUI.CreateUI();
-                InitUI();
+                _ui = UPMToolExtensionUI.CreateUI();
+                _ui.Init(this);
             }
 
-            return ui;
+            return _ui;
         }
 
-        private void InitUI()
+        /// <summary>
+        /// 安装选择的版本
+        /// </summary>
+        public void ChangeVersion()
         {
-            if (ui == null)
-            {
-                return;
-            }
+            PackageUtils.AddOrUpdatePackage(GetPackageIdByNewGitUrl(), AddOrUpdatePackageCallBack);
+            _ui.SetEnabled(false);
+        }
 
-            var choices = ui.TagsList;
+        private void AddOrUpdatePackageCallBack()
+        {
+            _ui.SetEnabled(true);
+        }
 
-            ui.GetGitTagsButton.clicked += () =>
+        /// <summary>
+        /// 选择插件版本
+        /// </summary>
+        /// <param name="evt"></param>
+        public void SelectVersion(ChangeEvent<string> evt)
+        {
+            _selectVersion = evt.newValue;
+        }
+
+        /// <summary>
+        /// 获取git仓库的tags
+        /// </summary>
+        public void GetGitTags(List<string> choices, Action<List<string>> action)
+        {
+            GitUtils.GetTags(_gitUrl, tags =>
             {
-                GitUtils.GetTags(gitUrl, tags =>
+                choices.Clear();
+
+                choices.AddRange(tags);
+
+                choices.Sort((a, b) =>
                 {
-                    choices.Clear();
-
-                    for (int i = 0; i < tags.Length; i++)
+                    var sa = a.Split('.');
+                    var sb = b.Split('.');
+                    if (sa.Length != 3 || sb.Length != 3)
                     {
-                        choices.Add(tags[i]);
+                        return 0;
                     }
 
-                    choices.Sort((a, b) =>
+                    for (var i = 0; i < 3; i++)
                     {
-                        var sa = a.Split('.');
-                        var sb = b.Split('.');
-                        if (sa.Length != 3 || sb.Length != 3)
+                        try
                         {
+                            var ia = int.Parse(sa[i]);
+                            var ib = int.Parse(sb[i]);
+                            if (ia == ib)
+                            {
+                                continue;
+                            }
+
+                            if (ia > ib)
+                            {
+                                return -1;
+                            }
+
+                            if (ia < ib)
+                            {
+                                return 1;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
                             return 0;
                         }
-
-                        for (int i = 0; i < 3; i++)
-                        {
-                            try
-                            {
-                                var ia = int.Parse(sa[i]);
-                                var ib = int.Parse(sb[i]);
-                                if (ia == ib)
-                                {
-                                    continue;
-                                }
-
-                                if (ia > ib)
-                                {
-                                    return -1;
-                                }
-
-                                if (ia < ib)
-                                {
-                                    return 1;
-                                }
-                            }
-                            catch (Exception e)
-                            {
-                                Console.WriteLine(e);
-                                return 0;
-                            }
-                        }
-
-                        return 0;
-                    });
-
-                    if (choices.Count > 0)
-                    {
-                        ui.versionTagsPopupField.SetEnabled(true);
-                        ui.versionTagsPopupField.value = choices[0];
-                        ui.ChangeVersionButton.SetEnabled(true);
                     }
+
+                    return 0;
                 });
-            };
 
-            ui.versionTagsPopupField.RegisterValueChangedCallback<string>((evt) => { selectVersion = evt.newValue; });
-
-            ui.ChangeVersionButton.clicked += () => { PackageUtils.AddOrUpdatePackage(GetPackageIdByNewGitUrl()); };
+                if (choices.Count > 0)
+                {
+                    action(choices);
+                }
+            });
         }
 
         private string GetPackageIdByNewGitUrl()
         {
-            if (selectPackageInfo == null)
+            if (_selectPackageInfo == null)
             {
                 return "";
             }
 
-            var url = GitUtils.GitPathConvertUnityPackagePath(gitUrl);
+            var url = GitUtils.GitPathConvertUnityPackagePath(_gitUrl);
 //            url = "git@gitee.com/chinochan66/UPM-Tool-Test.git";
-            return $"{selectPackageInfo.name}@{url}#{selectVersion}";
+            return $"{_selectPackageInfo.name}@{url}#{_selectVersion}";
         }
 
         /// <summary>
@@ -134,26 +142,26 @@ namespace UPMToolDevelop
         /// <param name="packageInfo"></param>
         public void OnPackageSelectionChange(PackageInfo packageInfo)
         {
-            if (ui == null)
+            if (_ui == null)
             {
                 return;
             }
 
-            selectPackageInfo = packageInfo;
+            _selectPackageInfo = packageInfo;
 
-            var packageId = selectPackageInfo.packageId;
+            var packageId = _selectPackageInfo.packageId;
 
             // 判断这个包是否是git途径获取的
-            gitUrl = GetGitUrl(packageId);
+            _gitUrl = GetGitUrl(packageId);
 
             // 只有git途径获取的包,才能使用UPM Tool拓展功能
-            if (!string.IsNullOrEmpty(gitUrl))
+            if (!string.IsNullOrEmpty(_gitUrl))
             {
-                ui.SetUIVisible(true);
+                _ui.SetUIVisible(true);
             }
             else
             {
-                ui.SetUIVisible(false);
+                _ui.SetUIVisible(false);
             }
 
             // todo ......
@@ -181,7 +189,7 @@ namespace UPMToolDevelop
         /// </summary>
         /// <param name="packageId">插件包的来源路径</param>
         /// <returns></returns>
-        private string GetGitUrl(string packageId)
+        private static string GetGitUrl(string packageId)
         {
             if (string.IsNullOrEmpty(packageId))
             {
@@ -209,10 +217,18 @@ namespace UPMToolDevelop
             return url;
         }
 
+        /// <summary>
+        /// 当添加或更新插件包时
+        /// </summary>
+        /// <param name="packageInfo"></param>
         public void OnPackageAddedOrUpdated(PackageInfo packageInfo)
         {
         }
 
+        /// <summary>
+        /// 当移除插件包时
+        /// </summary>
+        /// <param name="packageInfo"></param>
         public void OnPackageRemoved(PackageInfo packageInfo)
         {
         }
