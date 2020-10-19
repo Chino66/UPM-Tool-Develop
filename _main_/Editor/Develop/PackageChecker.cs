@@ -22,6 +22,9 @@ namespace UPMTool
 
         private static PackageJsonInfo _packageJsonInfo;
 
+        /// <summary>
+        /// 开发插件时,检查package.json和PackagePath.cs
+        /// </summary>
         [InitializeOnLoadMethod]
         public static void Check()
         {

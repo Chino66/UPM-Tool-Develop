@@ -62,6 +62,11 @@ namespace UPMTool
         public List<PackageDependency> dependenciesUt;
         
 
+        /// <summary>
+        /// 根据依赖类型获取依赖数组
+        /// </summary>
+        /// <param name="dependType"></param>
+        /// <returns></returns>
         public List<PackageDependency> GetDependenciesByType(string dependType)
         {
             if (dependType.Equals("dependencies"))
@@ -76,9 +81,5 @@ namespace UPMTool
 
             return null;
         }
-
-        public string GetAssetsPath() => $@"Assets\UPM\{displayName}\";
-
-        public string GetPackagesPath() => $@"Packages\{name}\{displayName}\";
     }
 }

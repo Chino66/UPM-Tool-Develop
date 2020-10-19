@@ -10,11 +10,15 @@ using UPMTool;
 /// <summary>
 /// package发布工具
 /// 1. 将package发布到git远程仓库
-/// 2. 若没有git远程仓库,则创建git仓库并推送到远程
+/// 2. 若没有git远程仓库,则需要先创建git仓库并推送到远程
 /// </summary>
 public class CMDTool : EditorWindow
 {
-    [MenuItem("Tool/UPM Tool/cmd Tool")]
+    /// <summary>
+    /// 不在开放cmd工具
+    /// todo 之后考虑将cmd工具单独抽出来作为插件使用
+    /// </summary>
+//    [MenuItem("Tool/UPM Tool/cmd Tool")]
     public static void Show()
     {
         CMDTool ct = GetWindow<CMDTool>();
@@ -222,24 +226,3 @@ public class CMDTool : EditorWindow
         }
     }
 }
-
-//public class CmdItem
-//{
-//    public string cmd;
-//    public ProcessOutput callback;
-//
-//    public CmdItem(string cmd, ProcessOutput callback)
-//    {
-//        this.cmd = cmd;
-//        this.callback = callback;
-//    }
-//}
-
-#region 垃圾堆
-
-//        Debug.LogError(Application.dataPath);
-//        ProcessUtils.method();
-//        // 代码中使用style的方法 水平放置元素
-//        box_cmd.style.flexDirection = new StyleEnum<FlexDirection>(FlexDirection.Row);
-
-#endregion
