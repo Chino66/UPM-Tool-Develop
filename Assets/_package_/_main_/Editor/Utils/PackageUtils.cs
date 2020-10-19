@@ -52,7 +52,7 @@ namespace UPMTool
 
         private static ListRequest ListRequest;
 
-        private static void List()
+        public static void List()
         {
             ListRequest = Client.List();
             EditorApplication.update += ListProgress;
@@ -66,7 +66,7 @@ namespace UPMTool
                 {
                     foreach (var package in ListRequest.Result)
                     {
-                        Debug.Log("Package name: " + package.name);
+                        Debug.Log($"{package.name},{package.displayName},{package.version}");
                     }
                 }
                 else if (ListRequest.Status >= StatusCode.Failure)

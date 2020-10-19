@@ -155,27 +155,19 @@ namespace UPMToolDevelop
             _gitUrl = GetGitUrl(packageId);
 
             // 只有git途径获取的包,才能使用UPM Tool拓展功能
-            if (!string.IsNullOrEmpty(_gitUrl))
-            {
-                _ui.SetUIVisible(true);
-            }
-            else
+            if (string.IsNullOrEmpty(_gitUrl))
             {
                 _ui.SetUIVisible(false);
+                return;
             }
 
-            // todo ......
-
-            Debug.Log($"package.json path is {packageInfo.assetPath}");
+            _ui.SetUIVisible(true);
 
             var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>($"{packageInfo.assetPath}/package.json");
 
             var packageJsonInfo = PackageJson.Parse(textAsset.text);
 
-            foreach (var dependency in packageJsonInfo.dependenciesUt)
-            {
-                Debug.Log($"{dependency.packageName}:{dependency.version}");
-            }
+            _ui.DrawDependenciesUt(packageJsonInfo);
         }
 
         /// <summary>
