@@ -62,6 +62,11 @@ namespace UPMTool
             }
         }
 
+        /// <summary>
+        /// 将PackageJsonInfo对象转为json文本
+        /// </summary>
+        /// <param name="packageJsonInfo"></param>
+        /// <returns></returns>
         public static string ToJson(PackageJsonInfo packageJsonInfo)
         {
             var setting = new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore};

@@ -15,17 +15,19 @@
               </e>
               <e p="Develop" t="Include">
                 <e p="PackageChecker.cs" t="Include" />
-                <e p="PackageDependency.cs" t="Include" />
-                <e p="PackageJson.cs" t="Include" />
-                <e p="PackageJsonEditor.cs" t="Include" />
-                <e p="PackageJsonInfo.cs" t="Include" />
-                <e p="PackageJsonUI.cs" t="Include" />
                 <e p="PackagePathGenerator.cs" t="Include" />
               </e>
               <e p="Editor.UPMTool.asmdef" t="Include" />
               <e p="Example.cs" t="Include" />
-              <e p="PackageCreateTool" t="Include">
+              <e p="PackageJson" t="Include">
+                <e p="PackageDependency.cs" t="Include" />
+                <e p="PackageJson.cs" t="Include" />
+                <e p="PackageJsonInfo.cs" t="Include" />
+              </e>
+              <e p="PackageJsonTool" t="Include">
+                <e p="PackageJsonEditor.cs" t="Include" />
                 <e p="PackageJsonTool.cs" t="Include" />
+                <e p="PackageJsonUI.cs" t="Include" />
               </e>
               <e p="PackageReleaseTool" t="Include">
                 <e p="CMDTool.cs" t="Include" />
