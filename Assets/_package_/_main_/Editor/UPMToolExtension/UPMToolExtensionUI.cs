@@ -6,6 +6,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UPMToolDevelop;
+using PackageInfo = UnityEditor.PackageManager.PackageInfo;
 
 namespace UPMTool
 {
@@ -19,40 +20,78 @@ namespace UPMTool
             return new UPMToolExtensionUI();
         }
 
-        private readonly VisualElement _root;
+        private VisualElement _packageVersionRoot;
 
-        private readonly List<string> _tagsList;
+        private List<string> _tagsList;
 
-        private readonly Button _getGitTagsButton;
-        private readonly PopupField<string> _versionTagsPopupField;
-        private readonly Button _changeVersionButton;
+        private Button _getGitTagsButton;
+        private PopupField<string> _versionTagsPopupField;
+        private Button _changeVersionButton;
         private VisualTreeAsset _dependenciesItemVisualTreeAsset;
 
         private Queue<VisualElement> _dependenciesItemQueue;
 
         private UPMToolExtensionUI()
         {
-            _root = new VisualElement {name = "ui_root"};
-            Add(_root);
+            InitPackageVersion();
+
+            InitDependenciesUt();
+        }
+
+        #region 插件版本
+
+        private void InitPackageVersion()
+        {
+            _packageVersionRoot = new VisualElement {name = "package_version_root"};
+            Add(_packageVersionRoot);
 
             // 插件版本UI用代码生成,不用uxml的原因是PopupField组件不能用uxml
-            _getGitTagsButton = new Button();
-            _getGitTagsButton.name = "get_git_tags";
-            _getGitTagsButton.text = "获取版本信息";
-            _root.Add(_getGitTagsButton);
+            _getGitTagsButton = new Button {name = "get_git_tags", text = "获取版本信息"};
+            _packageVersionRoot.Add(_getGitTagsButton);
 
             _tagsList = new List<string> {"-select version-"};
             _versionTagsPopupField = new PopupField<string>("Version:", _tagsList, 0) {value = "-select version-"};
             _versionTagsPopupField.SetEnabled(false);
-            _root.Add(_versionTagsPopupField);
+            _packageVersionRoot.Add(_versionTagsPopupField);
 
             _changeVersionButton = new Button {name = "change_version", text = "切换版本"};
             _changeVersionButton.SetEnabled(false);
-            _root.Add(_changeVersionButton);
-
-            // Ut依赖用uxml
-            InitDependenciesUt();
+            _packageVersionRoot.Add(_changeVersionButton);
         }
+
+        public void ResetDrawPackageVersionUI()
+        {
+            _tagsList.Clear();
+            _tagsList.Add("-select version-");
+            _versionTagsPopupField.value = _tagsList[0];
+            _versionTagsPopupField.SetEnabled(false);
+            _changeVersionButton.SetEnabled(false);
+        }
+
+        public void InitPackageVersionAction(UPMToolExtension upmToolExtension)
+        {
+            _getGitTagsButton.clicked += () => { upmToolExtension.GetGitTags(_tagsList, ApplyChoices); };
+
+            _versionTagsPopupField.RegisterValueChangedCallback<string>(upmToolExtension.SelectVersion);
+
+            _changeVersionButton.clicked += upmToolExtension.ChangeVersion;
+        }
+
+
+        private void ApplyChoices(List<string> choices)
+        {
+            if (choices.Count > 0)
+            {
+                _versionTagsPopupField.SetEnabled(true);
+                _versionTagsPopupField.value = choices[0];
+                _changeVersionButton.SetEnabled(true);
+            }
+        }
+
+        #endregion
+
+
+        #region Ut依赖
 
         private void InitDependenciesUt()
         {
@@ -68,7 +107,7 @@ namespace UPMTool
             _dependenciesItemQueue = new Queue<VisualElement>();
         }
 
-        public void DrawDependenciesUt(PackageJsonInfo packageJsonInfo)
+        public void DrawDependenciesUt(PackageJsonInfo packageJsonInfo, UPMToolExtension upmToolExtension)
         {
             var dependRoot = this.Q<VisualElement>("dependencies_item_root");
 
@@ -80,7 +119,6 @@ namespace UPMTool
                 ReturnDependenciesItem(item);
                 dependRoot.RemoveAt(0);
             }
-
 
             if (packageJsonInfo.dependenciesUt.Count <= 0)
             {
@@ -100,55 +138,28 @@ namespace UPMTool
                 item.Q<Label>("packageName_lab").text = dependency.packageName;
                 item.Q<Label>("version_lab").text = dependency.version;
                 var button = item.Q<Button>("import_btn");
-                button.text = "import";
-                button.clicked += () => { PackageUtils.List(); };
+                button.clickable = null;
+                if (upmToolExtension.InstalledPackageInfos.ContainsKey(dependency.packageName))
+                {
+                    button.text = "imported";
+                    button.SetEnabled(false);
+                }
+                else
+                {
+                    button.text = "import";
+                    button.SetEnabled(true);
+                    button.clicked += () =>
+                    {
+                        Debug.Log($"click {dependency.packageName}");
+                        upmToolExtension.InstallDependenciesPackage($"{dependency.packageName}@{dependency.version}");
+                    };
+                }
             }
         }
-
-//        private 
 
         private VisualElement GetNoneDependenciesTip()
         {
             return this.Q<VisualElement>("dependencies_none_tip");
-        }
-
-        /// <summary>
-        /// 如果enable为false,则UI置灰
-        /// </summary>
-        /// <param name="enable"></param>
-        public void SetUIEnable(bool enable)
-        {
-            _root.SetEnabled(enable);
-        }
-
-        /// <summary>
-        /// 设置这个UI界面的显隐
-        /// </summary>
-        /// <param name="isVisible"></param>
-        public void SetUIVisible(bool isVisible)
-        {
-            _root.style.display = isVisible == false
-                ? new StyleEnum<DisplayStyle>(DisplayStyle.None)
-                : new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
-        }
-
-        public void Init(UPMToolExtension upmToolExtension)
-        {
-            _getGitTagsButton.clicked += () => { upmToolExtension.GetGitTags(_tagsList, ApplyChoices); };
-
-            _versionTagsPopupField.RegisterValueChangedCallback<string>(upmToolExtension.SelectVersion);
-
-            _changeVersionButton.clicked += upmToolExtension.ChangeVersion;
-        }
-
-        private void ApplyChoices(List<string> choices)
-        {
-            if (choices.Count > 0)
-            {
-                _versionTagsPopupField.SetEnabled(true);
-                _versionTagsPopupField.value = choices[0];
-                _changeVersionButton.SetEnabled(true);
-            }
         }
 
         private VisualElement GetDependenciesItem()
@@ -165,6 +176,28 @@ namespace UPMTool
         {
             item.Unbind();
             _dependenciesItemQueue.Enqueue(item);
+        }
+
+        #endregion
+
+        /// <summary>
+        /// 如果enable为false,则UI置灰
+        /// </summary>
+        /// <param name="enable"></param>
+        public void SetUIEnable(bool enable)
+        {
+            _packageVersionRoot.SetEnabled(enable);
+        }
+
+        /// <summary>
+        /// 设置这个UI界面的显隐
+        /// </summary>
+        /// <param name="isVisible"></param>
+        public void SetUIVisible(bool isVisible)
+        {
+            this.style.display = isVisible == false
+                ? new StyleEnum<DisplayStyle>(DisplayStyle.None)
+                : new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
         }
     }
 }
