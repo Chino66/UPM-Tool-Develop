@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
+using PackageInfo = UnityEditor.PackageManager.PackageInfo;
 
 namespace UPMTool
 {
@@ -52,9 +54,12 @@ namespace UPMTool
 
         private static ListRequest ListRequest;
 
-        public static void List()
+        private static Action<Dictionary<string, PackageInfo>> _listRequestCompletedCallback;
+
+        public static void List(Action<Dictionary<string, PackageInfo>> completed)
         {
             ListRequest = Client.List();
+            _listRequestCompletedCallback = completed;
             EditorApplication.update += ListProgress;
         }
 
@@ -64,10 +69,15 @@ namespace UPMTool
             {
                 if (ListRequest.Status == StatusCode.Success)
                 {
+                    var list = new Dictionary<string, PackageInfo>();
                     foreach (var package in ListRequest.Result)
                     {
                         Debug.Log($"{package.name},{package.displayName},{package.version}");
+                        list.Add(package.name, package);
                     }
+
+                    _listRequestCompletedCallback?.Invoke(list);
+                    _listRequestCompletedCallback = null;
                 }
                 else if (ListRequest.Status >= StatusCode.Failure)
                 {

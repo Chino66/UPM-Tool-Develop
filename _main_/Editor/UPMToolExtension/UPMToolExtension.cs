@@ -31,39 +31,82 @@ namespace UPMToolDevelop
 
         private UPMToolExtensionUI _ui;
 
+        private bool _inRequestList = false;
+        public Dictionary<string /*packageName*/, PackageInfo> InstalledPackageInfos { get; private set; }
+
+        #region IPackageManagerExtension实现
+
         public VisualElement CreateExtensionUI()
         {
             if (_ui == null)
             {
                 _ui = UPMToolExtensionUI.CreateUI();
-                _ui.Init(this);
+                _ui.InitPackageVersionAction(this);
             }
+
+            RequestInstalledPackageList();
 
             return _ui;
         }
 
         /// <summary>
-        /// 安装选择的版本
+        /// 在PackageManager视窗
+        /// 当选择插件包时,获取这个插件包的信息
         /// </summary>
-        public void ChangeVersion()
+        /// <param name="packageInfo"></param>
+        public void OnPackageSelectionChange(PackageInfo packageInfo)
         {
-            PackageUtils.AddOrUpdatePackage(GetPackageIdByNewGitUrl(), AddOrUpdatePackageCallBack);
-            _ui.SetEnabled(false);
-        }
+            if (_ui == null)
+            {
+                return;
+            }
 
-        private void AddOrUpdatePackageCallBack()
-        {
-            _ui.SetEnabled(true);
+            _selectPackageInfo = packageInfo;
+
+            var packageId = _selectPackageInfo.packageId;
+
+            // 判断这个包是否是git途径获取的
+            _gitUrl = GetGitUrl(packageId);
+
+            // 只有git途径获取的包,才能使用UPM Tool拓展功能
+            if (string.IsNullOrEmpty(_gitUrl))
+            {
+                _ui.SetUIVisible(false);
+                return;
+            }
+
+            _ui.SetUIVisible(true);
+
+            _ui.ResetDrawPackageVersionUI();
+            
+            if (_inRequestList == false)
+            {
+                DrawDependenciesUt();
+            }
         }
 
         /// <summary>
-        /// 选择插件版本
+        /// 当添加或更新插件包时
         /// </summary>
-        /// <param name="evt"></param>
-        public void SelectVersion(ChangeEvent<string> evt)
+        /// <param name="packageInfo"></param>
+        public void OnPackageAddedOrUpdated(PackageInfo packageInfo)
         {
-            _selectVersion = evt.newValue;
+            RequestInstalledPackageList();
         }
+
+        /// <summary>
+        /// 当移除插件包时
+        /// </summary>
+        /// <param name="packageInfo"></param>
+        public void OnPackageRemoved(PackageInfo packageInfo)
+        {
+            RequestInstalledPackageList();
+        }
+
+        #endregion
+
+
+        #region 更新插件版本
 
         /// <summary>
         /// 获取git仓库的tags
@@ -123,6 +166,66 @@ namespace UPMToolDevelop
             });
         }
 
+        /// <summary>
+        /// 选择插件版本
+        /// </summary>
+        /// <param name="evt"></param>
+        public void SelectVersion(ChangeEvent<string> evt)
+        {
+            _selectVersion = evt.newValue;
+        }
+
+        /// <summary>
+        /// 安装选择的版本
+        /// </summary>
+        public void ChangeVersion()
+        {
+            _ui.SetEnabled(false);
+
+            var path = GetPackageIdByNewGitUrl();
+
+            PackageUtils.AddOrUpdatePackage(path, () => { _ui.SetEnabled(true); });
+        }
+
+        #endregion
+
+
+        #region 插件依赖
+
+        /// <summary>
+        /// 获取已经安装的插件信息
+        /// </summary>
+        private void RequestInstalledPackageList()
+        {
+            _inRequestList = true;
+            PackageUtils.List(list =>
+            {
+                InstalledPackageInfos = list;
+                _inRequestList = false;
+                DrawDependenciesUt();
+            });
+        }
+
+        private void DrawDependenciesUt()
+        {
+            // todo 缓存
+            var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>($"{_selectPackageInfo.assetPath}/package.json");
+
+            var packageJsonInfo = PackageJson.Parse(textAsset.text);
+
+            _ui.DrawDependenciesUt(packageJsonInfo, this);
+        }
+
+
+        public void InstallDependenciesPackage(string path)
+        {
+            _ui.parent.SetEnabled(false);
+            PackageUtils.AddOrUpdatePackage(path, () => { _ui.SetEnabled(true); });
+        }
+
+        #endregion
+
+
         private string GetPackageIdByNewGitUrl()
         {
             if (_selectPackageInfo == null)
@@ -131,44 +234,13 @@ namespace UPMToolDevelop
             }
 
             var url = GitUtils.GitPathConvertUnityPackagePath(_gitUrl);
-//            url = "git@gitee.com/chinochan66/UPM-Tool-Test.git";
+            // url实例:
+            // "ssh://git@gitee.com/chinochan66/UPM-Tool-Test.git";
+            // 真实路径:
+            // "com.chino.upmtool@ssh://git@gitee.com/chino66/UPM-Tool-Test.git#upm"
             return $"{_selectPackageInfo.name}@{url}#{_selectVersion}";
         }
 
-        /// <summary>
-        /// 在PackageManager视窗
-        /// 当选择插件包时,获取这个插件包的信息
-        /// </summary>
-        /// <param name="packageInfo"></param>
-        public void OnPackageSelectionChange(PackageInfo packageInfo)
-        {
-            if (_ui == null)
-            {
-                return;
-            }
-
-            _selectPackageInfo = packageInfo;
-
-            var packageId = _selectPackageInfo.packageId;
-
-            // 判断这个包是否是git途径获取的
-            _gitUrl = GetGitUrl(packageId);
-
-            // 只有git途径获取的包,才能使用UPM Tool拓展功能
-            if (string.IsNullOrEmpty(_gitUrl))
-            {
-                _ui.SetUIVisible(false);
-                return;
-            }
-
-            _ui.SetUIVisible(true);
-
-            var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>($"{packageInfo.assetPath}/package.json");
-
-            var packageJsonInfo = PackageJson.Parse(textAsset.text);
-
-            _ui.DrawDependenciesUt(packageJsonInfo);
-        }
 
         /// <summary>
         /// 获取git路径,可能是github或gitee
@@ -207,22 +279,6 @@ namespace UPMToolDevelop
 
             Debug.LogWarning(url);
             return url;
-        }
-
-        /// <summary>
-        /// 当添加或更新插件包时
-        /// </summary>
-        /// <param name="packageInfo"></param>
-        public void OnPackageAddedOrUpdated(PackageInfo packageInfo)
-        {
-        }
-
-        /// <summary>
-        /// 当移除插件包时
-        /// </summary>
-        /// <param name="packageInfo"></param>
-        public void OnPackageRemoved(PackageInfo packageInfo)
-        {
         }
     }
 }
