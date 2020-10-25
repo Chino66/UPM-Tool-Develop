@@ -72,7 +72,7 @@ namespace UPMTool
                     var list = new Dictionary<string, PackageInfo>();
                     foreach (var package in ListRequest.Result)
                     {
-                        Debug.Log($"{package.name},{package.displayName},{package.version}");
+//                        Debug.Log($"{package.name},{package.displayName},{package.version}");
                         list.Add(package.name, package);
                     }
 
