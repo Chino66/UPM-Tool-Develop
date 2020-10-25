@@ -62,7 +62,6 @@ namespace UPMToolDevelop
             }
 
             _selectPackageInfo = packageInfo;
-
             var packageId = _selectPackageInfo.packageId;
 
             // 判断这个包是否是git途径获取的
@@ -197,6 +196,11 @@ namespace UPMToolDevelop
         /// </summary>
         private void RequestInstalledPackageList()
         {
+            if (_inRequestList)
+            {
+                return;
+            }
+
             _inRequestList = true;
             PackageUtils.List(list =>
             {
@@ -208,6 +212,11 @@ namespace UPMToolDevelop
 
         private void DrawDependenciesUt()
         {
+            if (_selectPackageInfo == null)
+            {
+                return;
+            }
+
             // todo 缓存
             var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>($"{_selectPackageInfo.assetPath}/package.json");
 
@@ -277,7 +286,6 @@ namespace UPMToolDevelop
 
             url = GitUtils.UnityPackagePathConvertGitPath(url);
 
-            Debug.LogWarning(url);
             return url;
         }
     }

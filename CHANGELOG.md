@@ -22,7 +22,7 @@
 4. 使用UPMTool创建插件模板时,默认对创建的Package.json添加"UPMTool"的插件依赖
     * 创建的插件并不是必须依赖"UPMTool",而是"UPMTool"可以给插件拓展更多功能,如发布,更新等
 
-### 0.0.6
+### 0.0.6-0.0.7
 1. 用于UPMTool插件的依赖使用git路径而不是semver,所以添加"dependenciesUt"字段到package.json的中,支持路径的依赖
 例:
 ```
@@ -34,3 +34,6 @@
 }
 ```
 2. 安装UPMTool工具后,在PackageManager面板可以看到插件的"dependenciesUt"依赖安装情况,点击"install"安装指定依赖
+
+# 0.0.8
+1. 关闭一些输出
