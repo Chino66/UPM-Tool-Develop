@@ -259,6 +259,7 @@ namespace UPMToolDevelop
         /// 例:
         /// 本地插件的packageId:com.chino.upmtool@file:F:\Unity3D\UPM-Tool-Develop\Assets\_package_
         /// git插件的packageId:com.chino.testpackage@ssh://git@github.com/Chino66/UPM-Tool-Develop.git#upm
+        /// http://gitlab.wd.com/cyj/Game_AI_Develop.git#upm
         /// </summary>
         /// <param name="packageId">插件包的来源路径</param>
         /// <returns></returns>
@@ -272,7 +273,7 @@ namespace UPMToolDevelop
 
             Debug.Log(packageId);
 
-            var pattern = "(https://(.*).git)|(git@(.*).git)";
+            var pattern = "(https://(.*).git)|(git@(.*).git)|(http://(.*).git)";
 
             Match match = Regex.Match(packageId, pattern);
 

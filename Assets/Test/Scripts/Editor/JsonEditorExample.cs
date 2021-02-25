@@ -7,8 +7,8 @@ using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
-using UPMTool;
 using PackageInfo = UnityEditor.PackageInfo;
+
 
 public class JsonEditorExample : Editor
 {
