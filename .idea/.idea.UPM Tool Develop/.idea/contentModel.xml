@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Administrator\.Rider2019.1\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\Administrator\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Administrator\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_UPM Tool Develop.-811136192.00" t="ExcludeRecursive" />
-    <e p="E:\GitHub\Package Projects\UPM Tool Develop" t="IncludeRecursive">
+    <e p="C:\Users\cyj\AppData\local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\cyj\AppData\local\JetBrains\Rider2020.3\resharper-host\local\Transient\Rider\v203\SolutionCaches\_UPM Tool Develop.803834318.00" t="ExcludeRecursive" />
+    <e p="D:\Package Projects\UPM Tool Develop" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_package_" t="Include">
           <e p="_main_" t="Include">
             <e p="Editor" t="Include">
               <e p="_generate_" t="Include">
+                <e p="PackageDependenciesChecker.cs" t="Include" />
                 <e p="PackagePath.cs" t="Include" />
+              </e>
+              <e p="CMDTool" t="Include">
+                <e p="CMDTool.cs" t="Include" />
               </e>
               <e p="Develop" t="Include">
                 <e p="PackageChecker.cs" t="Include" />
-                <e p="PackageDependency.cs" t="Include" />
-                <e p="PackageJsonEditor.cs" t="Include" />
-                <e p="PackageJsonInfo.cs" t="Include" />
-                <e p="PackageJsonUI.cs" t="Include" />
-                <e p="PackageManifestImporter.cs" t="Include" />
                 <e p="PackagePathGenerator.cs" t="Include" />
-                <e p="Version.cs" t="Include" />
               </e>
               <e p="Editor.UPMTool.asmdef" t="Include" />
               <e p="Example.cs" t="Include" />
-              <e p="PackageCreateTool" t="Include">
-                <e p="PackageCreateTool.cs" t="Include" />
+              <e p="PackageJson" t="Include">
+                <e p="PackageDependency.cs" t="Include" />
+                <e p="PackageJson.cs" t="Include" />
+                <e p="PackageJsonInfo.cs" t="Include" />
+              </e>
+              <e p="PackageJsonTool" t="Include">
+                <e p="PackageJsonEditor.cs" t="Include" />
+                <e p="PackageJsonTool.cs" t="Include" />
+                <e p="PackageJsonUI.cs" t="Include" />
               </e>
               <e p="PackageReleaseTool" t="Include">
-                <e p="CMDTool.cs" t="Include" />
                 <e p="PackageReleaseTool.cs" t="Include" />
               </e>
               <e p="Process" t="Include">
@@ -51,6 +55,8 @@
             <e p="Resources" t="Include">
               <e p="UIElement" t="Include">
                 <e p="dependencies_item_uxml.uxml" t="Include" />
+                <e p="dependenciesUt_item_uxml.uxml" t="Include" />
+                <e p="dependenciesUt_root_uxml.uxml" t="Include" />
                 <e p="example_uss.uss" t="Include" />
                 <e p="example_uxml.uxml" t="Include" />
                 <e p="package_json_uss.uss" t="Include" />
@@ -60,6 +66,11 @@
           </e>
         </e>
         <e p="Test" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="JsonEditorExample.cs" t="Include" />
+            </e>
+          </e>
           <e p="UIElementsExamples.cs" t="Include" />
         </e>
         <e p="UIBuilder" t="Include">
