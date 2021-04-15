@@ -75,6 +75,11 @@ namespace UPMTool
                 return url;
             }
 
+            if (url.StartsWith("http"))
+            {
+                return url;
+            }
+            
             if (url.StartsWith("git@"))
             {
                 var index = url.IndexOf(':');

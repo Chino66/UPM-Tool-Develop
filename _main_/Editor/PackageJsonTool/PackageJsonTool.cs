@@ -1,11 +1,6 @@
-﻿using System;
-using System.IO;
-using LitJson;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 using UPMTool;
-using UPMToolDevelop;
 
 public class PackageJsonTool : EditorWindow
 {
