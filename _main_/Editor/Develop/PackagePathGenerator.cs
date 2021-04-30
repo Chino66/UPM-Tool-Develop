@@ -6,7 +6,7 @@ namespace UPMTool
 {
     public static class PackagePathGenerator
     {
-        public static void Generate(string nameSpace, string path, string className = "PackagePath")
+        public static void Generate(string nameSpace, string path, string displayName, string className = "PackagePath")
         {
             CodeCompileUnit unit = new CodeCompileUnit();
             CodeNamespace theNamespace = new CodeNamespace(nameSpace);
@@ -18,11 +18,19 @@ namespace UPMTool
             theClass.TypeAttributes = TypeAttributes.Public | TypeAttributes.Class;
             theNamespace.Types.Add(theClass);
 
+            // LocalPath
             CodeMemberField LocalPath = new CodeMemberField(typeof(string), "LocalPath");
             LocalPath.Attributes = MemberAttributes.Private | MemberAttributes.Const;
             LocalPath.InitExpression = new CodePrimitiveExpression(@"Assets/_package_/_main_/");
             theClass.Members.Add(LocalPath);
 
+            // DisplayName
+            CodeMemberField DisplayName = new CodeMemberField(typeof(string), "DisplayName");
+            DisplayName.Attributes = MemberAttributes.Public | MemberAttributes.Const;
+            DisplayName.InitExpression = new CodePrimitiveExpression(displayName);
+            theClass.Members.Add(DisplayName);
+            
+            // _mainPath
             CodeMemberField _mainPath = new CodeMemberField(typeof(string), "_mainPath");
             _mainPath.Attributes = MemberAttributes.Private | MemberAttributes.Static;
             theClass.Members.Add(_mainPath);

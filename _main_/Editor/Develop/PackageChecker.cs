@@ -14,6 +14,8 @@ namespace UPMTool
 
         private const string packagePathCsPath = "Assets/_package_/_main_/Editor/_generate_/PackagePath.cs";
 
+        private const string upmToolImporterCsPath = "Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs";
+
         public const string resourcesPath = "Assets/_package_/_main_/Resources";
 
         private static PackageJsonInfo _packageJsonInfo;
@@ -35,7 +37,17 @@ namespace UPMTool
             _packageJsonInfo = GetPackageJsonInfo();
 
             // PackagePath.cs检查
-            hasFile = File.Exists(packagePathCsPath);
+            PackagePathCheck();
+
+            // UPMToolImporter.cs检查
+            UPMToolImporterCheck();
+
+            AssetDatabase.Refresh();
+        }
+
+        private static void PackagePathCheck()
+        {
+            var hasFile = File.Exists(packagePathCsPath);
 
             if (hasFile)
             {
@@ -51,8 +63,30 @@ namespace UPMTool
 
             var nameSpace = _packageJsonInfo.displayName.Replace(" ", "");
 
-            PackagePathGenerator.Generate(nameSpace, packagePathCsPath);
+            PackagePathGenerator.Generate(nameSpace, packagePathCsPath, _packageJsonInfo.displayName);
         }
+
+        private static void UPMToolImporterCheck()
+        {
+            var hasFile = File.Exists(upmToolImporterCsPath);
+
+            if (hasFile)
+            {
+                return;
+            }
+
+            var dirPath = Path.GetDirectoryName(upmToolImporterCsPath);
+
+            if (Directory.Exists(dirPath) == false)
+            {
+                Directory.CreateDirectory(dirPath);
+            }
+
+            var nameSpace = _packageJsonInfo.displayName.Replace(" ", "");
+
+            UPMToolImporterGenerator.Generate(nameSpace, upmToolImporterCsPath, _packageJsonInfo.displayName);
+        }
+
 
         public static bool HasPackageJson => File.Exists(packageJsonPath);
 

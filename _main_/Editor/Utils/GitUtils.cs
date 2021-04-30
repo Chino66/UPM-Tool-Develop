@@ -79,7 +79,7 @@ namespace UPMTool
             {
                 return url;
             }
-            
+
             if (url.StartsWith("git@"))
             {
                 var index = url.IndexOf(':');
@@ -90,11 +90,11 @@ namespace UPMTool
                     return url;
                 }
             }
-            
+
             Debug.LogError("url is bad");
             return url;
         }
-        
+
         /// <summary>
         /// 将unity包地址转为git地址
         /// 如果是https地址,则直接返回就是正确的格式
@@ -113,7 +113,7 @@ namespace UPMTool
                 return "";
             }
 
-            if (url.StartsWith("https"))
+            if (url.StartsWith("http"))
             {
                 return url;
             }
@@ -127,8 +127,8 @@ namespace UPMTool
                     return url;
                 }
             }
-            
-            Debug.LogError("url is bad");
+
+            Debug.LogError("url is bad " + url);
             return url;
         }
     }
