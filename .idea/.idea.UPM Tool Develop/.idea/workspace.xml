@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4bc877-c64f-49dd-9bb0-e70078763c60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackagePathGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackagePathGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/GitUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/GitUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackageDependenciesChecker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackageDependenciesChecker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackagePath.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackagePath.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +306,7 @@
       <workItem from="1614240092052" duration="1852000" />
       <workItem from="1618199701886" duration="617000" />
       <workItem from="1618206854885" duration="7968000" />
-      <workItem from="1619755244315" duration="15954000" />
+      <workItem from="1619755244315" duration="16863000" />
     </task>
     <servers />
   </component>

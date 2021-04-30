@@ -42,6 +42,12 @@ namespace UPMTool
             {
                 Attributes = MemberAttributes.Private | MemberAttributes.Static
             };
+            var Type = new CodeTypeReference(className);
+            // var importer = new CodeVariableDeclarationStatement(Type, $"importer = new {className}()");
+            var s = new CodeExpressionStatement();
+            s.Expression =
+                new CodeVariableReferenceExpression($"PackageManagerExtensions.RegisterExtension(new {className}())");
+            sc.Statements.Add(s);
             @class.Members.Add(sc);
 
             // 类实现IPackageManagerExtension接口

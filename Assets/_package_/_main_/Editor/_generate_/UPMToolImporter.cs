@@ -27,6 +27,7 @@ namespace UPMTool
         
         static UPMToolImporter()
         {
+            PackageManagerExtensions.RegisterExtension(new UPMToolImporter());
         }
         
         public virtual VisualElement CreateExtensionUI()
