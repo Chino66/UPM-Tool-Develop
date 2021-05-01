@@ -11,8 +11,8 @@
           <e p="_main_" t="Include">
             <e p="Editor" t="Include">
               <e p="_generate_" t="Include">
-                <e p="PackageDependenciesChecker.cs" t="Include" />
                 <e p="PackagePath.cs" t="Include" />
+                <e p="UPMToolImporter.cs" t="Include" />
               </e>
               <e p="CMDTool" t="Include">
                 <e p="CMDTool.cs" t="Include" />
@@ -20,8 +20,12 @@
               <e p="Develop" t="Include">
                 <e p="PackageChecker.cs" t="Include" />
                 <e p="PackagePathGenerator.cs" t="Include" />
+                <e p="UPMToolImporterGenerator.cs" t="Include" />
               </e>
               <e p="Editor.UPMTool.asmdef" t="Include" />
+              <e p="Example" t="Include">
+                <e p="PMExtension.cs" t="Include" />
+              </e>
               <e p="Example.cs" t="Include" />
               <e p="PackageJson" t="Include">
                 <e p="PackageDependency.cs" t="Include" />

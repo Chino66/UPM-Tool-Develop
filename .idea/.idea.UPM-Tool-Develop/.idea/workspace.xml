@@ -4,9 +4,10 @@
     <list default="true" id="1143237c-53f8-4284-8da9-15f458a0f077" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM-Tool-Develop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/PackageUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/PackageUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackageDependenciesChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackageDependenciesChecker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example/PMExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example/PMExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs.meta" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,344 +17,168 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtensionUI.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="153" column="116" selection-start-line="153" selection-start-column="68" selection-end-line="153" selection-end-column="116" />
-              <folding>
-                <marker date="1603206849553" expanded="true" signature="6:244" ph="..." />
-                <marker date="1603206849553" expanded="true" signature="263:6820" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="270:325" ph="/// UPMTool拓展的UI界面 ... " />
-                <marker date="1603206849553" expanded="true" signature="377:6818" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="435:500" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="906:995" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="1005:2929" ph="插件版本" />
-                <marker date="1603206849553" expanded="true" signature="1060:1897" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="1946:2207" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="2288:2597" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="2655:2909" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="2700:2899" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="2940:6207" ph="Ut依赖" />
-                <marker date="1603206849553" expanded="true" signature="2995:3587" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="3695:5558" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="3907:4073" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="4133:4290" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="4307:4440" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="4532:5548" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="4982:5110" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="5131:5534" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="5303:5515" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="5614:5701" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="5754:6025" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="5814:5899" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="6090:6187" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="6217:6328" ph="/// 如果enable为false,则UI置灰 ... " />
-                <marker date="1603206849553" expanded="true" signature="6373:6445" ph="{...}" />
-                <marker date="1603206849553" expanded="true" signature="6455:6560" ph="/// 设置这个UI界面的显隐 ... " />
-                <marker date="1603206849553" expanded="true" signature="6609:6812" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackageDependenciesChecker.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-              <folding>
-                <marker date="1603611209013" expanded="true" signature="37:304" ph="{...}" />
-                <marker date="1603611209013" expanded="true" signature="83:302" ph="{...}" />
-                <marker date="1603611209013" expanded="true" signature="124:144" ph="{...}" />
-                <marker date="1603611209013" expanded="true" signature="154:218" ph="/// 当导入插件的时候,先去加载依赖 ... " />
-                <marker date="1603611209013" expanded="true" signature="263:296" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/PackageUtils.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding>
-                <marker date="1603553547984" expanded="true" signature="6:222" ph="..." />
-                <marker date="1603553547984" expanded="true" signature="241:2774" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="280:2772" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="295:1418" ph="添加或更新插件包" />
-                <marker date="1603553547984" expanded="true" signature="422:524" ph="/// 添加或更新插件包 ... " />
-                <marker date="1603553547984" expanded="true" signature="606:775" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="819:1398" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="870:1388" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="946:1059" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="1126:1220" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="1429:2766" ph="插件包列表" />
-                <marker date="1603553547984" expanded="true" signature="1670:1840" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="1884:2746" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="1935:2736" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="2011:2502" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="2163:2360" ph="{...}" />
-                <marker date="1603553547984" expanded="true" signature="2569:2663" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJsonTool/PackageJsonUI.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="211" column="34" lean-forward="true" selection-start-line="211" selection-start-column="34" selection-end-line="211" selection-end-column="34" />
-              <folding>
-                <marker date="1603036295364" expanded="false" signature="6:170" ph="..." />
-                <marker date="1603036295364" expanded="true" signature="189:13794" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="238:13792" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="291:351" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="531:1348" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="1358:1416" ph="/// 初始化共用部分UI ... " />
-                <marker date="1603036295364" expanded="true" signature="1489:4412" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="1806:2093" ph="/* textField.value = packageJsonInfo.name; ... */" />
-                <marker date="1603036295364" expanded="true" signature="2206:2505" ph="/* textField.value = packageJsonInfo.displayName; ... */" />
-                <marker date="1603036295364" expanded="true" signature="2610:2915" ph="/* textField.value = packageJsonInfo.version; ... */" />
-                <marker date="1603036295364" expanded="true" signature="3016:3311" ph="/* textField.value = packageJsonInfo.unity; ... */" />
-                <marker date="1603036295364" expanded="true" signature="3410:3695" ph="/* textField.value = packageJsonInfo.type; ... */" />
-                <marker date="1603036295364" expanded="true" signature="3808:4164" ph="/* textField.value = packageJsonInfo.description; ... */" />
-                <marker date="1603036295364" expanded="true" signature="4422:4480" ph="/// 初始化创建界面UI ... " />
-                <marker date="1603036295364" expanded="true" signature="4566:6113" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="4877:5755" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="4995:5123" ph="/* 添加&quot;UPMTool&quot;依赖 ... */" />
-                <marker date="1603036295364" expanded="true" signature="5343:5407" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="6123:6181" ph="/// 初始化编辑界面UI ... " />
-                <marker date="1603036295364" expanded="true" signature="6267:7482" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="6737:7147" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="6958:7022" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="7553:8027" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="7710:7867" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="7884:8017" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="8037:8103" ph="/// 插件依赖相关UIElement交互 ... " />
-                <marker date="1603036295364" expanded="true" signature="8259:9392" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="8302:8599" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="8878:9008" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="9144:9297" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="9402:9509" ph="/// 绘制所有依赖项 ... " />
-                <marker date="1603036295364" expanded="true" signature="9602:10039" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="9822:9979" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="10049:10183" ph="/// 绘制依赖项 ... " />
-                <marker date="1603036295364" expanded="true" signature="10273:10868" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="10878:10983" ph="/// 添加依赖项 ... " />
-                <marker date="1603036295364" expanded="true" signature="11122:11582" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="11592:11697" ph="/// 移除依赖项 ... " />
-                <marker date="1603036295364" expanded="true" signature="11839:12187" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="12252:12953" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="12433:12485" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="12524:12725" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="12742:12943" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="13032:13127" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="13206:13300" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="13353:13624" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="13413:13498" ph="{...}" />
-                <marker date="1603036295364" expanded="true" signature="13689:13786" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="255" column="41" lean-forward="true" selection-start-line="255" selection-start-column="41" selection-end-line="255" selection-end-column="41" />
+            <state relative-caret-position="405">
+              <caret line="137" column="45" lean-forward="true" selection-start-line="137" selection-start-column="45" selection-end-line="137" selection-end-column="45" />
               <folding>
-                <marker date="1603611376510" expanded="true" signature="6:265" ph="..." />
-                <marker date="1603611376510" expanded="true" signature="291:7769" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="298:420" ph="/// UPMTool在PackageManager上的拓展 ... " />
-                <marker date="1603611376510" expanded="true" signature="504:7767" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="544:644" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="970:2706" ph="IPackageManagerExtension实现" />
-                <marker date="1603611376510" expanded="true" signature="1054:1305" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="1093:1226" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="1315:1459" ph="/// 在PackageManager视窗 ... " />
-                <marker date="1603611376510" expanded="true" signature="1529:2200" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="1568:1620" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="1894:1987" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="2124:2190" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="2210:2316" ph="/// 当添加或更新插件包时 ... " />
-                <marker date="1603611376510" expanded="true" signature="2385:2448" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="2458:2561" ph="/// 当移除插件包时 ... " />
-                <marker date="1603611376510" expanded="true" signature="2623:2686" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="2717:4937" ph="更新插件版本" />
-                <marker date="1603611376510" expanded="true" signature="2741:2802" ph="/// 获取git仓库的tags ... " />
-                <marker date="1603611376510" expanded="true" signature="2884:4398" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="2953:4386" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="3085:4257" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="3230:3308" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="3357:4208" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="3407:4002" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="3585:3687" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="3729:3832" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="3874:3976" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="4046:4186" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="4299:4372" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="4408:4502" ph="/// 选择插件版本 ... " />
-                <marker date="1603611376510" expanded="false" signature="4561:4624" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="4634:4690" ph="/// 安装选择的版本 ... " />
-                <marker date="1603611376510" expanded="true" signature="4726:4917" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="4948:6072" ph="插件依赖" />
-                <marker date="1603611376510" expanded="true" signature="4970:5030" ph="/// 获取已经安装的插件信息 ... " />
-                <marker date="1603611376510" expanded="true" signature="5081:5413" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="5123:5175" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="5262:5401" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="5456:5844" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="5510:5562" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="5906:6052" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="6123:6583" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="6177:6232" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="6318:6501" ph="/* url实例: ... */" />
-                <marker date="1603611376510" expanded="true" signature="6594:7055" ph="/// 获取git路径,可能是github或gitee ... " />
-                <marker date="1603611376510" expanded="true" signature="7113:7761" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="7172:7280" ph="{...}" />
-                <marker date="1603611376510" expanded="true" signature="7480:7625" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="6:193" ph="..." />
+                <marker date="1619867568104" expanded="true" signature="212:20671" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="263:20669" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="406:4384" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="1373:1466" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="1810:1905" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="2099:2335" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="2574:2742" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="2928:3066" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="4111:4210" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="4286:4374" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="4394:4518" ph="/// 实现CreateExtensionUI接口 ... " />
+                <marker date="1619867568104" expanded="true" signature="4604:7192" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="5024:5136" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="5272:5377" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="5537:5655" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="5923:6167" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="6311:6429" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="6657:6847" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="7202:7353" ph="/// &lt;summary&gt; ... " />
+                <marker date="1619867568104" expanded="true" signature="7499:8266" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="8015:8209" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="8276:8425" ph="/// &lt;summary&gt; ... " />
+                <marker date="1619867568104" expanded="true" signature="8570:9328" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="9081:9271" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="9338:9473" ph="/// &lt;summary&gt; ... " />
+                <marker date="1619867568104" expanded="true" signature="9611:10362" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="10115:10305" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="10372:10473" ph="/// CheckList模块 ... " />
+                <marker date="1619867568104" expanded="true" signature="10545:15367" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="10721:10816" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="11045:11140" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="11312:11478" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="11788:11927" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="12094:12235" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="12412:12563" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="12624:12683" ph="/* -- ... */" />
+                <marker date="1619867568104" expanded="true" signature="12738:12912" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="13464:13594" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="14506:14728" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="14901:15027" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="15192:15310" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="15377:15472" ph="/// Add模块 ... " />
+                <marker date="1619867568104" expanded="true" signature="15538:19219" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="15700:15795" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="16000:16095" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="16273:16433" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="16883:17024" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="17185:17320" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="17491:17636" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="17788:17956" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="18490:18614" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="18776:18891" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="19050:19162" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="19297:20663" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="19736:19936" ph="{...}" />
+                <marker date="1619867568104" expanded="true" signature="20405:20606" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJsonTool/PackageJsonEditor.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="988">
+              <caret line="69" column="9" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+              <folding>
+                <marker date="1619780814024" expanded="false" signature="6:54" ph="..." />
+                <marker date="1619780814024" expanded="true" signature="73:2841" ph="{...}" />
+                <marker date="1619780814024" expanded="true" signature="114:2839" ph="{...}" />
+                <marker date="1619780814024" expanded="true" signature="731:815" ph="/// 开发插件时,检查package.json和PackagePath.cs ... " />
+                <marker date="1619780814024" expanded="true" signature="883:1292" ph="{...}" />
+                <marker date="1619780814024" expanded="true" signature="1000:1052" ph="{...}" />
+                <marker date="1619780814024" expanded="true" signature="1340:1878" ph="{...}" />
+                <marker date="1619780814024" expanded="true" signature="1434:1486" ph="{...}" />
+                <marker date="1619780814024" expanded="true" signature="1608:1688" ph="{...}" />
+                <marker date="1619780814024" expanded="true" signature="1930:2484" ph="{...}" />
+                <marker date="1619780814024" expanded="true" signature="2028:2080" ph="{...}" />
+                <marker date="1619780814024" expanded="true" signature="2206:2286" ph="{...}" />
+                <marker date="1619780814024" expanded="true" signature="2621:2833" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackagePathGenerator.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="47" column="78" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="78" />
+              <folding>
+                <marker date="1619780814082" expanded="false" signature="6:77" ph="..." />
+                <marker date="1619780814082" expanded="true" signature="96:3855" ph="{...}" />
+                <marker date="1619780814082" expanded="true" signature="143:3853" ph="{...}" />
+                <marker date="1619780814082" expanded="true" signature="270:3847" ph="{...}" />
+                <marker date="1619780814082" expanded="true" signature="3749:3837" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
               <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
               <folding>
-                <marker date="1603036295507" expanded="false" signature="6:260" ph="..." />
-                <marker date="1603036295507" expanded="true" signature="286:7274" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="293:361" ph="/// package.json文件Inspector视图拓展 ... " />
-                <marker date="1603036295507" expanded="true" signature="443:7272" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="605:896" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="631:886" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="914:1019" ph="/// 使用UIElement方式绘制Inspector ... " />
-                <marker date="1603036295507" expanded="true" signature="1078:1520" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="1229:1463" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="1530:1639" ph="/// 创建插件包框架结构 ... " />
-                <marker date="1603036295507" expanded="true" signature="1719:2224" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="2234:2322" ph="/// 创建插件包框架结构后 ... " />
-                <marker date="1603036295507" expanded="true" signature="2376:2432" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="2442:2570" ph="/// 创建目录 ... " />
-                <marker date="1603036295507" expanded="true" signature="2621:2767" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="2680:2757" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="2777:2916" ph="/// 创建或修改文件 ... " />
-                <marker date="1603036295507" expanded="true" signature="2988:3331" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="3098:3174" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="3431:4360" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="3660:3747" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="3933:4020" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="4212:4299" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="4417:4976" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="4488:4941" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="5088:5555" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="5289:5418" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="5565:5708" ph="/// 保存package,json版本号修改 ... " />
-                <marker date="1603036295507" expanded="true" signature="5780:6022" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="6032:6150" ph="/// 使用OnHeaderGUI,绘制的GUI可以交互 ... " />
-                <marker date="1603036295507" expanded="true" signature="6196:6553" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="6380:6432" ph="{...}" />
-                <marker date="1603036295507" expanded="true" signature="6563:6904" ph="/// 创建插件package.json时,默认添加&quot;UPMTool&quot;依赖到dependenciesUt ... " />
-                <marker date="1603036295507" expanded="true" signature="6985:7266" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="0:395" ph="/* ------------------------------------------------------------------------------ ... */" />
+                <marker date="1619867568154" expanded="true" signature="414:4321" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="427:681" ph="..." />
+                <marker date="1619867568154" expanded="true" signature="776:4319" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="1318:1459" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="1540:1708" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="1759:2014" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="1811:1863" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="2089:2267" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="2324:2885" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="2382:2434" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="2558:2610" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="2951:3355" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="3442:3565" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="3651:3770" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="3849:3968" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="4011:4140" ph="{...}" />
+                <marker date="1619867568154" expanded="true" signature="4183:4313" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/CMDTool/CMDTool.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example/PMExtension.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state relative-caret-position="165">
+              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="29" />
               <folding>
-                <marker date="1603114145283" expanded="false" signature="6:177" ph="..." />
-                <marker date="1603114145283" expanded="true" signature="179:285" ph="/// package发布工具 ... " />
-                <marker date="1603114145283" expanded="true" signature="321:5847" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="328:413" ph="/// 不在开放cmd工具 ... " />
-                <marker date="1603114145283" expanded="true" signature="486:595" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="601:647" ph="/// 进程代理类 ... " />
-                <marker date="1603114145283" expanded="true" signature="685:739" ph="/// 命令执行完成的返回消息队列 ... " />
-                <marker date="1603114145283" expanded="true" signature="783:831" ph="/// 输入的命令队列 ... " />
-                <marker date="1603114145283" expanded="true" signature="832:910" ph="/* private Queue&lt;string&gt; inputCmds; ... */" />
-                <marker date="1603114145283" expanded="true" signature="980:1010" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="1039:1183" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="1211:3373" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="1359:1553" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="1754:1952" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="2872:3295" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="2965:3248" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="3041:3234" ph="/* returnMsgs.Enqueue(msg); ... */" />
-                <marker date="1603114145283" expanded="true" signature="3419:3514" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="3570:3618" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="4285:4417" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="4444:5493" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="4478:5487" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="4607:4832" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="4738:4818" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="4834:4901" ph="/* Debug.Log(command); ... */" />
-                <marker date="1603114145283" expanded="true" signature="5167:5405" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="5310:5391" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="5523:5557" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="5587:5621" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="5652:5845" ph="{...}" />
-                <marker date="1603114145283" expanded="true" signature="5685:5839" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackagePath.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-              <folding>
-                <marker date="1599929909173" expanded="true" signature="0:395" ph="/* ------------------------------------------------------------------------------ ... */" />
-                <marker date="1599929909173" expanded="true" signature="434:1442" ph="{...}" />
-                <marker date="1599929909173" expanded="true" signature="504:1440" ph="{...}" />
-                <marker date="1599929909173" expanded="true" signature="685:1434" ph="{...}" />
-                <marker date="1599929909173" expanded="true" signature="711:1424" ph="{...}" />
-                <marker date="1599929909173" expanded="true" signature="778:1376" ph="{...}" />
-                <marker date="1599929909173" expanded="true" signature="1024:1171" ph="{...}" />
-                <marker date="1599929909173" expanded="true" signature="1196:1358" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/5c/8843c2a4/CompilationPipeline.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3781">
-              <caret line="209" column="25" selection-start-line="209" selection-start-column="25" selection-end-line="209" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/BatUtils.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
-              <folding>
-                <marker date="1602777793822" expanded="false" signature="26:174" ph="..." />
-                <marker date="1602777793822" expanded="true" signature="235:3870" ph="{...}" />
-                <marker date="1602777793822" expanded="true" signature="270:3868" ph="{...}" />
-                <marker date="1602777793822" expanded="true" signature="285:342" ph="/// .bat文件路径 ... " />
-                <marker date="1602777793822" expanded="true" signature="571:709" ph="/// 运行.bat ... " />
-                <marker date="1602777793822" expanded="true" signature="780:1499" ph="{...}" />
-                <marker date="1602777793822" expanded="true" signature="1509:1605" ph="/// 生成.bat内容 ... " />
-                <marker date="1602777793822" expanded="true" signature="1660:2203" ph="{...}" />
-                <marker date="1602777793822" expanded="true" signature="1882:1944" ph="{...}" />
-                <marker date="1602777793822" expanded="true" signature="2213:2314" ph="/// 创建.bat文件,空文件 ... " />
-                <marker date="1602777793822" expanded="true" signature="2366:2493" ph="{...}" />
-                <marker date="1602777793822" expanded="true" signature="2420:2483" ph="{...}" />
-                <marker date="1602777793822" expanded="true" signature="2496:3862" ph="/* 直接执行命令行 ... */" />
+                <marker date="1619866220602" expanded="false" signature="6:255" ph="..." />
+                <marker date="1619866220602" expanded="true" signature="327:3397" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="409:533" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="647:995" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="1026:1122" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="1157:1274" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="1341:1451" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="1517:1623" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="1682:1788" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="1942:2087" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="2126:2343" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="2170:2210" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="2511:2666" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="2711:3395" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="2761:2801" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="2917:2957" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="3043:3294" ph="{...}" />
+                <marker date="1619866220602" expanded="true" signature="3066:3148" ph="/* 正式 ... */" />
+                <marker date="1619866220602" expanded="true" signature="3203:3284" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -382,6 +207,10 @@
       <find>DrawDependenciesUt</find>
       <find>package.json</find>
       <find>package.json&quot;</find>
+      <find>InitExpression</find>
+      <find>OnPackageAddedOrUpdated</find>
+      <find>game a</find>
+      <find>memberField</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -391,9 +220,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test/Scripts/Editor/JsonEditorExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/BatUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6540B1B4-00C3-48CC-A8D4-8BAE1291645C/28/6c44fd15/CodeTypeReferenceExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/GitUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/PackageUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/68/377248a1/StyleEnum`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6540B1B4-00C3-48CC-A8D4-8BAE1291645C/e1/0633f31a/CodeVariableReferenceExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJsonTool/PackageJsonEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtensionUI.cs" root0="FORCE_HIGHLIGHTING" />
@@ -417,8 +248,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackagePathGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/95/ea1cb8c4/StyleLength.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73F49D3B-D492-46D4-9BF7-5923D29E04DF/e9/dfef3121/RequiredByNativeCodeAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example/PMExtension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/8b/303d405a/IStyle.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackageDependenciesChecker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/TimeUtil.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJson/PackageJsonInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJson/PackageJson.cs" root0="FORCE_HIGHLIGHTING" />
@@ -431,6 +262,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/9e/56fa9ee8/ScriptedImporterEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/CMDTool/CMDTool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageReleaseTool/PackageReleaseTool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/cc/7ababd71/PopupField`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/27/75b96357/IPackageManagerExtension.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/60/18be9492/BasePopupField`2.cs" root0="SKIP_HIGHLIGHTING" />
@@ -440,6 +272,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/c6/dd9c9e26/Focusable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/28/4eef5d9f/VisualElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/1d/01677921/CallbackEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -470,7 +303,6 @@
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJson.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageReleaseTool/CMDTool.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtensionUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/package_example.json" />
@@ -478,6 +310,10 @@
         <option value="$PROJECT_DIR$/Assets/Test/Scripts/Editor/JsonEditorExample.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackageDependenciesChecker.cs" />
         <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs" />
+        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example/PMExtension.cs" />
+        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" />
+        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs" />
       </list>
     </option>
   </component>
@@ -490,8 +326,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="841" />
-    <option name="width" value="1554" />
+    <option name="x" value="825" />
+    <option name="width" value="1665" />
     <option name="height" value="1447" />
   </component>
   <component name="ProjectId" id="1WtMuulHvcN1r49Nb4kzkqUXXKQ" />
@@ -542,6 +378,14 @@
               <item name="_package_" type="1045f7f1:UnityExplorerNode" />
               <item name="_main_" type="1045f7f1:UnityExplorerNode" />
               <item name="Editor" type="1045f7f1:UnityExplorerNode" />
+              <item name="Develop" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="_package_" type="1045f7f1:UnityExplorerNode" />
+              <item name="_main_" type="1045f7f1:UnityExplorerNode" />
+              <item name="Editor" type="1045f7f1:UnityExplorerNode" />
               <item name="UPMToolExtension" type="1045f7f1:UnityExplorerNode" />
             </path>
           </expand>
@@ -550,11 +394,11 @@
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -646,12 +490,14 @@
       <workItem from="1603374827711" duration="5904000" />
       <workItem from="1603467066521" duration="918000" />
       <workItem from="1603518704472" duration="7568000" />
-      <workItem from="1603597132098" duration="4586000" />
+      <workItem from="1603597132098" duration="5027000" />
+      <workItem from="1603612251621" duration="885000" />
+      <workItem from="1619851783236" duration="14752000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104076000" />
+    <option name="totallyTimeSpent" value="120154000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -663,10 +509,35 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="841" y="0" width="1554" height="1447" extended-state="0" />
+    <frame x="825" y="0" width="1665" height="1447" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15261044" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16323988" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3285928" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.28101644" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3285928" />
+      <window_info anchor="bottom" id="NuGet" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.15568863" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Unit Tests" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="Unity" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16323988" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -689,7 +560,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Errors In Solution" order="3" />
       <window_info anchor="right" id="Database" order="4" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -755,45 +626,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/CHANGELOG.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/ProcessUtils.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding>
-            <marker date="1602777793737" expanded="false" signature="6:58" ph="..." />
-            <marker date="1602777793737" expanded="true" signature="77:1600" ph="{...}" />
-            <marker date="1602777793737" expanded="true" signature="175:1598" ph="{...}" />
-            <marker date="1602777793737" expanded="true" signature="273:1262" ph="{...}" />
-            <marker date="1602777793737" expanded="true" signature="1326:1377" ph="{...}" />
-            <marker date="1602777793737" expanded="true" signature="1465:1592" ph="{...}" />
-            <marker date="1602777793737" expanded="true" signature="1507:1582" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73F49D3B-D492-46D4-9BF7-5923D29E04DF/dd/1bdd2d96/VisibleToOtherModulesAttribute.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Resources/UIElement/package_json_uss.uss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/30/0a80e8ea/DependencyInfo.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/b9/a33bc420/EntitlementsInfo.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/27/75b96357/IPackageManagerExtension.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -997,42 +829,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="12" column="76" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="76" />
-          <folding>
-            <marker date="1603113663122" expanded="false" signature="6:142" ph="..." />
-            <marker date="1603113663122" expanded="true" signature="161:1959" ph="{...}" />
-            <marker date="1603113663122" expanded="true" signature="202:1957" ph="{...}" />
-            <marker date="1603113663122" expanded="true" signature="701:785" ph="/// 开发插件时,检查package.json和PackagePath.cs ... " />
-            <marker date="1603113663122" expanded="true" signature="853:1603" ph="{...}" />
-            <marker date="1603113663122" expanded="true" signature="970:1022" ph="{...}" />
-            <marker date="1603113663122" expanded="true" signature="1189:1241" ph="{...}" />
-            <marker date="1603113663122" expanded="true" signature="1363:1443" ph="{...}" />
-            <marker date="1603113663122" expanded="true" signature="1739:1951" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/633137B3-5487-45DA-9561-42ABE1C535C6/6c/98482974/Button.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
           <caret line="60" column="19" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackagePathGenerator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding>
-            <marker date="1602860638233" expanded="false" signature="6:77" ph="..." />
-            <marker date="1602860638233" expanded="true" signature="96:3434" ph="{...}" />
-            <marker date="1602860638233" expanded="true" signature="143:3432" ph="{...}" />
-            <marker date="1602860638233" expanded="true" signature="250:3426" ph="{...}" />
-            <marker date="1602860638233" expanded="true" signature="3328:3416" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1231,74 +1031,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/5c/8843c2a4/CompilationPipeline.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtensionUI.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3781">
-          <caret line="209" column="25" selection-start-line="209" selection-start-column="25" selection-end-line="209" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/BatUtils.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+        <state relative-caret-position="2584">
+          <caret line="153" column="116" selection-start-line="153" selection-start-column="68" selection-end-line="153" selection-end-column="116" />
           <folding>
-            <marker date="1602777793822" expanded="false" signature="26:174" ph="..." />
-            <marker date="1602777793822" expanded="true" signature="235:3870" ph="{...}" />
-            <marker date="1602777793822" expanded="true" signature="270:3868" ph="{...}" />
-            <marker date="1602777793822" expanded="true" signature="285:342" ph="/// .bat文件路径 ... " />
-            <marker date="1602777793822" expanded="true" signature="571:709" ph="/// 运行.bat ... " />
-            <marker date="1602777793822" expanded="true" signature="780:1499" ph="{...}" />
-            <marker date="1602777793822" expanded="true" signature="1509:1605" ph="/// 生成.bat内容 ... " />
-            <marker date="1602777793822" expanded="true" signature="1660:2203" ph="{...}" />
-            <marker date="1602777793822" expanded="true" signature="1882:1944" ph="{...}" />
-            <marker date="1602777793822" expanded="true" signature="2213:2314" ph="/// 创建.bat文件,空文件 ... " />
-            <marker date="1602777793822" expanded="true" signature="2366:2493" ph="{...}" />
-            <marker date="1602777793822" expanded="true" signature="2420:2483" ph="{...}" />
-            <marker date="1602777793822" expanded="true" signature="2496:3862" ph="/* 直接执行命令行 ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackagePath.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <marker date="1599929909173" expanded="true" signature="0:395" ph="/* ------------------------------------------------------------------------------ ... */" />
-            <marker date="1599929909173" expanded="true" signature="434:1442" ph="{...}" />
-            <marker date="1599929909173" expanded="true" signature="504:1440" ph="{...}" />
-            <marker date="1599929909173" expanded="true" signature="685:1434" ph="{...}" />
-            <marker date="1599929909173" expanded="true" signature="711:1424" ph="{...}" />
-            <marker date="1599929909173" expanded="true" signature="778:1376" ph="{...}" />
-            <marker date="1599929909173" expanded="true" signature="1024:1171" ph="{...}" />
-            <marker date="1599929909173" expanded="true" signature="1196:1358" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/PackageUtils.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <marker date="1603553547984" expanded="true" signature="6:222" ph="..." />
-            <marker date="1603553547984" expanded="true" signature="241:2774" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="280:2772" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="295:1418" ph="添加或更新插件包" />
-            <marker date="1603553547984" expanded="true" signature="422:524" ph="/// 添加或更新插件包 ... " />
-            <marker date="1603553547984" expanded="true" signature="606:775" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="819:1398" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="870:1388" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="946:1059" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="1126:1220" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="1429:2766" ph="插件包列表" />
-            <marker date="1603553547984" expanded="true" signature="1670:1840" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="1884:2746" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="1935:2736" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="2011:2502" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="2163:2360" ph="{...}" />
-            <marker date="1603553547984" expanded="true" signature="2569:2663" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="6:244" ph="..." />
+            <marker date="1603206849553" expanded="true" signature="263:6820" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="270:325" ph="/// UPMTool拓展的UI界面 ... " />
+            <marker date="1603206849553" expanded="true" signature="377:6818" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="435:500" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="906:995" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="1005:2929" ph="插件版本" />
+            <marker date="1603206849553" expanded="true" signature="1060:1897" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="1946:2207" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="2288:2597" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="2655:2909" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="2700:2899" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="2940:6207" ph="Ut依赖" />
+            <marker date="1603206849553" expanded="true" signature="2995:3587" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="3695:5558" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="3907:4073" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="4133:4290" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="4307:4440" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="4532:5548" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="4982:5110" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="5131:5534" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="5303:5515" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="5614:5701" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="5754:6025" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="5814:5899" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="6090:6187" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="6217:6328" ph="/// 如果enable为false,则UI置灰 ... " />
+            <marker date="1603206849553" expanded="true" signature="6373:6445" ph="{...}" />
+            <marker date="1603206849553" expanded="true" signature="6455:6560" ph="/// 设置这个UI界面的显隐 ... " />
+            <marker date="1603206849553" expanded="true" signature="6609:6812" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1307,103 +1074,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-          <folding>
-            <marker date="1603611209013" expanded="true" signature="37:304" ph="{...}" />
-            <marker date="1603611209013" expanded="true" signature="83:302" ph="{...}" />
-            <marker date="1603611209013" expanded="true" signature="124:144" ph="{...}" />
-            <marker date="1603611209013" expanded="true" signature="154:218" ph="/// 当导入插件的时候,先去加载依赖 ... " />
-            <marker date="1603611209013" expanded="true" signature="263:296" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJsonTool/PackageJsonEditor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
-          <folding>
-            <marker date="1603036295507" expanded="false" signature="6:260" ph="..." />
-            <marker date="1603036295507" expanded="true" signature="286:7274" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="293:361" ph="/// package.json文件Inspector视图拓展 ... " />
-            <marker date="1603036295507" expanded="true" signature="443:7272" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="605:896" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="631:886" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="914:1019" ph="/// 使用UIElement方式绘制Inspector ... " />
-            <marker date="1603036295507" expanded="true" signature="1078:1520" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="1229:1463" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="1530:1639" ph="/// 创建插件包框架结构 ... " />
-            <marker date="1603036295507" expanded="true" signature="1719:2224" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="2234:2322" ph="/// 创建插件包框架结构后 ... " />
-            <marker date="1603036295507" expanded="true" signature="2376:2432" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="2442:2570" ph="/// 创建目录 ... " />
-            <marker date="1603036295507" expanded="true" signature="2621:2767" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="2680:2757" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="2777:2916" ph="/// 创建或修改文件 ... " />
-            <marker date="1603036295507" expanded="true" signature="2988:3331" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="3098:3174" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="3431:4360" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="3660:3747" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="3933:4020" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="4212:4299" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="4417:4976" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="4488:4941" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="5088:5555" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="5289:5418" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="5565:5708" ph="/// 保存package,json版本号修改 ... " />
-            <marker date="1603036295507" expanded="true" signature="5780:6022" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="6032:6150" ph="/// 使用OnHeaderGUI,绘制的GUI可以交互 ... " />
-            <marker date="1603036295507" expanded="true" signature="6196:6553" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="6380:6432" ph="{...}" />
-            <marker date="1603036295507" expanded="true" signature="6563:6904" ph="/// 创建插件package.json时,默认添加&quot;UPMTool&quot;依赖到dependenciesUt ... " />
-            <marker date="1603036295507" expanded="true" signature="6985:7266" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/CMDTool/CMDTool.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding>
-            <marker date="1603114145283" expanded="false" signature="6:177" ph="..." />
-            <marker date="1603114145283" expanded="true" signature="179:285" ph="/// package发布工具 ... " />
-            <marker date="1603114145283" expanded="true" signature="321:5847" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="328:413" ph="/// 不在开放cmd工具 ... " />
-            <marker date="1603114145283" expanded="true" signature="486:595" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="601:647" ph="/// 进程代理类 ... " />
-            <marker date="1603114145283" expanded="true" signature="685:739" ph="/// 命令执行完成的返回消息队列 ... " />
-            <marker date="1603114145283" expanded="true" signature="783:831" ph="/// 输入的命令队列 ... " />
-            <marker date="1603114145283" expanded="true" signature="832:910" ph="/* private Queue&lt;string&gt; inputCmds; ... */" />
-            <marker date="1603114145283" expanded="true" signature="980:1010" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="1039:1183" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="1211:3373" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="1359:1553" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="1754:1952" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="2872:3295" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="2965:3248" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="3041:3234" ph="/* returnMsgs.Enqueue(msg); ... */" />
-            <marker date="1603114145283" expanded="true" signature="3419:3514" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="3570:3618" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="4285:4417" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="4444:5493" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="4478:5487" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="4607:4832" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="4738:4818" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="4834:4901" ph="/* Debug.Log(command); ... */" />
-            <marker date="1603114145283" expanded="true" signature="5167:5405" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="5310:5391" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="5523:5557" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="5587:5621" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="5652:5845" ph="{...}" />
-            <marker date="1603114145283" expanded="true" signature="5685:5839" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJsonTool/PackageJsonUI.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="211" column="34" lean-forward="true" selection-start-line="211" selection-start-column="34" selection-end-line="211" selection-end-column="34" />
+        <state relative-caret-position="3762">
+          <caret line="211" column="34" selection-start-line="211" selection-start-column="34" selection-end-line="211" selection-end-column="34" />
           <folding>
             <marker date="1603036295364" expanded="false" signature="6:170" ph="..." />
             <marker date="1603036295364" expanded="true" signature="189:13794" ph="{...}" />
@@ -1457,99 +1134,391 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtensionUI.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJsonTool/PackageJsonEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="153" column="116" selection-start-line="153" selection-start-column="68" selection-end-line="153" selection-end-column="116" />
+        <state relative-caret-position="1387">
+          <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
           <folding>
-            <marker date="1603206849553" expanded="true" signature="6:244" ph="..." />
-            <marker date="1603206849553" expanded="true" signature="263:6820" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="270:325" ph="/// UPMTool拓展的UI界面 ... " />
-            <marker date="1603206849553" expanded="true" signature="377:6818" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="435:500" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="906:995" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="1005:2929" ph="插件版本" />
-            <marker date="1603206849553" expanded="true" signature="1060:1897" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="1946:2207" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="2288:2597" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="2655:2909" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="2700:2899" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="2940:6207" ph="Ut依赖" />
-            <marker date="1603206849553" expanded="true" signature="2995:3587" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="3695:5558" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="3907:4073" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="4133:4290" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="4307:4440" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="4532:5548" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="4982:5110" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="5131:5534" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="5303:5515" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="5614:5701" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="5754:6025" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="5814:5899" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="6090:6187" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="6217:6328" ph="/// 如果enable为false,则UI置灰 ... " />
-            <marker date="1603206849553" expanded="true" signature="6373:6445" ph="{...}" />
-            <marker date="1603206849553" expanded="true" signature="6455:6560" ph="/// 设置这个UI界面的显隐 ... " />
-            <marker date="1603206849553" expanded="true" signature="6609:6812" ph="{...}" />
+            <marker date="1619780814168" expanded="false" signature="6:99" ph="..." />
+            <marker date="1619780814168" expanded="true" signature="125:7113" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="132:200" ph="/// package.json文件Inspector视图拓展 ... " />
+            <marker date="1619780814168" expanded="true" signature="282:7111" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="444:735" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="470:725" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="753:858" ph="/// 使用UIElement方式绘制Inspector ... " />
+            <marker date="1619780814168" expanded="true" signature="917:1359" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="1068:1302" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="1369:1478" ph="/// 创建插件包框架结构 ... " />
+            <marker date="1619780814168" expanded="true" signature="1558:2063" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="2073:2161" ph="/// 创建插件包框架结构后 ... " />
+            <marker date="1619780814168" expanded="true" signature="2215:2271" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="2281:2409" ph="/// 创建目录 ... " />
+            <marker date="1619780814168" expanded="true" signature="2460:2606" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="2519:2596" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="2616:2755" ph="/// 创建或修改文件 ... " />
+            <marker date="1619780814168" expanded="true" signature="2827:3170" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="2937:3013" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="3270:4199" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="3499:3586" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="3772:3859" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="4051:4138" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="4256:4815" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="4327:4780" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="4927:5394" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="5128:5257" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="5404:5547" ph="/// 保存package,json版本号修改 ... " />
+            <marker date="1619780814168" expanded="true" signature="5619:5861" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="5871:5989" ph="/// 使用OnHeaderGUI,绘制的GUI可以交互 ... " />
+            <marker date="1619780814168" expanded="true" signature="6035:6392" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="6219:6271" ph="{...}" />
+            <marker date="1619780814168" expanded="true" signature="6402:6743" ph="/// 创建插件package.json时,默认添加&quot;UPMTool&quot;依赖到dependenciesUt ... " />
+            <marker date="1619780814168" expanded="true" signature="6824:7105" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/CMDTool/CMDTool.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding>
+            <marker date="1603114145283" expanded="false" signature="6:177" ph="..." />
+            <marker date="1603114145283" expanded="true" signature="179:285" ph="/// package发布工具 ... " />
+            <marker date="1603114145283" expanded="true" signature="328:413" ph="/// 不在开放cmd工具 ... " />
+            <marker date="1603114145283" expanded="true" signature="486:595" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="601:647" ph="/// 进程代理类 ... " />
+            <marker date="1603114145283" expanded="true" signature="685:739" ph="/// 命令执行完成的返回消息队列 ... " />
+            <marker date="1603114145283" expanded="true" signature="783:831" ph="/// 输入的命令队列 ... " />
+            <marker date="1603114145283" expanded="true" signature="832:910" ph="/* private Queue&lt;string&gt; inputCmds; ... */" />
+            <marker date="1603114145283" expanded="true" signature="980:1010" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="1039:1183" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="1211:3373" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="1359:1553" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="1754:1952" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="2872:3295" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="2965:3248" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="3041:3234" ph="/* returnMsgs.Enqueue(msg); ... */" />
+            <marker date="1603114145283" expanded="true" signature="3419:3514" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="3570:3618" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="4285:4417" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="4444:5493" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="4478:5487" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="4607:4832" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="4738:4818" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="4834:4901" ph="/* Debug.Log(command); ... */" />
+            <marker date="1603114145283" expanded="true" signature="5167:5405" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="5310:5391" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="5523:5557" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="5587:5621" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="5652:5845" ph="{...}" />
+            <marker date="1603114145283" expanded="true" signature="5685:5839" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackagePath.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <marker date="1599929909173" expanded="true" signature="0:395" ph="/* ------------------------------------------------------------------------------ ... */" />
+            <marker date="1599929909173" expanded="true" signature="434:1442" ph="{...}" />
+            <marker date="1599929909173" expanded="true" signature="504:1440" ph="{...}" />
+            <marker date="1599929909173" expanded="true" signature="685:1434" ph="{...}" />
+            <marker date="1599929909173" expanded="true" signature="711:1424" ph="{...}" />
+            <marker date="1599929909173" expanded="true" signature="778:1376" ph="{...}" />
+            <marker date="1599929909173" expanded="true" signature="1024:1171" ph="{...}" />
+            <marker date="1599929909173" expanded="true" signature="1196:1358" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/5c/8843c2a4/CompilationPipeline.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3781">
+          <caret line="209" column="25" selection-start-line="209" selection-start-column="25" selection-end-line="209" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/PackageUtils.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding>
+            <marker date="1603553547984" expanded="true" signature="6:222" ph="..." />
+            <marker date="1603553547984" expanded="true" signature="241:2774" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="280:2772" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="295:1418" ph="添加或更新插件包" />
+            <marker date="1603553547984" expanded="true" signature="422:524" ph="/// 添加或更新插件包 ... " />
+            <marker date="1603553547984" expanded="true" signature="606:775" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="819:1398" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="870:1388" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="946:1059" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="1126:1220" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="1429:2766" ph="插件包列表" />
+            <marker date="1603553547984" expanded="true" signature="1670:1840" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="1884:2746" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="1935:2736" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="2011:2502" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="2163:2360" ph="{...}" />
+            <marker date="1603553547984" expanded="true" signature="2569:2663" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="255" column="41" lean-forward="true" selection-start-line="255" selection-start-column="41" selection-end-line="255" selection-end-column="41" />
+        <state relative-caret-position="182">
+          <caret line="273" column="33" selection-start-line="273" selection-start-column="33" selection-end-line="273" selection-end-column="33" />
           <folding>
-            <marker date="1603611376510" expanded="true" signature="6:265" ph="..." />
-            <marker date="1603611376510" expanded="true" signature="291:7769" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="298:420" ph="/// UPMTool在PackageManager上的拓展 ... " />
-            <marker date="1603611376510" expanded="true" signature="504:7767" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="544:644" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="970:2706" ph="IPackageManagerExtension实现" />
-            <marker date="1603611376510" expanded="true" signature="1054:1305" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="1093:1226" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="1315:1459" ph="/// 在PackageManager视窗 ... " />
-            <marker date="1603611376510" expanded="true" signature="1529:2200" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="1568:1620" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="1894:1987" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="2124:2190" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="2210:2316" ph="/// 当添加或更新插件包时 ... " />
-            <marker date="1603611376510" expanded="true" signature="2385:2448" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="2458:2561" ph="/// 当移除插件包时 ... " />
-            <marker date="1603611376510" expanded="true" signature="2623:2686" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="2717:4937" ph="更新插件版本" />
-            <marker date="1603611376510" expanded="true" signature="2741:2802" ph="/// 获取git仓库的tags ... " />
-            <marker date="1603611376510" expanded="true" signature="2884:4398" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="2953:4386" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="3085:4257" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="3230:3308" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="3357:4208" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="3407:4002" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="3585:3687" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="3729:3832" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="3874:3976" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="4046:4186" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="4299:4372" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="4408:4502" ph="/// 选择插件版本 ... " />
-            <marker date="1603611376510" expanded="false" signature="4561:4624" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="4634:4690" ph="/// 安装选择的版本 ... " />
-            <marker date="1603611376510" expanded="true" signature="4726:4917" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="4948:6072" ph="插件依赖" />
-            <marker date="1603611376510" expanded="true" signature="4970:5030" ph="/// 获取已经安装的插件信息 ... " />
-            <marker date="1603611376510" expanded="true" signature="5081:5413" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="5123:5175" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="5262:5401" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="5456:5844" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="5510:5562" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="5906:6052" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="6123:6583" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="6177:6232" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="6318:6501" ph="/* url实例: ... */" />
-            <marker date="1603611376510" expanded="true" signature="6594:7055" ph="/// 获取git路径,可能是github或gitee ... " />
-            <marker date="1603611376510" expanded="true" signature="7113:7761" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="7172:7280" ph="{...}" />
-            <marker date="1603611376510" expanded="true" signature="7480:7625" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="6:265" ph="..." />
+            <marker date="1619780814353" expanded="true" signature="291:7848" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="298:420" ph="/// UPMTool在PackageManager上的拓展 ... " />
+            <marker date="1619780814353" expanded="true" signature="504:7846" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="544:644" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="970:2706" ph="IPackageManagerExtension实现" />
+            <marker date="1619780814353" expanded="true" signature="1054:1305" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="1093:1226" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="1315:1459" ph="/// 在PackageManager视窗 ... " />
+            <marker date="1619780814353" expanded="true" signature="1529:2200" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="1568:1620" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="1894:1987" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="2124:2190" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="2210:2316" ph="/// 当添加或更新插件包时 ... " />
+            <marker date="1619780814353" expanded="true" signature="2385:2448" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="2458:2561" ph="/// 当移除插件包时 ... " />
+            <marker date="1619780814353" expanded="true" signature="2623:2686" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="2717:4937" ph="更新插件版本" />
+            <marker date="1619780814353" expanded="true" signature="2741:2802" ph="/// 获取git仓库的tags ... " />
+            <marker date="1619780814353" expanded="true" signature="2884:4398" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="2953:4386" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="3085:4257" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="3230:3308" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="3357:4208" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="3407:4002" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="3585:3687" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="3729:3832" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="3874:3976" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="4046:4186" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="4299:4372" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="4408:4502" ph="/// 选择插件版本 ... " />
+            <marker date="1619780814353" expanded="false" signature="4561:4624" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="4634:4690" ph="/// 安装选择的版本 ... " />
+            <marker date="1619780814353" expanded="true" signature="4726:4917" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="4948:6072" ph="插件依赖" />
+            <marker date="1619780814353" expanded="true" signature="4970:5030" ph="/// 获取已经安装的插件信息 ... " />
+            <marker date="1619780814353" expanded="true" signature="5081:5413" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="5123:5175" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="5262:5401" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="5456:5844" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="5510:5562" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="5906:6052" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="6123:6583" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="6177:6232" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="6318:6501" ph="/* url实例: ... */" />
+            <marker date="1619780814353" expanded="true" signature="6594:7116" ph="/// 获取git路径,可能是github或gitee ... " />
+            <marker date="1619780814353" expanded="true" signature="7174:7840" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="7233:7341" ph="{...}" />
+            <marker date="1619780814353" expanded="true" signature="7559:7704" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/BatUtils.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+          <folding>
+            <marker date="1602777793822" expanded="false" signature="26:174" ph="..." />
+            <marker date="1602777793822" expanded="true" signature="270:3868" ph="{...}" />
+            <marker date="1602777793822" expanded="true" signature="285:342" ph="/// .bat文件路径 ... " />
+            <marker date="1602777793822" expanded="true" signature="571:709" ph="/// 运行.bat ... " />
+            <marker date="1602777793822" expanded="true" signature="780:1499" ph="{...}" />
+            <marker date="1602777793822" expanded="true" signature="1509:1605" ph="/// 生成.bat内容 ... " />
+            <marker date="1602777793822" expanded="true" signature="1660:2203" ph="{...}" />
+            <marker date="1602777793822" expanded="true" signature="1882:1944" ph="{...}" />
+            <marker date="1602777793822" expanded="true" signature="2213:2314" ph="/// 创建.bat文件,空文件 ... " />
+            <marker date="1602777793822" expanded="true" signature="2366:2493" ph="{...}" />
+            <marker date="1602777793822" expanded="true" signature="2420:2483" ph="{...}" />
+            <marker date="1602777793822" expanded="true" signature="2496:3862" ph="/* 直接执行命令行 ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6540B1B4-00C3-48CC-A8D4-8BAE1291645C/28/6c44fd15/CodeTypeReferenceExpression.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6540B1B4-00C3-48CC-A8D4-8BAE1291645C/e1/0633f31a/CodeVariableReferenceExpression.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackagePathGenerator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="47" column="78" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="78" />
+          <folding>
+            <marker date="1619780814082" expanded="false" signature="6:77" ph="..." />
+            <marker date="1619780814082" expanded="true" signature="96:3855" ph="{...}" />
+            <marker date="1619780814082" expanded="true" signature="143:3853" ph="{...}" />
+            <marker date="1619780814082" expanded="true" signature="270:3847" ph="{...}" />
+            <marker date="1619780814082" expanded="true" signature="3749:3837" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/GitHub/Test_Package_Develop/Library/PackageCache/com.chino.upmtool@2df80b5fe0/_main_/Editor/UPMToolExtension/UPMToolExtension.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="211" selection-start-line="211" selection-end-line="211" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example/PMExtension.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="29" />
+          <folding>
+            <marker date="1619866220602" expanded="false" signature="6:255" ph="..." />
+            <marker date="1619866220602" expanded="true" signature="327:3397" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="409:533" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="647:995" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="1026:1122" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="1157:1274" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="1341:1451" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="1517:1623" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="1682:1788" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="1942:2087" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="2126:2343" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="2170:2210" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="2511:2666" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="2711:3395" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="2761:2801" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="2917:2957" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="3043:3294" ph="{...}" />
+            <marker date="1619866220602" expanded="true" signature="3066:3148" ph="/* 正式 ... */" />
+            <marker date="1619866220602" expanded="true" signature="3203:3284" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="69" column="9" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+          <folding>
+            <marker date="1619780814024" expanded="false" signature="6:54" ph="..." />
+            <marker date="1619780814024" expanded="true" signature="73:2841" ph="{...}" />
+            <marker date="1619780814024" expanded="true" signature="114:2839" ph="{...}" />
+            <marker date="1619780814024" expanded="true" signature="731:815" ph="/// 开发插件时,检查package.json和PackagePath.cs ... " />
+            <marker date="1619780814024" expanded="true" signature="883:1292" ph="{...}" />
+            <marker date="1619780814024" expanded="true" signature="1000:1052" ph="{...}" />
+            <marker date="1619780814024" expanded="true" signature="1340:1878" ph="{...}" />
+            <marker date="1619780814024" expanded="true" signature="1434:1486" ph="{...}" />
+            <marker date="1619780814024" expanded="true" signature="1608:1688" ph="{...}" />
+            <marker date="1619780814024" expanded="true" signature="1930:2484" ph="{...}" />
+            <marker date="1619780814024" expanded="true" signature="2028:2080" ph="{...}" />
+            <marker date="1619780814024" expanded="true" signature="2206:2286" ph="{...}" />
+            <marker date="1619780814024" expanded="true" signature="2621:2833" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
+          <folding>
+            <marker date="1619867568154" expanded="true" signature="0:395" ph="/* ------------------------------------------------------------------------------ ... */" />
+            <marker date="1619867568154" expanded="true" signature="414:4321" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="427:681" ph="..." />
+            <marker date="1619867568154" expanded="true" signature="776:4319" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="1318:1459" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="1540:1708" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="1759:2014" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="1811:1863" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="2089:2267" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="2324:2885" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="2382:2434" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="2558:2610" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="2951:3355" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="3442:3565" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="3651:3770" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="3849:3968" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="4011:4140" ph="{...}" />
+            <marker date="1619867568154" expanded="true" signature="4183:4313" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="137" column="45" lean-forward="true" selection-start-line="137" selection-start-column="45" selection-end-line="137" selection-end-column="45" />
+          <folding>
+            <marker date="1619867568104" expanded="true" signature="6:193" ph="..." />
+            <marker date="1619867568104" expanded="true" signature="212:20671" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="263:20669" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="406:4384" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="1373:1466" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="1810:1905" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="2099:2335" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="2574:2742" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="2928:3066" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="4111:4210" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="4286:4374" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="4394:4518" ph="/// 实现CreateExtensionUI接口 ... " />
+            <marker date="1619867568104" expanded="true" signature="4604:7192" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="5024:5136" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="5272:5377" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="5537:5655" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="5923:6167" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="6311:6429" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="6657:6847" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="7202:7353" ph="/// &lt;summary&gt; ... " />
+            <marker date="1619867568104" expanded="true" signature="7499:8266" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="8015:8209" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="8276:8425" ph="/// &lt;summary&gt; ... " />
+            <marker date="1619867568104" expanded="true" signature="8570:9328" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="9081:9271" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="9338:9473" ph="/// &lt;summary&gt; ... " />
+            <marker date="1619867568104" expanded="true" signature="9611:10362" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="10115:10305" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="10372:10473" ph="/// CheckList模块 ... " />
+            <marker date="1619867568104" expanded="true" signature="10545:15367" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="10721:10816" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="11045:11140" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="11312:11478" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="11788:11927" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="12094:12235" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="12412:12563" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="12624:12683" ph="/* -- ... */" />
+            <marker date="1619867568104" expanded="true" signature="12738:12912" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="13464:13594" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="14506:14728" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="14901:15027" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="15192:15310" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="15377:15472" ph="/// Add模块 ... " />
+            <marker date="1619867568104" expanded="true" signature="15538:19219" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="15700:15795" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="16000:16095" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="16273:16433" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="16883:17024" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="17185:17320" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="17491:17636" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="17788:17956" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="18490:18614" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="18776:18891" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="19050:19162" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="19297:20663" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="19736:19936" ph="{...}" />
+            <marker date="1619867568104" expanded="true" signature="20405:20606" ph="{...}" />
           </folding>
         </state>
       </provider>

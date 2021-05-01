@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
@@ -13,73 +14,59 @@ public class PMExtension : IPackageManagerExtension
     
     static PMExtension()
     {
-        // CheckList(exist =>
-        // {
-        //     if (exist == false)
-        //     {
-        //         PackageManagerExtensions.RegisterExtension(new PMExtension());
-        //     }
-        // });
-        PackageManagerExtensions.RegisterExtension(new PMExtension());
+        CheckList(exist=>{if(exist == false){PackageManagerExtensions.RegisterExtension(new PMExtension());}});
     }
 
     private Button button;
+
+    private bool existUPMTool = false;
 
     public VisualElement CreateExtensionUI()
     {
         button = new Button();
         button.text = "Import UPM Tool";
-        button.clickable.clicked += () =>
-        {
-            // 正式
-            // var path = "https://gitee.com/Chino66/UPM-Tool-Develop.git#upm";
-            // 测试用
-            var path = "http://gitlab.wd.com/cyj/Game_AI_Develop.git#upm";
+        button.clickable.clicked+=()=>{var path="https://gitee.com/Chino66/UPM-Tool-Develop.git#upm";button.SetEnabled(false);Add(path,()=>{});};
 
-            button.SetEnabled(false);
-            Add(path, () => { });
-        };
-
-        CheckList(exist => { button.SetEnabled(!exist); });
+        CheckList(exist=>{existUPMTool=exist; if (exist){HideButton();}else{ShowButton();}});
         return button;
+    }
+
+    private void ShowButton()
+    {
+        button.SetEnabled(true);button.style.height = new StyleLength {value = 20};
+    }
+    
+    private void HideButton()
+    {
+        button.visible=false;button.SetEnabled(false);button.style.height = new StyleLength {value = 0};
     }
 
     public void OnPackageSelectionChange(PackageInfo packageInfo)
     {
-        if (packageInfo.displayName == DisplayName)
-        {
-            button.visible = true;
-            var s = new StyleLength {value = 20};
-            button.style.height = s;
-        }
-        else
-        {
-            button.visible = false;
-            var s = new StyleLength {value = 0};
-            button.style.height = s;
-        }
+        if(!existUPMTool&&packageInfo.displayName==DisplayName){ShowButton();}else{HideButton();}
     }
 
     public void OnPackageAddedOrUpdated(PackageInfo packageInfo)
     {
-        CheckList(exist => { button.SetEnabled(!exist); });
+        CheckList(exist=>{existUPMTool=exist; if (exist){HideButton();}else{ShowButton();}});
     }
 
     public void OnPackageRemoved(PackageInfo packageInfo)
     {
+        CheckList(exist=>{existUPMTool=exist; if (exist){HideButton();}else{ShowButton();}});
     }
 
-    private AddRequest _addRequest;
-    private Action _addCompleteCallback;
+    private static AddRequest _addRequest;
+    private static Action _addCompleteCallback;
 
-    private void Add(string packageId, Action action)
+    private static void Add(string packageId, Action action)
     {
         _addRequest = Client.Add(packageId);
         _addCompleteCallback = action;
         EditorApplication.update += AddProgress;
     }
 
-    private void AddProgress()
+    private static void AddProgress()
     {
         if (!_addRequest.IsCompleted)
         {
