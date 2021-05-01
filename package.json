@@ -1,7 +1,7 @@
 {
   "name": "com.chino.upmtool",
   "displayName": "UPM Tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "2019.3",
   "description": "UPM Tool是UnityPackageManager的拓展工具.这个工具辅助用Git方式导入插件,可以自由切换版本,切换的版本基于Git的tag,且tag版本的命名规则必须采用semver命名规则",
   "type": "library"
