@@ -17,7 +17,8 @@ namespace UPMTool
     
     public class PackagePath
     {
-        
+        public static bool IsDevelopment { get; private set; }
+
         private const string LocalPath = "Assets/_package_/_main_/";
         
         private static string _mainPath;
@@ -34,11 +35,13 @@ namespace UPMTool
                     if (p == null)
                     {
                         _mainPath = LocalPath;
+                        IsDevelopment = true;
                         Debug.Log("本地路径 " + _mainPath);
                     }
                     else
                     {
                         _mainPath = p.assetPath + "/_main_/";
+                        IsDevelopment = false;
                         Debug.Log("插件路径 " + _mainPath);
                     }
                 }

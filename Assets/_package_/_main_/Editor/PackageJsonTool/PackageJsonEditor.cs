@@ -221,16 +221,14 @@ namespace UPMToolDevelop
 
         /// <summary>
         /// 创建插件package.json时,默认添加"UPMTool"依赖到dependenciesUt
-        /// "com.chino.upmtool": "ssh://git@github.com/Chino66/UPM-Tool-Develop.git#upm",
-        /// 或
-        /// "com.chino.upmtool": "ssh://git@gitee.com/Chino66/UPM-Tool-Develop.git#upm",
+        /// "com.chino.upmtool": "https://gitee.com/Chino66/UPM-Tool-Develop.git#upm"
         /// </summary>
         /// <param name="packageJsonInfo"></param>
         public static void AddUPMToolDependency(PackageJsonInfo packageJsonInfo)
         {
             var dependency = new PackageDependency();
             dependency.packageName = "com.chino.upmtool";
-            dependency.version = "ssh://git@gitee.com/Chino66/UPM-Tool-Develop.git#upm";
+            dependency.version = "https://gitee.com/Chino66/UPM-Tool-Develop.git#upm";
             packageJsonInfo.dependenciesUt.Add(dependency);
         }
     }
