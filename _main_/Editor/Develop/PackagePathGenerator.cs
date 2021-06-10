@@ -35,6 +35,16 @@ namespace UPMTool
             _mainPath.Attributes = MemberAttributes.Private | MemberAttributes.Static;
             theClass.Members.Add(_mainPath);
 
+            // public static bool IsDevelopment { get; private set; }
+            var IsDevelopment = new CodeMemberProperty();
+            IsDevelopment.Type = new CodeTypeReference(typeof(bool));
+            IsDevelopment.Attributes = MemberAttributes.Public | MemberAttributes.Static;
+            IsDevelopment.Name = "IsDevelopment";
+            IsDevelopment.HasGet = true;
+            IsDevelopment.HasSet = true;
+            IsDevelopment.SetStatements.Add(new CodeExpression());
+            theClass.Members.Add(IsDevelopment);
+            
             // MainPath属性
             CodeMemberProperty MainPath = new CodeMemberProperty();
             MainPath.Type = new CodeTypeReference(typeof(string));
