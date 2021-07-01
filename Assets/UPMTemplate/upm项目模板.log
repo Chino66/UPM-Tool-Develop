@@ -1,0 +1,18 @@
+!! upm项目模板
+
+官方文档@[https://docs.unity3d.com/Manual/ProjectTemplates.html]
+参考@[https://www.bilibili.com/read/cv10501229/]
+由@[D:\Unity Hub Download\2020.3.12f1c1\Editor\Data\Resources\PackageManager\ProjectTemplates\com.unity.template.3d-5.0.4.tgz]配置修改而来
+
+PackageManager:
+添加:
+!--
+UPMTool
+--!
+
+PlayerSetting:
+!--
+Api Compatiabllity Level* 设为 .NET 4.x
+--!
+
+
