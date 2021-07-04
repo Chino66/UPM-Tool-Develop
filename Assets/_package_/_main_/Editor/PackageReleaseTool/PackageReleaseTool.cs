@@ -65,8 +65,15 @@ namespace UPMTool
         /// </summary>
         private Label LabelOutput => rootVisualElement.Q<Label>("lab_output");
 
-        private void OutputLine(string line, bool add = true)
+        private void OutputLine(string line, bool add = true, bool debug = false)
         {
+            Debug.Log($"OutputLine:{line}");
+
+            if (debug)
+            {
+                return;
+            }
+
             if (LabelOutput == null)
             {
                 Debug.LogError("LabelOutput is null !!");
@@ -310,16 +317,18 @@ namespace UPMTool
 
             _gitInfo.SetTags(tags);
 
-            OutputLine($"3.版本标签:\n");
+            OutputLine($"3.版本标签:\n", true, true);
 
             for (int i = 0; i < _gitInfo.Versions.Count; i++)
             {
-                OutputLine($"->tag:{_gitInfo.Versions[i]}\n");
+                OutputLine($"->tag:{_gitInfo.Versions[i]}\n", true, true);
             }
 
             return tagList.ToArray();
         }
 
+        private const string Pattern = "(https://gitee.com.*.git)|(git@gitee.com:.*.git)|(https://github.com.*.git)|(git@github.com:.*.git)";
+        
         /// <summary>
         /// 2. 获取远程git的地址
         /// </summary>
@@ -336,8 +345,8 @@ namespace UPMTool
                 // 格式:"origin	https://github.com/Chino66/UPM-Tool-Develop.git (fetch)"
                 // 格式:"origin	git@github.com:Chino66/UPM-Tool-Develop.git  (fetch)"
                 var ret = msgs.Dequeue();
-                string pattern = "(https://github.com.*.git)|(git@github.com:.*.git)";
-                Match match = Regex.Match(ret, pattern);
+                
+                Match match = Regex.Match(ret, Pattern);
                 if (match.Success)
                 {
                     remotePath = match.Value;
@@ -718,7 +727,7 @@ namespace UPMTool
             var box = new Box {name = "box_version_tags"};
             {
                 var scrollView = new ScrollView {name = "sv_version_tags"};
-                scrollView.style.height = 100;
+                scrollView.style.height = 200;
                 {
                     label = new Label {name = "lab_version_tags_content"};
                     scrollView.Add(label);
@@ -779,8 +788,6 @@ namespace UPMTool
                 {
                     continue;
                 }
-
-                Debug.Log(tag);
                 Versions.Add(new Version(tag));
                 Versions.Sort((a, b) => a < b ? 1 : -1);
             }
