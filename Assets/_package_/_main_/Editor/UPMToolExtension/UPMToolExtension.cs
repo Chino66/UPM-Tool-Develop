@@ -61,6 +61,11 @@ namespace UPMToolDevelop
                 return;
             }
 
+            if (packageInfo == null)
+            {
+                return;
+            }
+
             _selectPackageInfo = packageInfo;
             var packageId = _selectPackageInfo.packageId;
 
