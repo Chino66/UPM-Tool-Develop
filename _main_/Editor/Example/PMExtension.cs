@@ -8,13 +8,13 @@ using UnityEngine.UIElements;
 using PackageInfo = UnityEditor.PackageManager.PackageInfo;
 
 [InitializeOnLoad]
-public class PMExtension : IPackageManagerExtension
+public class PMExtension //: IPackageManagerExtension
 {
     public const string DisplayName = "UPM Tool";
     
     static PMExtension()
     {
-        CheckList(exist=>{if(exist == false){PackageManagerExtensions.RegisterExtension(new PMExtension());}});
+        // CheckList(exist=>{if(exist == false){PackageManagerExtensions.RegisterExtension(new PMExtension());}});
     }
 
     private Button button;
