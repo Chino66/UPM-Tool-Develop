@@ -327,8 +327,9 @@ namespace UPMTool
             return tagList.ToArray();
         }
 
-        private const string Pattern = "(https://gitee.com.*.git)|(git@gitee.com:.*.git)|(https://github.com.*.git)|(git@github.com:.*.git)";
-        
+        private const string Pattern =
+            "(https://gitee.com.*.git)|(git@gitee.com:.*.git)|(https://github.com.*.git)|(git@github.com:.*.git)|(git@.*.git)|(https:.*.git)|(http:.*.git)";
+
         /// <summary>
         /// 2. 获取远程git的地址
         /// </summary>
@@ -354,6 +355,7 @@ namespace UPMTool
                 else
                 {
                     remotePath = "";
+                    Debug.LogError($"远程仓库路径为空! {ret}");
                 }
             }, false);
 
@@ -788,6 +790,7 @@ namespace UPMTool
                 {
                     continue;
                 }
+
                 Versions.Add(new Version(tag));
                 Versions.Sort((a, b) => a < b ? 1 : -1);
             }
