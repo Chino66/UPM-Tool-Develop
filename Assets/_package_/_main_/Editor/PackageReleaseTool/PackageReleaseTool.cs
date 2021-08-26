@@ -43,6 +43,7 @@ namespace UPMTool
                 if (_proxy == null)
                 {
                     _proxy = new ProcessProxy();
+                    _proxy.SetDebugMode(false);
                     _proxy.Start();
                 }
 
@@ -54,6 +55,18 @@ namespace UPMTool
         /// 项目的git信息
         /// </summary>
         private ProjectGitInfo _gitInfo;
+
+        /// <summary>
+        /// Git根目录和当前cmd目录的相对目录
+        /// 格式:xxx/xxxx/...
+        /// </summary>
+        private string _prefixPath = "";
+
+        /// <summary>
+        /// Git根目录和当前cmd目录的相对目录深度
+        /// 格式:../../....
+        /// </summary>
+        private string _cdupPath = "";
 
         /// <summary>
         /// 当前项目的版本号(package.json中填的版本号)
@@ -121,12 +134,7 @@ namespace UPMTool
             rootVisualElement.Add(label);
 
             // 初始化process代理类(必要)
-            if (_proxy == null)
-            {
-                _proxy = new ProcessProxy();
-//                _proxy.SetDebugMode(true);
-                _proxy.Start();
-            }
+            var processProxy = getProcessProxy;
 
             // 预处理
             PreProcess();
@@ -151,6 +159,12 @@ namespace UPMTool
                 Debug.LogError("这个项目没有被git控制");
                 return;
             }
+
+            // 1.1. 本地git仓库根目录和unity项目根目录的深度和相对路径
+            await GitCheckCdupAndPrefixPath();
+
+            // 1.2. 将cmd当前目录设置为git仓库根目录
+            await SetCmdPath(_cdupPath);
 
             // 2. 获取远程git的地址
             var remotePath = await GetGitRemotePath();
@@ -254,7 +268,9 @@ namespace UPMTool
             var modify = false;
             var condition = new TaskCondition(false);
 
-            getProcessProxy.Input("git diff Assets/_package_/package.json", (msgs) =>
+            var cmd = $"git diff {_prefixPath}Assets/_package_/package.json";
+
+            getProcessProxy.Input(cmd, (msgs) =>
             {
                 condition.Value = true;
 
@@ -346,7 +362,7 @@ namespace UPMTool
                 // 格式:"origin	https://github.com/Chino66/UPM-Tool-Develop.git (fetch)"
                 // 格式:"origin	git@github.com:Chino66/UPM-Tool-Develop.git  (fetch)"
                 var ret = msgs.Dequeue();
-                
+
                 Match match = Regex.Match(ret, Pattern);
                 if (match.Success)
                 {
@@ -407,6 +423,81 @@ namespace UPMTool
             }
 
             return path;
+        }
+
+        /// <summary>
+        /// 1.1. 执行 git rev-parse --show-cdup 和 git rev-parse --show-prefix
+        /// 检查当前路径(Unity项目根目录)和Git仓库根目录的深度和相对路径
+        /// 如果是同一目录,则是空,否则有多少级就返回多少个"../"相对路径则是"xx/xx/xxx"
+        /// </summary>
+        /// <returns></returns>
+        private async Task GitCheckCdupAndPrefixPath()
+        {
+            var condition = new TaskCondition(false);
+
+            // 1. 检查深度
+            var cmd = "git rev-parse --show-cdup";
+            ShowTip($"执行:\"{cmd}\"...");
+            var cdupPath = "";
+            getProcessProxy.Input(cmd,
+                (msgs) =>
+                {
+                    condition.Value = true;
+                    cdupPath = GetContent(msgs);
+                    cdupPath = cdupPath.Replace("\n", "");
+                    cdupPath = cdupPath.Replace("\t", "");
+                    _cdupPath = cdupPath;
+                    Debug.Log($"Unity项目根目录和Git仓库根目录深度:{cdupPath}");
+                }, false);
+
+            await TimeUtil.WaitUntilConditionSet(condition);
+
+            ShowTip($"执行:\"{cmd}\"完成");
+
+            // 2. 检查相对路径
+            condition.Value = false;
+            cmd = "git rev-parse --show-prefix";
+            ShowTip($"执行:\"{cmd}\"...");
+            var prefixPath = "";
+            getProcessProxy.Input(cmd,
+                (msgs) =>
+                {
+                    condition.Value = true;
+                    prefixPath = GetContent(msgs);
+                    prefixPath = prefixPath.Replace("\n", "");
+                    prefixPath = prefixPath.Replace("\t", "");
+                    _prefixPath = prefixPath;
+                    Debug.Log($"Unity项目根目录和Git仓库根目录相对路径:{prefixPath}");
+                }, false);
+
+            await TimeUtil.WaitUntilConditionSet(condition);
+
+            ShowTip($"执行:\"{cmd}\"完成");
+        }
+
+        /// <summary>
+        /// 1.2. 执行 cd levelPath
+        /// 将cmd当前目录指向git仓库根目录
+        /// </summary>
+        /// <returns></returns>
+        private async Task SetCmdPath(string levelPath)
+        {
+            var condition = new TaskCondition(false);
+
+            if (levelPath.Contains("/") == false)
+            {
+                return;
+            }
+
+            var cmd = $"cd {levelPath}";
+
+            ShowTip($"执行:\"{cmd}\"...");
+
+            getProcessProxy.Input(cmd, (msgs) => { condition.Value = true; }, false);
+
+            await TimeUtil.WaitUntilConditionSet(condition);
+
+            ShowTip($"执行:\"{cmd}\"完成");
         }
 
         private string GetContent(Queue<string> msgs)
@@ -487,6 +578,29 @@ namespace UPMTool
         }
 
         /// <summary>
+        /// 当前cmd路径
+        /// </summary>
+        /// <returns></returns>
+        private async Task CurrentPath()
+        {
+            var condition = new TaskCondition(false);
+
+            var cmd = $"echo %cd%";
+
+            ShowTip($"执行:\"{cmd}\"...");
+
+            getProcessProxy.Input(cmd, (msgs) =>
+            {
+                condition.Value = true;
+                Debug.Log(GetContent(msgs));
+            }, false);
+
+            await TimeUtil.WaitUntilConditionSet(condition);
+
+            ShowTip($"执行:\"{cmd}\"完成");
+        }
+
+        /// <summary>
         /// 1. 执行 git subtree split --prefix=Assets/_package_ --branch upm
         /// 分割目录,只对Assets/_package_下的内容加入分支
         /// </summary>
@@ -495,20 +609,21 @@ namespace UPMTool
         {
             var condition = new TaskCondition(false);
 
-            ShowTip("执行:\"git subtree split --prefix=Assets/_package_ --branch upm\"...");
+            var cmd = $"git subtree split --prefix={_prefixPath}Assets/_package_ --branch upm";
 
-            getProcessProxy.Input("git subtree split --prefix=Assets/_package_ --branch upm",
-                (msgs) =>
-                {
-                    condition.Value = true;
+            ShowTip($"执行:\"{cmd}\"...");
 
-                    // 执行成功则返回:一串哈希码
-                    Debug.Log(GetContent(msgs));
-                }, false);
+            getProcessProxy.Input(cmd, (msgs) =>
+            {
+                condition.Value = true;
+
+                // 执行成功则返回:一串哈希码
+                Debug.Log(GetContent(msgs));
+            }, false);
 
             await TimeUtil.WaitUntilConditionSet(condition);
 
-            ShowTip("执行:\"git subtree split ... \"完成");
+            ShowTip($"执行:\"{cmd}\"完成");
         }
 
         /// <summary>
@@ -547,12 +662,7 @@ namespace UPMTool
             ShowTip($"执行:\"git push origin upm --tags\"...");
 
             getProcessProxy.Input("git push origin upm --tags",
-                (msgs) =>
-                {
-                    condition.Value = true;
-
-                    Debug.Log(GetContent(msgs));
-                }, false);
+                (msgs) => { condition.Value = true; }, false);
 
             await TimeUtil.WaitUntilConditionSet(condition);
 
