@@ -28,6 +28,22 @@ namespace UPMTool
             pct.titleContent = new GUIContent("Package Release Tool");
         }
 
+        private static bool DEBUG = false;
+
+        [MenuItem("Tool/UPM Tool/Debug", true)]
+        private static bool DebugCheck()
+        {
+            Menu.SetChecked("Tool/UPM Tool/Debug", DEBUG);
+            return true;
+        }
+
+        [MenuItem("Tool/UPM Tool/Debug")]
+        private static void DebugToggle()
+        {
+            DEBUG = !DEBUG;
+            EditorPrefs.SetBool("Package_Release_Tool_Debug", DEBUG);
+        }
+
         private const string NotGitRepositoryMsg =
             "fatal: not a git repository (or any of the parent directories): .git";
 
@@ -43,7 +59,7 @@ namespace UPMTool
                 if (_proxy == null)
                 {
                     _proxy = new ProcessProxy();
-                    _proxy.SetDebugMode(false);
+                    _proxy.SetDebugMode(DEBUG);
                     _proxy.Start();
                 }
 
@@ -127,6 +143,15 @@ namespace UPMTool
 
         private void OnEnable()
         {
+            if (EditorPrefs.HasKey("Package_Release_Tool_Debug") == false)
+            {
+                EditorPrefs.SetBool("Package_Release_Tool_Debug", DEBUG);
+            }
+            else
+            {
+                DEBUG = EditorPrefs.GetBool("Package_Release_Tool_Debug");
+            }
+
             var label = new Label {name = "lab_output"};
             rootVisualElement.Add(label);
 
@@ -136,6 +161,7 @@ namespace UPMTool
             // 初始化process代理类(必要)
             var processProxy = getProcessProxy;
 
+            getProcessProxy.SetDebugMode(DEBUG);
             // 预处理
             PreProcess();
         }
@@ -536,7 +562,8 @@ namespace UPMTool
             }
 
             // 3. git工作流发布版本
-            // 执行 git subtree split --prefix=Assets/_package_ --branch upm
+            // 执行 git subtree split --rejoin --prefix=Assets/_package_ --branch upm
+            // 执行 git push
             // 执行 git tag x.x.x upm
             // 执行 git push origin upm --tags
             await GitFlow();
@@ -573,6 +600,7 @@ namespace UPMTool
         private async Task GitFlow()
         {
             await GitSubtreeSplit();
+            await GitPush();
             await GitCreateTagByVersion(_version.ToString());
             await GitPushOrigin();
         }
@@ -601,7 +629,7 @@ namespace UPMTool
         }
 
         /// <summary>
-        /// 1. 执行 git subtree split --prefix=Assets/_package_ --branch upm
+        /// 1. 执行 git subtree split --rejoin --prefix=Assets/_package_ --branch upm
         /// 分割目录,只对Assets/_package_下的内容加入分支
         /// </summary>
         /// <returns></returns>
@@ -609,7 +637,7 @@ namespace UPMTool
         {
             var condition = new TaskCondition(false);
 
-            var cmd = $"git subtree split --prefix={_prefixPath}Assets/_package_ --branch upm";
+            var cmd = $"git subtree split --rejoin --prefix={_prefixPath}Assets/_package_ --branch upm";
 
             ShowTip($"执行:\"{cmd}\"...");
 
@@ -627,7 +655,31 @@ namespace UPMTool
         }
 
         /// <summary>
-        /// 2. 执行 git tag x.x.x upm
+        /// 2. 执行 git push
+        /// 把git subtree split --rejoin...的merge推送到远端
+        /// </summary>
+        /// <returns></returns>
+        private async Task GitPush()
+        {
+            var condition = new TaskCondition(false);
+
+            var cmd = $"git push";
+
+            ShowTip($"执行:\"{cmd}\"...");
+
+            getProcessProxy.Input(cmd, (msgs) =>
+            {
+                condition.Value = true;
+                Debug.Log(GetContent(msgs));
+            }, false);
+
+            await TimeUtil.WaitUntilConditionSet(condition);
+
+            ShowTip($"执行:\"{cmd}\"完成");
+        }
+
+        /// <summary>
+        /// 3. 执行 git tag x.x.x upm
         /// 创建tag
         /// </summary>
         /// <returns></returns>
@@ -651,7 +703,7 @@ namespace UPMTool
         }
 
         /// <summary>
-        /// 3. 执行 git push origin upm --tags
+        /// 4. 执行 git push origin upm --tags
         /// 推送标签
         /// </summary>
         /// <returns></returns>
