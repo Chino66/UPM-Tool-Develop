@@ -1,3 +1,3 @@
 @ echo off
-git ls-remote --tags git@gitee.com:Chino66/Test_Package_Develop.git
+git ls-remote --tags http://192.168.0.10/cyj/testproject.git
 exit
