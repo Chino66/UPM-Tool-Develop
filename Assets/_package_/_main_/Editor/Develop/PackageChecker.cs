@@ -13,15 +13,30 @@ namespace UPMTool
 
         public const string changelogMDPath = "Assets/_package_/CHANGELOG.md";
 
-        private const string packagePathCsPath = "Assets/_package_/_main_/Editor/_generate_/PackagePath.cs";
+        private static string packagePathCsPath => $"Assets/_package_{mainFlag}Editor/_generate_/PackagePath.cs";
 
-        private const string upmToolImporterCsPath = "Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs";
-        
-        private static string editorAsmdefPath => $"Assets/_package_/_main_/Editor/Editor.{_packageJsonInfo.displayName.Trim()}";
+        private static string upmToolImporterCsPath => $"Assets/_package_{mainFlag}Editor/_generate_/UPMToolImporter.cs";
 
-        public const string resourcesPath = "Assets/_package_/_main_/Resources";
+        private static string editorAsmdefPath =>
+            $"Assets/_package_{mainFlag}Editor/Editor.{_packageJsonInfo.displayName.Trim()}";
+
+        public const string resourcesPath = "Assets/_package_{mainFlag}Resources";
+
+        private const string mainPath = "Assets/_package_/_main_";
 
         private static PackageJsonInfo _packageJsonInfo;
+
+        public static bool HasPackageJson => File.Exists(packageJsonPath);
+        private static bool HasMainDir => Directory.Exists(mainPath);
+
+        /// <summary>
+        /// 在1.2.0以及之前版本,插件目录结构为:_package_/_main_/...
+        /// 1.2.0以后,取消_main_目录,结构为:_package_/...
+        /// 为了兼容以前的插件结构,需要根据插件目录是否有_main_目录为依据
+        /// 如果有_main_目录,则是1.2.0之前版本,则mainFlag的值为:"/_main_/"
+        /// 1.2.0之后mainFlag为:"/"
+        /// </summary>
+        private static string mainFlag = "/";
 
         /// <summary>
         /// 开发插件时,检查package.json和PackagePath.cs
@@ -37,6 +52,8 @@ namespace UPMTool
                 return;
             }
 
+            mainFlag = HasMainDir ? "/_main_/" : "/";
+
             _packageJsonInfo = GetPackageJsonInfo();
 
             // PackagePath.cs检查
@@ -47,7 +64,7 @@ namespace UPMTool
 
             // Editor下.asmdef检查
             EditorAsmdefCheck();
-                
+
             AssetDatabase.Refresh();
         }
 
@@ -67,7 +84,7 @@ namespace UPMTool
             {
                 Directory.CreateDirectory(dirPath);
             }
-            
+
             // todo unity没有提供生成.asmdef的api,这个文件是json格式的,可以自行创建
         }
 
@@ -89,7 +106,7 @@ namespace UPMTool
 
             var nameSpace = _packageJsonInfo.displayName.Replace(" ", "");
 
-            PackagePathGenerator.Generate(nameSpace, packagePathCsPath, _packageJsonInfo.displayName);
+            PackagePathGenerator.Generate(nameSpace, packagePathCsPath, _packageJsonInfo.displayName, "PackagePath", mainFlag);
         }
 
         private static void UPMToolImporterCheck()
@@ -112,9 +129,6 @@ namespace UPMTool
 
             UPMToolImporterGenerator.Generate(nameSpace, upmToolImporterCsPath, _packageJsonInfo.displayName);
         }
-
-
-        public static bool HasPackageJson => File.Exists(packageJsonPath);
 
         public static PackageJsonInfo GetPackageJsonInfo()
         {

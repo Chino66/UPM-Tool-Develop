@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4bc877-c64f-49dd-9bb0-e70078763c60" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UPM Tool Develop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_package_.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackagePathGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackagePathGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Library.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_package_/_main_/Resources/Bat/git_get_tags.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_package_/_main_/Resources/Bat/git_get_tags.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,40 +76,47 @@
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtensionUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/394C8FAE-4BA1-4DD2-A259-BD441D5BEF25/4e/58a83294/CodeObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20735148-1523-4917-A5E8-F91B0B239405/bf/42123931/JsonConvert.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/8b/842d5d43/InitializeOnLoadAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test/Scripts/Editor/JsonEditorExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/GitUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/394C8FAE-4BA1-4DD2-A259-BD441D5BEF25/49/80561431/CodeConstructor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/394C8FAE-4BA1-4DD2-A259-BD441D5BEF25/c9/5f53373f/CodeMemberMethod.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/394C8FAE-4BA1-4DD2-A259-BD441D5BEF25/c9/5f53373f/CodeMemberMethod.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageReleaseTool/PackageReleaseTool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/e2/fde28f76/Client.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackagePath.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/af/0a502cfd/IPackageManagerToolbarExtension.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0E47C6D6-43E5-4C65-A913-F925639C3CBA/c9/4aee440f/PackageInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/394C8FAE-4BA1-4DD2-A259-BD441D5BEF25/47/317408a8/CodeMethodReturnStatement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Test/UIElementsExamples.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/BatUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/ProcessUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/fb/c5eef27d/AssemblyDefinitionAsset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/PackageUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42D975C3-C027-43A7-BDF5-C81753993FC0/cd/f8c70eaf/IPackageManagerExtension.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackagePathGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/TimeUtil.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/RegexUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F427A2CD-9F1A-412A-B26B-288BDCA4D453/ff/56d14db3/TextAsset.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJsonTool/PackageJsonEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJsonTool/PackageJsonTool.cs" />
       <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Utils/GitUtils.cs" />
-      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs" />
       <option value="$PROJECT_DIR$/Assets/_package_/package.json" />
+      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJsonTool/PackageJsonUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageJsonTool/PackageJsonEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs" />
+      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/UPMToolExtension/UPMToolExtension.cs" />
+      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example/PMExtension.cs" />
+      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/CMDTool/CMDTool.cs" />
+      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Process/ProcessProxy.cs" />
+      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/PackageReleaseTool/PackageReleaseTool.cs" />
       <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/PackagePath.cs" />
       <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackagePathGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageChecker.cs" />
-      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Example/PMExtension.cs" />
-      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/_generate_/UPMToolImporter.cs" />
-      <option value="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/UPMToolImporterGenerator.cs" />
     </changedPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -240,6 +256,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
@@ -306,7 +324,13 @@
       <workItem from="1614240092052" duration="1852000" />
       <workItem from="1618199701886" duration="617000" />
       <workItem from="1618206854885" duration="7968000" />
-      <workItem from="1619755244315" duration="16863000" />
+      <workItem from="1619755244315" duration="17553000" />
+      <workItem from="1620703180760" duration="7093000" />
+      <workItem from="1623308462197" duration="638000" />
+      <workItem from="1628584548467" duration="1455000" />
+      <workItem from="1629897167695" duration="18883000" />
+      <workItem from="1630893007408" duration="2814000" />
+      <workItem from="1633943882906" duration="4893000" />
     </task>
     <servers />
   </component>
@@ -391,6 +415,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -407,6 +432,19 @@
           <line>56</line>
           <properties documentPath="$PROJECT_DIR$/Assets/_package_/_main_/Editor/Develop/PackageJsonEditor.cs" initialLine="48" />
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_package_/_main_/Editor/Process/ProcessProxy.cs</url>
+          <line>156</line>
+          <properties documentPath="D:\Package Projects\UPM Tool Develop\Assets\_package_\_main_\Editor\Process\ProcessProxy.cs" initialLine="156" containingFunctionPresentation="method 'OutputDataReceived'">
+            <startOffsets>
+              <option value="4308" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4339" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

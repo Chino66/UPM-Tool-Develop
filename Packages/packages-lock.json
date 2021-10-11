@@ -1,7 +1,14 @@
 {
   "dependencies": {
+    "com.chino.testproject": {
+      "version": "http://192.168.0.10/cyj/testproject.git#0.1.3",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f13746b67eb0ea438007d74c405dd9b45671be70"
+    },
     "com.unity.ext.nunit": {
-      "version": "1.0.0",
+      "version": "1.0.6",
       "depth": 2,
       "source": "registry",
       "dependencies": {},
@@ -24,11 +31,11 @@
       "url": "https://packages.unity.cn"
     },
     "com.unity.test-framework": {
-      "version": "1.1.16",
+      "version": "1.1.22",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.ext.nunit": "1.0.0",
+        "com.unity.ext.nunit": "1.0.6",
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       },

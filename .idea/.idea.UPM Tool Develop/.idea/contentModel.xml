@@ -12,7 +12,6 @@
             <e p="Editor" t="Include">
               <e p="_generate_" t="Include">
                 <e p="PackagePath.cs" t="Include" />
-                <e p="UPMToolImporter.cs" t="Include" />
               </e>
               <e p="CMDTool" t="Include">
                 <e p="CMDTool.cs" t="Include" />

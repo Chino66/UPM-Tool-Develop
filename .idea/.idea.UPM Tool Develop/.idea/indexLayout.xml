@@ -6,14 +6,13 @@
     </attachedFolders>
     <explicitIncludes>
       <Path>Library/PackageCache/com.chino.testpackage@edb81533a33ff1dd9e645ff778453d3b72231492</Path>
-      <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>
+      <Path>Library/PackageCache/com.chino.testproject@f13746b67e</Path>
+      <Path>Library/PackageCache/com.unity.ext.nunit@1.0.6</Path>
       <Path>Library/PackageCache/com.unity.ide.rider@1.1.4</Path>
-      <Path>Library/PackageCache/com.unity.package-validation-suite@0.7.10-preview</Path>
-      <Path>Library/PackageCache/com.unity.test-framework@1.1.16</Path>
+      <Path>Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0</Path>
+      <Path>Library/PackageCache/com.unity.test-framework@1.1.22</Path>
       <Path>Library/PackageCache/com.unity.ui.builder@1.0.0-preview.7</Path>
       <Path>Library/PackageCache/com.unity.ui.builder@1.0.0-preview.9</Path>
-      <Path>Library/PackageCache/com.unity.upm.develop@0.1.2-preview</Path>
-      <Path>Library/PackageCache/nuget.mono-cecil@0.1.6-preview</Path>
       <Path>Packages</Path>
       <Path>ProjectSettings</Path>
     </explicitIncludes>
