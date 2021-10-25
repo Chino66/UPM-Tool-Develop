@@ -20,7 +20,7 @@ namespace UPMTool
         private static string editorAsmdefPath =>
             $"Assets/_package_{mainFlag}Editor/Editor.{_packageJsonInfo.displayName.Trim()}";
 
-        public const string resourcesPath = "Assets/_package_{mainFlag}Resources";
+        public static string resourcesPath = $"Assets/_package_{mainFlag}Resources";
 
         private const string mainPath = "Assets/_package_/_main_";
 
