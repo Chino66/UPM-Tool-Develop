@@ -40,50 +40,5 @@
                 </ui:Box>
             </ui:Box>
         </ui:VisualElement>
-        <ui:VisualElement name="detail_view_root">
-            <ui:Box name="title" class="row" style="background-color: rgba(182, 182, 182, 0);">
-                <ui:Label text="Detail" style="-unity-font-style: bold;" />
-            </ui:Box>
-            <ui:Box name="detail_box" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(255, 255, 255, 0);">
-                <ui:VisualElement focusable="false" style="align-items: stretch; justify-content: flex-start;">
-                    <ui:Box class="row" style="flex-grow: 1; flex-wrap: nowrap; flex-direction: row; flex-shrink: 1; position: relative; border-top-left-radius: 3px; border-bottom-left-radius: 0; border-top-right-radius: 3px; border-bottom-right-radius: 0; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(128, 128, 128); border-right-color: rgb(128, 128, 128); border-top-color: rgb(128, 128, 128); border-bottom-color: rgb(128, 128, 128);">
-                        <ui:Label text="Username" display-tooltip-when-elided="True" style="width: auto; flex-shrink: 1; flex-grow: 0;" />
-                        <ui:TextField name="name_tf" max-length="-1" multiline="true" text="chino66" style="width: auto; height: auto; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px; flex-shrink: 1; flex-grow: 1; flex-direction: row; flex-wrap: wrap-reverse; flex-basis: auto; display: flex;" />
-                    </ui:Box>
-                    <ui:Box class="row" style="flex-grow: 1; border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-left-color: rgb(128, 128, 128); border-right-color: rgb(128, 128, 128); border-top-color: rgb(128, 128, 128); border-bottom-color: rgb(128, 128, 128);">
-                        <ui:Label text="Token       " display-tooltip-when-elided="True" style="width: auto; flex-shrink: 1; flex-grow: 0;" />
-                        <ui:TextField name="displayName_tf" text="ghp_27xxxxxxxxxxxxxxCEQ" style="width: 30%; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px; flex-shrink: 1; flex-grow: 1;" />
-                    </ui:Box>
-                </ui:VisualElement>
-                <ui:Box class="row" style="border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 0; border-left-color: rgb(128, 128, 128); border-right-color: rgb(128, 128, 128); border-top-color: rgb(128, 128, 128); border-bottom-color: rgb(128, 128, 128);">
-                    <ui:Label name="scopes" text="Scopes" style="width: auto;" />
-                </ui:Box>
-                <ui:Box name="none_tip" class="row" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 3px; border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); background-color: rgba(128, 128, 128, 0); display: none; height: 30px;">
-                    <ui:Label name="dependencies_listempty" text="List is Empty" style="background-color: rgba(0, 0, 0, 0); display: flex; height: auto;" />
-                </ui:Box>
-                <ui:Box name="scope_item_list_root" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 3px; border-left-color: rgb(98, 98, 98); border-right-color: rgb(98, 98, 98); border-top-color: rgb(98, 98, 98); border-bottom-color: rgb(98, 98, 98); display: flex; background-color: rgba(140, 140, 140, 0); min-width: auto;">
-                    <ui:VisualElement name="scope_item_root" class="row">
-                        <ui:TextField name="displayName_tf" text="com.chino" style="width: auto; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px; flex-shrink: 1; flex-grow: 1;" />
-                    </ui:VisualElement>
-                    <ui:VisualElement name="scope_item_root" class="row">
-                        <ui:TextField name="displayName_tf" text="com.chino66" style="width: 30%; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px; flex-shrink: 1; flex-grow: 1;" />
-                    </ui:VisualElement>
-                    <ui:VisualElement name="scope_item_root" class="row">
-                        <ui:TextField name="displayName_tf" text="com.package" style="width: 30%; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px; flex-shrink: 1; flex-grow: 1;" />
-                    </ui:VisualElement>
-                </ui:Box>
-                <ui:Box class="row" style="width: 60px; flex-direction: row; justify-content: flex-start; align-items: auto; position: relative; left: auto; right: auto; flex-basis: auto; flex-wrap: nowrap; border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-top-left-radius: 0; border-bottom-left-radius: 3px; border-top-right-radius: 0; border-bottom-right-radius: 3px; border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); background-color: rgba(140, 140, 140, 0); flex-shrink: 1; flex-grow: 0;">
-                    <ui:Button text="+" name="dependencies_add" style="width: auto; flex-direction: row-reverse; justify-content: flex-start; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 2px; padding-bottom: 2px; background-color: rgba(228, 228, 228, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; font-size: 16px; -unity-font-style: bold;" />
-                    <ui:Button text="-" name="dependencies_remove" style="flex-direction: row-reverse; flex-wrap: nowrap; width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 2px; padding-bottom: 2px; background-color: rgba(228, 228, 228, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; font-size: 16px; -unity-font-style: bold;" />
-                </ui:Box>
-            </ui:Box>
-        </ui:VisualElement>
-        <ui:Box name="edit_box" class="row" style="border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; display: none;">
-            <ui:Button name="revert_btn" text="revert" style="margin-left: 2px; margin-right: 0; margin-top: 2px; margin-bottom: 2px; height: 20px; border-left-width: 0; border-right-width: 1px; border-top-width: 0; border-bottom-width: 0; border-top-right-radius: 0; border-bottom-right-radius: 0;" />
-            <ui:Button name="apply_btn" text="apply" style="margin-left: 0; margin-right: 2px; margin-top: 2px; margin-bottom: 2px; height: 20px; border-left-width: 0; border-right-width: 1px; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0;" />
-        </ui:Box>
-        <ui:Box name="create_box" class="row" style="border-left-color: rgba(128, 128, 128, 0.5); border-right-color: rgba(128, 128, 128, 0.5); border-top-color: rgba(128, 128, 128, 0.5); border-bottom-color: rgba(128, 128, 128, 0.5); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; display: none;">
-            <ui:Button name="create_btn" text="create" style="margin-left: 2px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px; height: 20px;" />
-        </ui:Box>
     </ui:VisualElement>
 </ui:UXML>
