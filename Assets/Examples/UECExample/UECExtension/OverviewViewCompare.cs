@@ -7,37 +7,23 @@ using UPMTool;
 
 namespace UEC
 {
-    public class UECUI : UI
+    public class OverviewViewCompare : View
     {
-        public static UECUI CreateUI(VisualElement parent = null)
-        {
-            var ui = new UECUI();
-            if (parent == null)
-            {
-                parent = new VisualElement();
-            }
-
-            ui.Initialize(parent);
-            return ui;
-        }
-
-        private UECUI()
-        {
-        }
-
+        private VisualElementCache _cache;
+        
         protected override void OnInitialize(VisualElement parent)
         {
-            var uxmlPath = Path.Combine(PackagePath.MainPath, @"Resources/UIElement/uec_view_uxml.uxml");
+            var uxmlPath = Path.Combine(PackagePath.MainPath, @"Resources/UIElement/overview_view_uxml.uxml");
             var asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(uxmlPath);
             var ussPath = Path.Combine(PackagePath.MainPath, @"Resources/UIElement/uss.uss");
             var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(ussPath);
             var temp = asset.CloneTree();
             temp.styleSheets.Add(styleSheet);
-            AddStyleSheet(styleSheet);
+            
+//            var temp = parent.Q("list_view_root");
             Add(temp);
-
-            AddView<OverviewView>();
-            AddView<DetailView>();
+            _cache = new VisualElementCache(temp);
         }
+
     }
 }

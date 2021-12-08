@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 namespace UEC.UIFramework
 {
-    public abstract class View : TemplateContainer
+    public abstract class View : VisualElement
     {
         public UI UI;
 

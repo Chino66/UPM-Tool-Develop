@@ -6,32 +6,49 @@ namespace UEC.UIFramework
 {
     public class UI : View
     {
-        public Dictionary<Type, View> Views;
+        private Dictionary<Type, View> _views;
+
+        private List<StyleSheet> _styleSheets;
 
         public UI()
         {
-            Views = new Dictionary<Type, View>();
+            _views = new Dictionary<Type, View>();
+            _styleSheets = new List<StyleSheet>();
+        }
+
+        public void AddStyleSheet(StyleSheet styleSheet)
+        {
+            _styleSheets.Add(styleSheet);
         }
 
         public T AddView<T>() where T : View
         {
             var type = typeof(T);
-            if (Views.TryGetValue(type, out var v))
+            if (_views.TryGetValue(type, out var v))
             {
                 return (T) v;
             }
 
             var view = System.Activator.CreateInstance<T>();
+            AddStyleSheet(view);
             view.Initialize(Self);
             view.SetUI(this);
-            Views.Add(type, view);
+            _views.Add(type, view);
             return view;
+        }
+
+        private void AddStyleSheet(VisualElement element)
+        {
+            foreach (var styleSheet in _styleSheets)
+            {
+                element.styleSheets.Add(styleSheet);
+            }
         }
 
         public T GetView<T>() where T : View
         {
             var type = typeof(T);
-            if (Views.TryGetValue(type, out var v))
+            if (_views.TryGetValue(type, out var v))
             {
                 return (T) v;
             }
